@@ -1,23 +1,23 @@
 <?php
 include('connect_db.php');
-$target_dir = $_SERVER["DOCUMENT_ROOT"]. "/loket_e-commerce/assets/images/collection/BigDeal_images/768-988/";
+$target_dir = $_SERVER["DOCUMENT_ROOT"]. "/loket_e-commerce/assets/images/collection/BigDeal_images/602-402/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 echo basename($_FILES["fileToUpload"]["name"]) . "<br>";
 echo $_FILES["fileToUpload"]["tmp_name"] . "<br>";
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-// Check if image file is a actual image or fake image
+echo  $target_file;
+//Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-//   if($check !== false) {
+  if($check !== false) {
       
-//     echo "File is an image - " . $check["mime"] . ".";d
-//     $uploadOk = 1;
-//   } else {
-//     echo "File is not an image.";
-//     $uploadOk = 0;
-//   }
+    echo "File is an image - " . $check["mime"] . ".";
+    $uploadOk = 1;
+  } else {
+    echo "File is not an image.";
+    $uploadOk = 0;
+  }
 }
 
 // Check if file already exists
@@ -79,7 +79,7 @@ $offer_code = $row['offer_code'];
 $total_tax = 0.18;
 $product_quantity = $_POST['product_quantity'];
 $description = $_POST['description'];
-$product_image = "../assets/images/collection/BigDeal_images/768-988/".$_FILES["fileToUpload"]["name"];
+$product_image = "../assets/images/collection/BigDeal_images/abc/".$_FILES["fileToUpload"]["name"];
 echo $product_name;
 // print_r($_POST);
 $sql = "INSERT INTO admin_products(product_id, product_name, initial_cost,final_cost, product_quantity, sub_category_name,shop_id,colour, size, height, weight, depth,offer_code, total_tax,product_image) VALUES (NULL, '$product_name','$initial_cost','$final_cost', '$product_quantity','$sub_category_name','$shop_id','$colour','$size','$height','$weight','$depth','$offer_code','$total_tax','$product_image');"; 

@@ -9,6 +9,17 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 // Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
+$category = $_POST['category_name'];
+// $sub_category_name = $_POST['sub_category_name'];
+// $colour = $row['colour'];
+// $size = $row['size'];
+// $height = $row['height'];
+// $weight = $row['weight'];
+// $depth = $row['depth'];
+// $offer_code = $row['offer_code'];
+// $total_tax = 0.18;
+// $product_quantity = $_POST['product_quantity'];
+$description = $_POST['description'];
   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 //   if($check !== false) {
       
@@ -24,7 +35,7 @@ if(isset($_POST["submit"])) {
 if (file_exists($target_file)) {
     echo'<script>
     alert("Sorry, file already exists");
-    window.location = "category.php";
+    window.location = "add-category.php";
     </script>';
   $uploadOk = 0;
 }
@@ -33,7 +44,7 @@ if (file_exists($target_file)) {
 if ($_FILES["fileToUpload"]["size"] > 500000) {
     echo'<script>
     alert("Sorry, your file is too large");
-    window.location = "category.php";
+    window.location = "add-category.php";
     </script>';
   $uploadOk = 0;
 }
@@ -43,7 +54,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 && $imageFileType != "gif" ) {
     echo'<script>
     alert("Sorry, only JPG, JPEG, PNG & GIF files are allowed");
-    window.location = "category.php";
+    window.location = "add-category.php";
     </script>';
   $uploadOk = 0;
 }
@@ -52,7 +63,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 if ($uploadOk == 0) {
     echo'<script>
     alert("Sorry, your file was not uploaded");
-    window.location = "category.php";
+    window.location = "add-category.php";
     </script>';
 // if everything is ok, try to upload file
 } else {
@@ -63,29 +74,20 @@ if ($uploadOk == 0) {
   }
 }
 if($uploadOk == 1){
-$category = $_POST['category'];
-// $sub_category_name = $_POST['sub_category_name'];
-// $colour = $row['colour'];
-// $size = $row['size'];
-// $height = $row['height'];
-// $weight = $row['weight'];
-// $depth = $row['depth'];
-// $offer_code = $row['offer_code'];
-// $total_tax = 0.18;
-// $product_quantity = $_POST['product_quantity'];
-$description = $_POST['description'];
-$product_image = "../assets/images/collection/BigDeal_images/1920-550/".$_FILES["fileToUpload"]["name"];
+
+$category_image = "../assets/images/collection/BigDeal_images/1920-550/".basename($_FILES["fileToUpload"]["name"]);
 echo $product_name;
+echo $product_image;
 // print_r($_POST);
 $sql = "INSERT INTO admin_category(id,category_name,category_image,description) VALUES (NULL,'$category_name','$category_image','$description');"; 
 $result = $conn->query($sql);
 echo $sql;
 echo $result;
-if($result->num_rows>=0){
-    // echo'<script>
-    // alert("Product added successfully");
-    // window.location = "category.php";
-    // </script>';
-}
+// if($result->num_rows>=0){
+//     echo'<script>
+//     alert("Product added successfully'.$category_name.'");
+//     window.location = "add-category.php";
+//     </script>';
+// }
 }
 ?>
