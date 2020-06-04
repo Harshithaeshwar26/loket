@@ -667,7 +667,6 @@
             <div class="col-xl-8 col-lg-6 col-md-8 offset-xl-2 offset-lg-3 offset-md-2">
                 <div class="theme-card" style="border-style:solid; border-width:5px; border-color:#d3d3d3; background-color:white;">
                     
-                           
                     
                 </div>
             </div>

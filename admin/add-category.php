@@ -346,7 +346,7 @@
                                         </div> -->
                                     </div>
                                     <div class="col-xl-12">
-                                        <form method = "POST" action = "category.php" enctype="multipart/form-data" >
+                                        <form method = "POST" action = "category.php" >
                                             <!-- <div class="form">
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Product Name:</label>
@@ -371,16 +371,12 @@
                                                     <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
                                                 </div>
                                             </div> -->
-                                            
-                                                <!-- <div class="form-group row">
-                                                    <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
-                                                    <select class="form-control digits col-xl-8 col-sm-7" name = "category_name" id="exampleFormControlSelect1">
-                                                        <option>Electronics</option>
-                                                        <option>Hardware</option>
-                                                        <option>Medicine</option>
-                                                        <option>Fashion</option>
-                                                    </select>
-                                                </div> -->
+                                            <div class="form">
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
                                                 <!-- <div class="form-group row">
                                                     <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Sub Category:</label>
                                                     <select class="form-control digits col-xl-8 col-sm-7" name = "sub_category_name" id="exampleFormControlSelect1">
@@ -403,9 +399,11 @@
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "colour" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>-->
-                                                
-                                                   
-                                                
+                                                <!-- <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Sub Category Name :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "sub_category_name" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div> -->
                                                 <!--div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Height :</label>
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "height" type="text" required="">
@@ -425,25 +423,22 @@
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Expiry Date :</label>
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "expiry_date" type="date" required="">
                                                     <div class="valid-feedback">Looks good!</div> -->
-                                                
-                                                <!-- <div class="form-group mb-3 row">
+                                                </div>
+                                                <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Description:</label>
                                                     <textarea class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "offer_code" type="text"></textarea>
                                                     <div class="valid-feedback">Looks good!</div>
-                                                </div> -->
-                                                <div class="form-group row">
+                                                </div>
+                                                <!-- <div class="form-group row">
                                                     <label class="col-xl-3 col-sm-4">Upload Image :</label>
                                                     <div class="col-xl-8 col-sm-7 pl-0 description-sm">
-                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" value="text default" required="">
                                                         <li> <input type="file" name="fileToUpload" id="fileToUpload"></li>
-                                                        <li><input type="submit" value="Upload Image" name="submit"></li>
                                                         
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="offset-xl-3 offset-sm-4">
-                                                <!-- <input type="submit" name = "submit" class="btn btn-primary"> -->
+                                                <input type="submit" name = "submit" class="btn btn-primary">
                                                 <button type="button" class="btn btn-light">Discard</button>
                                             </div>
                                         </form>
