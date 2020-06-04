@@ -113,23 +113,20 @@
                                                 </div>
                                             </div>
                                             <div class="form">
-                                                <div class="form-group row">
-                                                    <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Category :</label>
-                                                    <select class="form-control digits col-xl-8 col-sm-7" name = "category_name" id="exampleFormControlSelect1">
-                                                        <option>Electronics</option>
-                                                        <option>Hardware</option>
-                                                        <option>Medicine</option>
-                                                        <option>Fashion</option>
-                                                    </select>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>  
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Sub Category Name :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "sub_category_name" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Sub Category:</label>
-                                                    <select class="form-control digits col-xl-8 col-sm-7" name = "sub_category_name" id="exampleFormControlSelect1">
-                                                        <option>Mobile Phones</option>
-                                                        <option>Headphones</option>
-                                                        <option>Ear phones</option>
-                                                        <option>Charger</option>
-                                                    </select>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Shop Id :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "shop_id" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Quantity :</label>
