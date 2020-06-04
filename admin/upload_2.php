@@ -1,4 +1,7 @@
 <?php
+echo'<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">';
 session_start();
 include('connect_db.php');
 $category_name =  $_SESSION['category_name'];
@@ -54,11 +57,21 @@ if ($uploadOk == 0) {
 $category_image = "..assets/images/collection/BigDeal_images/1920-550/".basename($_FILES["fileToUpload"]["name"]);
 $sql = "UPDATE admin_product SET category_image = '$category_image' WHERE category_name = '$category_name';";
 $result = $conn->query($sql);
-if($result->num_rows>0){
-    echo'<script>
-    alert("Category addedd successfully");
-    window.location = "add-category.php";
-    </script>';
+if($result->num_rows>=0){
+  echo '<script>
+  setTimeout(function () { 
+      swal({
+      title: "",
+      text: "Category Added Successfully",
+      type: "success",
+      confirmButtonText: "OK"
+      },
+      function(isConfirm){
+      if (isConfirm) {
+          window.location.href = "add-category.php";
+      }
+      }); }, 1000);
+  </script>';
   }
 echo $sql;
 echo $result;
