@@ -54,6 +54,12 @@ if ($uploadOk == 0) {
 $product_image = "..assets/images/collection/BigDeal_images/768-988/".basename($_FILES["fileToUpload"]["name"]);
 $sql = "UPDATE admin_product SET product_image = '$product_image' WHERE product_code = '$product_code';";
 $result = $conn->query($sql);
+if($result->num_rows>0){
+  echo'<script>
+  alert("Product addedd successfully");
+  window.location = "add-product.php;
+  </script>';
+}
 echo $sql;
 echo $result;
 ?>
