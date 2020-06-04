@@ -16,7 +16,7 @@ $_SESSION['product_code'] = $product_code;
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
-    <title>Bigdeal - Premium Admin Template</title>
+    <title>Loket - E-commerce</title>
 
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -114,7 +114,7 @@ $_SESSION['product_code'] = $product_code;
                                                 
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Code :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" name = "" value = "<?php echo $product_code?>" disabled type="text" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" name = "" value = "<?php echo $product_code?>" size="16" maxlength="16" disabled type="text" required="">
                                                     <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
                                                 </div>
 
@@ -146,27 +146,27 @@ $_SESSION['product_code'] = $product_code;
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Colour :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "colour" type="text" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "colour" type="text">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Size :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "size" type="text" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "size" type="text">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Height :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "height" type="text" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "height" type="text">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Weight :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "weight" type="text" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "weight" type="text">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Depth :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "depth" type="text" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "depth" type="text">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
@@ -179,13 +179,6 @@ $_SESSION['product_code'] = $product_code;
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "offer_code" type="text">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
-                                                <!-- <div class="form-group row">
-                                                    <label class="col-xl-3 col-sm-4">Upload Image :</label>
-                                                    <div class="col-xl-8 col-sm-7 pl-0 description-sm">
-                                                        <li> <input type="file" name="fileToUpload" id="fileToUpload"></li>
-                                                        
-                                                    </div>
-                                                </div> -->
                                             </div>
                                             <div class="offset-xl-3 offset-sm-4">
                                                 <input type="submit" name = "submit" class="btn btn-primary">

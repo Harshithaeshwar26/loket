@@ -103,7 +103,7 @@ echo $result;
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
-    <title>Bigdeal - Premium Admin Template</title>
+    <title>Loket - E-commerce</title>
 
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -129,80 +129,13 @@ echo $result;
     <!-- Page Header Start-->
     <div class="page-main-header">
         <div class="main-header-left">
-            <div class="logo-wrapper"><a href="index.html"><img class="blur-up lazyloaded" src="../assets/images/layout-2/logo/logo.png" alt=""></a></div>
+            <div class="logo-wrapper"><a href="index.html"><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
         </div>
         <div class="main-header-right row">
-            <div class="mobile-sidebar">
-                <div class="media-body text-right switch-sm">
-                    <label class="switch">
-                        <input id="sidebar-toggle" type="checkbox" checked="checked"><span class="switch-state"></span>
-                    </label>
-                </div>
-            </div>
             <div class="nav-right col">
-                <ul class="nav-menus">
-                    <li>
-                        <form class="form-inline search-form">
-                            <div class="form-group">
-                                <input class="form-control-plaintext" type="search" placeholder="Search.."><span class="d-sm-none mobile-search"><i data-feather="search"></i></span>
-                            </div>
-                        </form>
-                    </li>
-                    <li class="onhover-dropdown"><a class="txt-dark" href="#">
-                        <h6>EN</h6></a>
-                        <ul class="language-dropdown onhover-show-div p-20">
-                            <li><a href="#" data-lng="pt"><i class="flag-icon flag-icon-uy"></i> Portuguese</a></li>
-                            <li><a href="#" data-lng="es"><i class="flag-icon flag-icon-um"></i> Spanish</a></li>
-                            <li><a href="#" data-lng="en"><i class="flag-icon flag-icon-is"></i> English</a></li>
-                            <li><a href="#" data-lng="fr"><i class="flag-icon flag-icon-nz"></i> French</a></li>
-                        </ul>
-                    </li>
+                
                     <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize"></i></a></li>
-                    <li class="onhover-dropdown"><i data-feather="bell"></i><span class="badge badge-pill badge-primary pull-right notification-badge">3</span><span class="dot"></span>
-                        <ul class="notification-dropdown onhover-show-div p-0">
-                            <li>
-                                <div class="media">
-                                    <div class="notification-icons bg-success mr-3"><i data-feather="thumbs-up"></i></div>
-                                    <div class="media-body">
-                                        <h6 class="font-success">Someone Likes Your Posts</h6>
-                                        <p class="mb-0"> 2 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media">
-                                    <div class="notification-icons bg-info mr-3"><i data-feather="message-circle"></i></div>
-                                    <div class="media-body">
-                                        <h6 class="font-info">3 New Comments</h6>
-                                        <p class="mb-0"> 1 Hours Ago</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="media">
-                                    <div class="notification-icons bg-secondary mr-3"><i data-feather="download"></i></div>
-                                    <div class="media-body">
-                                        <h6 class="font-secondary">Download Complete</h6>
-                                        <p class="mb-0"> 3 Days Ago</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="bg-light txt-dark"><a href="#" data-original-title="" title="">All </a> notification</li>
-                        </ul>
-                    </li>
-                    <li><a href="#"><i class="right_side_toggle" data-feather="message-square"></i><span class="dot"></span></a></li>
-                    <li class="onhover-dropdown">
-                        <div class="media align-items-center"><img class="align-self-center pull-right img-50 rounded-circle blur-up lazyloaded" src="../assets/images/dashboard/man.png" alt="header-user">
-                            <div class="dotted-animation"><span class="animate-circle"></span><span class="main-circle"></span></div>
-                        </div>
-                        <ul class="profile-dropdown onhover-show-div p-20 profile-dropdown-hover">
-                            <li><a href="#">Profile<span class="pull-right"><i data-feather="user"></i></span></a></li>
-                            <li><a href="#">Inbox<span class="pull-right"><i data-feather="mail"></i></span></a></li>
-                            <li><a href="#">Taskboard<span class="pull-right"><i data-feather="file-text"></i></span></a></li>
-                            <li><a href="#">Settings<span class="pull-right"><i data-feather="settings"></i></span></a></li>
-                        </ul>
-                    </li>
-                </ul>
+                
                 <div class="d-lg-none mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
             </div>
         </div>
@@ -392,16 +325,16 @@ echo $result;
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="page-header-left">
-                                <h3>Add Products
-                                    <small>Bigdeal Admin panel</small>
+                                <h3>Add Sub Category
+                                    <small>Loket Admin panel</small>
                                 </h3>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <ol class="breadcrumb pull-right">
                                 <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
-                                <li class="breadcrumb-item">Physical</li>
-                                <li class="breadcrumb-item active">Add Product</li>
+                                <!-- <li class="breadcrumb-item">Physical</li> -->
+                                <li class="breadcrumb-item active">Add Sub Category</li>
                             </ol>
                         </div>
                     </div>
@@ -415,7 +348,7 @@ echo $result;
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Add Product</h5>
+                                <h5>Add Sub Category</h5>
                             </div>
                             <div class="card-body">
                                 <div class="row product-adding">
@@ -427,23 +360,12 @@ echo $result;
                                                 </div> -->
                                                 <div class="col-xl-3 xl-50 col-sm-6 col-3">
                                                     <ul class="file-upload-product">
-                                                    <form action="upload_1.php" method="post" enctype="multipart/form-data">
-                                                    <!-- <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" required=""> -->
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                        Select image to upload:
-                                                        <li> <input type="file" name="fileToUpload" id="fileToUpload"></li>
-                                                        <li><input type="submit" value="Upload Image" name="submit"></li>
-                                                        
-                                                        
-                                                    <!-- <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                                        <li><div class="box-input-file"><input type="file" name="fileToUpload" id="fileToUpload"><i class="fa fa-plus"></i></div></li>
-                                                        
-                                                        </form>
-                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li> -->
+                                                        <form action="upload_1.php" method="post" enctype="multipart/form-data">
+                                                    
+                                                        <div class="valid-feedback">Looks good!</div>
+                                                        <li><h4>Select image to upload:</h4></li>
+                                                        <li><input type="file" name="fileToUpload" id="fileToUpload"></li>
+                                                        <li><input type="submit" value="Upload Image" name="submit" class="btn btn-primary"></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -565,7 +487,7 @@ echo $result;
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6 footer-copyright">
-                        <p class="mb-0">Copyright 2019 © Bigdeal All rights reserved.</p>
+                        <p class="mb-0">Copyright 2020 © Loket All rights reserved.</p>
                     </div>
                     <div class="col-md-6">
                         <p class="pull-right mb-0">Hand crafted & made with<i class="fa fa-heart"></i></p>
