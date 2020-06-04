@@ -1,3 +1,9 @@
+<?php
+session_start();
+include('connect_db.php');
+$product_code = rand(111111111111111111,9999999999999999);
+$_SESSION['product_code'] = $product_code;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +93,7 @@
                                 <div class="row product-adding">
                                     </div>
                                     <div class="col-xl-12">
-                                        <form method = "POST" action = "upload.php" >
+                                        <form method = "POST" action = "product.php" >
                                             <div class="form">
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Product Name:</label>
@@ -96,7 +102,7 @@
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Initital Price :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "final_cost" type="text" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "initial_cost" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
 
@@ -108,7 +114,13 @@
                                                 
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Code :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" name = "product_code" type="text" pattern=".{16,}" maxlength="16" required title="Input should be 16 characters">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" name = "" value = "<?php echo $product_code?>" disabled type="text" required="">
+                                                    <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
+                                                </div>
+
+                                                <div class="form-group mb-3 row">
+                                                    <!-- <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Code :</label> -->
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" name = "product_code" value = "<?php echo $product_code?>" hidden type="text" required="">
                                                     <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
                                                 </div>
                                             
@@ -167,13 +179,13 @@
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "offer_code" type="text">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
-                                                <div class="form-group row">
+                                                <!-- <div class="form-group row">
                                                     <label class="col-xl-3 col-sm-4">Upload Image :</label>
                                                     <div class="col-xl-8 col-sm-7 pl-0 description-sm">
                                                         <li> <input type="file" name="fileToUpload" id="fileToUpload"></li>
                                                         
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="offset-xl-3 offset-sm-4">
                                                 <input type="submit" name = "submit" class="btn btn-primary">

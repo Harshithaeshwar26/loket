@@ -429,13 +429,13 @@
                                                     <textarea class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "offer_code" type="text"></textarea>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
-                                                <div class="form-group row">
+                                                <!-- <div class="form-group row">
                                                     <label class="col-xl-3 col-sm-4">Upload Image :</label>
                                                     <div class="col-xl-8 col-sm-7 pl-0 description-sm">
                                                         <li> <input type="file" name="fileToUpload" id="fileToUpload"></li>
                                                         
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                             <div class="offset-xl-3 offset-sm-4">
                                                 <input type="submit" name = "submit" class="btn btn-primary">

@@ -341,14 +341,14 @@
                                     <div class="col-xl-5">
                                         <div class="add-product">
                                             <div class="row">
-                                                <div class="col-xl-9 xl-50 col-sm-6 col-9">
+                                                <!-- <div class="col-xl-9 xl-50 col-sm-6 col-9">
                                                     <img src="../assets/images/pro3/1.jpg" alt="" class="img-fluid image_zoom_1 blur-up lazyloaded">
-                                                </div>
+                                                </div> -->
                                                 <div class="col-xl-3 xl-50 col-sm-6 col-3">
                                                     <ul class="file-upload-product">
                                                     <form action="upload.php" method="post" enctype="multipart/form-data">
-                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" required="">
+                                                    <!-- <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" required=""> -->
                                                     <div class="valid-feedback">Looks good!</div>
                                                         Select image to upload:
                                                         <li> <input type="file" name="fileToUpload" id="fileToUpload"></li>
