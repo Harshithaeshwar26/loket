@@ -326,7 +326,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="row product-adding">
-                                    <div class="col-xl-5">
+                                    <!-- <div class="col-xl-5">
                                         <div class="add-product">
                                             <div class="row">
                                                 <div class="col-xl-9 xl-50 col-sm-6 col-9">
@@ -343,54 +343,103 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    <div class="col-xl-7">
-                                        <form class="needs-validation add-product-form" novalidate="">
+                                    <div class="col-xl-12">
+                                        <form method = "POST" action = "product.php" >
                                             <div class="form">
                                                 <div class="form-group mb-3 row">
-                                                    <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Title :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" type="text" required="">
+                                                    <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Product Name:</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" name = "product_name" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
-                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" type="text" required="">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Initital Price :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "final_cost" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
+
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Final Price :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "final_cost" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Code :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" type="text" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" name = "product_code" type="text" required="">
                                                     <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
                                                 </div>
                                             </div>
                                             <div class="form">
-                                                <div class="form-group row">
-                                                    <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Size :</label>
-                                                    <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1">
-                                                        <option>Small</option>
-                                                        <option>Medium</option>
-                                                        <option>Large</option>
-                                                        <option>Extra Large</option>
-                                                    </select>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>  
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Sub Category Name :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "sub_category_name" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Shop Id :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "shop_id" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <label class="col-xl-3 col-sm-4 mb-0">Total Products :</label>
                                                     <fieldset class="qty-box col-xl-9 col-xl-8 col-sm-7 pl-0">
                                                         <div class="input-group">
-                                                            <input class="touchspin" type="text" value="1">
+                                                            <input class="touchspin" name = "total_products"  type="text" value="1">
                                                         </div>
                                                     </fieldset>
                                                 </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Colour :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "colour" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Size :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "size" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Height :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "height" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Weight :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "weight" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Depth :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "depth" type="text" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Expiry Date :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "expiry_date" type="date" required="">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Offer Code :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "offer_code" type="text">
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
                                                 <div class="form-group row">
-                                                    <label class="col-xl-3 col-sm-4">Add Description :</label>
+                                                    <label class="col-xl-3 col-sm-4">Upload Image :</label>
                                                     <div class="col-xl-8 col-sm-7 pl-0 description-sm">
-                                                        <textarea id="editor1" name="editor1" cols="10" rows="4"></textarea>
+                                                        <li> <input type="file" name="fileToUpload" id="fileToUpload"></li>
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="offset-xl-3 offset-sm-4">
-                                                <button type="submit" class="btn btn-primary">Add</button>
+                                                <input type="submit" name = "submit" class="btn btn-primary">
                                                 <button type="button" class="btn btn-light">Discard</button>
                                             </div>
                                         </form>
