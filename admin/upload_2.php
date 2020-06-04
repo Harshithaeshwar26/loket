@@ -1,8 +1,8 @@
 <?php
 session_start();
 include('connect_db.php');
-$product_code =  $_SESSION['product_code'];
-$target_dir = $_SERVER["DOCUMENT_ROOT"]. "/loket_e-commerce/assets/images/collection/BigDeal_images/602-402/";
+$category_name =  $_SESSION['category_name'];
+$target_dir = $_SERVER["DOCUMENT_ROOT"]. "/loket_e-commerce/assets/images/collection/BigDeal_images/1920-550/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 echo basename($_FILES["fileToUpload"]["name"]) . "<br>";
@@ -51,9 +51,15 @@ if ($uploadOk == 0) {
     echo "Sorry, there was an error uploading your file.";
   }
 }
-$product_image = "..assets/images/collection/BigDeal_images/768-988/".basename($_FILES["fileToUpload"]["name"]);
-$sql = "UPDATE admin_product SET product_image = '$product_image' WHERE product_code = '$product_code';";
+$category_image = "..assets/images/collection/BigDeal_images/1920-550/".basename($_FILES["fileToUpload"]["name"]);
+$sql = "UPDATE admin_product SET category_image = '$category_image' WHERE category_name = '$category_name';";
 $result = $conn->query($sql);
+if($result->num_rows>0){
+    echo'<script>
+    alert("Category addedd successfully");
+    window.location = "add-category.php";
+    </script>';
+  }
 echo $sql;
 echo $result;
 ?>
