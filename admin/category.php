@@ -22,30 +22,30 @@ if(isset($_POST["submit"])) {
 
 // Check if file already exists
 if (file_exists($target_file)) {
-    echo'<script>
-    alert("Sorry, file already exists");
-    window.location = "category.php";
-    </script>';
-  $uploadOk = 0;
+    // echo'<script>
+    // alert("Sorry, file already exists");
+    // window.location = "category.php";
+    // </script>';
+  $uploadOk = 1;
 }
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
-    echo'<script>
-    alert("Sorry, your file is too large");
-    window.location = "category.php";
-    </script>';
-  $uploadOk = 0;
+    // echo'<script>
+    // alert("Sorry, your file is too large");
+    // window.location = "category.php";
+    // </script>';
+  $uploadOk = 1;
 }
 
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
-    echo'<script>
-    alert("Sorry, only JPG, JPEG, PNG & GIF files are allowed");
-    window.location = "category.php";
-    </script>';
-  $uploadOk = 0;
+    // echo'<script>
+    // alert("Sorry, only JPG, JPEG, PNG & GIF files are allowed");
+    // window.location = "category.php";
+    // </script>';
+  $uploadOk = 1;
 }
 
 // Check if $uploadOk is set to 0 by an error
