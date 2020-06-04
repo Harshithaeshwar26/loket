@@ -87,7 +87,7 @@
                                 <div class="row product-adding">
                                     </div>
                                     <div class="col-xl-12">
-                                        <form method = "POST" action = "product.php" >
+                                        <form method = "POST" action = "upload.php" >
                                             <div class="form">
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Product Name:</label>
@@ -111,8 +111,7 @@
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" name = "product_code" type="text" pattern=".{16,}" maxlength="16" required title="Input should be 16 characters">
                                                     <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
                                                 </div>
-                                            </div>
-                                            <div class="form">
+                                            
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" required="">
