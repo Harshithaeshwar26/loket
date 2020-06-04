@@ -10,7 +10,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
-    <title>Bigdeal - Premium Admin Template</title>
+    <title>Loket - E-commerce</title>
 
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -233,14 +233,14 @@
                         <div class="col-lg-6">
                             <div class="page-header-left">
                                 <h3>Add Sub Category
-                                    <small>Bigdeal Admin panel</small>
+                                    <small>Loket Admin panel</small>
                                 </h3>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <ol class="breadcrumb pull-right">
                                 <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
-                                <li class="breadcrumb-item">Physical</li>
+                                <!-- <li class="breadcrumb-item">Physical</li> -->
                                 <li class="breadcrumb-item active">Add Sub Category</li>
                             </ol>
                         </div>
