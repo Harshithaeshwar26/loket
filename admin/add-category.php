@@ -359,7 +359,7 @@
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Description:</label>
-                                                    <textarea class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "offer_code" type="text"></textarea>
+                                                    <textarea class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "description" type="text"></textarea>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <!-- <div class="form-group row">
