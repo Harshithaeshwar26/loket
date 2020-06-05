@@ -81,8 +81,8 @@ $description = $_POST['description'];
 // print_r($_POST);
 $sql = "INSERT INTO admin_sub_category(id, sub_category_name, category_name,sub_category_image,description) VALUES (NULL, '$sub_category_name','$category_name','$sub_category_image','$description');"; 
 $result = $conn->query($sql);
-echo $sql;
-echo $result;
+// echo $sql;
+// echo $result;
 // if($result->num_rows>=0){
 //     echo'<script>
 //     alert("Product added successfully");

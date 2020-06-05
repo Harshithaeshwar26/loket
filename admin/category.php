@@ -85,8 +85,8 @@ $_SESSION['category_name'] =$category_name;
 $description = $_POST['description'];
 $sql = "INSERT INTO admin_category(id,category_name,category_image,description) VALUES (NULL,'$category_name','$category_image','$description');"; 
 $result = $conn->query($sql);
-echo $sql;
-echo $result;
+// echo $sql;
+// echo $result;
 // if($result->num_rows>=0){
 //     echo'<script>
 //     alert("Product added successfully'.$category_name.'");
