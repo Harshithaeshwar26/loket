@@ -139,11 +139,107 @@
         left: 0%;
         }
         }
+
+        * {box-sizing: border-box;}
+
+        body { 
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .header {
+        overflow: hidden;
+        background-color: #f1f1f1;
+        padding: 20px 10px;
+        }
+
+        .header a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px; 
+        line-height: 25px;
+        border-radius: 4px;
+        }
+
+        .header a.logo {
+        font-size: 25px;
+        font-weight: bold;
+        }
+
+        .header a:hover {
+        background-color: #ddd;
+        color: black;
+        }
+
+        .header a.active {
+        background-color: dodgerblue;
+        color: white;
+        }
+
+        .header-right {
+        float: right;
+        }
+
+        @media screen and (max-width: 500px) {
+        .header a {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .header-right {
+            float: none;
+        }
+        }
+
+        .button {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        }
+
+        .button5 {
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        }
+
+        .button5:hover {
+        background-color: #555555;
+        color: white;
+        }
+
+        .button5 {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
+        .button5 {width: 100%;}
+        .button5 {border-radius: 12px;}
     </style>
 
 </head>
 <body>
 
+    <div class="header">
+    <a href="#default" class="logo" style="text-align:center">Loket</a>
+        <div class="header-right">
+            <a class="active" style="text-align:center; font-size:15px; font-weight: bold;" href="#home">HOME</a>
+        </div>
+    </div>
+    
     <div class="timeline">
         <div class="container left">
             <div class="content">
@@ -169,13 +265,14 @@
         <div class="container right">
             <div class="content">
                 <h2>Order Is On The Way</h2>
+                <button class="button button5">Live Track</button>
                 <p></p>
             </div>
         </div>
         <div class="container left">
             <div class="content">
                 <h2>Order Delivered</h2>
-                <p></p>
+                <p>Order Details</p>
             </div>
         </div>
     </div>
