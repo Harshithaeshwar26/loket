@@ -1,3 +1,6 @@
+<?php
+include('connect_db.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -145,13 +148,49 @@
 <body>
 
     <div class="timeline">
-        <div class="container left">
-            <div class="content">
-                <h2>Order Accepted By Delivery Boy</h2>
-                <p></p>
-            </div>
+    <?php
+    include('connect_db.php');
+    $item_id = 72970564;
+    $sql = "SELECT * FROM order_status WHERE item_id = '$item_id';";
+    $result = $conn->query($sql);
+    if($result->num_rows>=0){
+        while($row=$result->fetch_assoc()){
+            $status = $row['status'];
+        }
+    }
+    if($status = 'ordered_accepted'){
+        echo '<div class="container left">
+        <div class="content">
+            <h2>Order Accepted By Delivery Boy</h2>
+            <p></p>
         </div>
-        <div class="container right">
+    </div>';
+    }
+    else if($status = 'ordered_collected'){
+        echo'<div class="container left">
+        <div class="content">
+            <h2>Order Accepted By Delivery Boy</h2>
+            <p></p>
+        </div>
+    </div>
+    <div class="container right">
+            <div class="content">
+                <h2>Order Picked-Up At Store</h2>
+                <p>1st Product</p>
+                <p>2nd Product</p>
+                <p>3rd Product</p>
+                <p>4th Product</p>
+            </div>
+        </div';
+    }
+    else if($status = 'delivered'){
+        echo'<div class="container left">
+        <div class="content">
+            <h2>Order Accepted By Delivery Boy</h2>
+            <p></p>
+        </div>
+    </div>
+    <div class="container right">
             <div class="content">
                 <h2>Order Picked-Up At Store</h2>
                 <p>1st Product</p>
@@ -165,19 +204,9 @@
                 <h2>Order Out For Delivery</h2>
                 <p></p>
             </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <h2>Order Is On The Way</h2>
-                <p></p>
-            </div>
-        </div>
-        <div class="container left">
-            <div class="content">
-                <h2>Order Delivered</h2>
-                <p></p>
-            </div>
-        </div>
+        </div>';
+    }   
+    ?>
     </div>
 
 </body>
