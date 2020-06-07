@@ -246,15 +246,17 @@ include('connect_db.php');
     <div class="timeline">
     <?php
     include('connect_db.php');
-    $item_id = 72970564;
-    $sql = "SELECT * FROM order_status WHERE item_id = '$item_id';";
-    $result = $conn->query($sql);
-    if($result->num_rows>=0){
-        while($row=$result->fetch_assoc()){
-            $status = $row['status'];
-        }
-    }
-    if($status = 'ordered_accepted'){
+    // $item_id = 72970564;
+    // $sql = "SELECT * FROM order_status WHERE item_id = '$item_id';";
+    // $result = $conn->query($sql);
+    // if($result->num_rows>=0){
+    //     while($row=$result->fetch_assoc()){
+    //         $status = $row['status'];
+    //         $sta
+    //     }
+    // }
+    $status = "delivered";
+    if($status == 'ordered_accepted'){
         echo '<div class="container left">
         <div class="content">
             <h2>Order Accepted By Delivery Boy</h2>
@@ -262,7 +264,7 @@ include('connect_db.php');
         </div>
     </div>';
     }
-    else if($status = 'ordered_collected'){
+    else if($status == 'ordered_collected'){
         echo'<div class="container left">
         <div class="content">
             <h2>Order Accepted By Delivery Boy</h2>
@@ -279,7 +281,7 @@ include('connect_db.php');
             </div>
         </div';
     }
-    else if($status = 'delivered'){
+    else if($status == 'delivered'){
         echo'<div class="container left">
         <div class="content">
             <h2>Order Accepted By Delivery Boy</h2>

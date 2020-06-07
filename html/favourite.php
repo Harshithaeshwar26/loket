@@ -679,6 +679,7 @@ include('connect_db.php');
                             <th scope="col">product name</th>
                             <th scope="col">price</th>
                             <th scope="col">quantity</th>
+                            <th scope="col">add to cart</th>
                             <th scope="col">action</th>
                             <th scope="col">total</th>
                         </tr>
@@ -739,7 +740,8 @@ include('connect_db.php');
                                     
                             </td>
                            
-                            
+                            <td><a href="cart_1.php?id='.$product_name.'" ><i class="fa fa-shopping-cart" ></i></a></td>
+
                             <td><a href="favourite_2.php?id='.$item_name.'" class="icon"><i class="fa fa-trash"></i></a></td>
                             <td>
                                 <h2 class="" style = "color:#1167b1">Rs '.$item_price.'</h2></td>

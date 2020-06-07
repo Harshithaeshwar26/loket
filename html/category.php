@@ -73,13 +73,13 @@ include('connect_db.php');
                     <div class="top-header-right">
                         <div class="top-menu-block">
                             <ul>
-                                <li><a href="#">gift cards</a></li>
-                                <li><a href="#">Notifications</a></li>
+                                <!-- <li><a href="#">gift cards</a></li>
+                                <li><a href="#">Notifications</a></li> -->
                                 <li><a href="#">help & contact</a></li>
-                                <li><a href="#">todays deal</a></li>
+                                <!-- <li><a href="#">todays deal</a></li>
                                 <li><a href="#">track order</a></li>
                                 <li><a href="#">shipping </a></li>
-                                <li><a href="#">easy returns</a></li>
+                                <li><a href="#">easy returns</a></li> -->
                             </ul>
                         </div>
                         <div class="language-block">
@@ -124,7 +124,7 @@ include('connect_db.php');
                                             back <i class="fa fa-angle-right pl-2"></i>
                                         </div>
                                     </li>
-                                    <li> <a href="#">foodgrains</a></li>
+                                    <!-- <li> <a href="#">foodgrains</a></li>
                                     <li> <a href="#">bakery</a></li>
                                     <li> <a href="#">beverage</a></li>
                                     <li> <a href="#">snacks</a></li>
@@ -135,7 +135,7 @@ include('connect_db.php');
                                     <li> <a href="#">kiwi</a></li>
                                     <li> <a href="#">mangosteen</a></li>
                                     <li> <a href="#">grape</a></li>
-                                    <li> <a href="#">zucchini</a></li>
+                                    <li> <a href="#">zucchini</a></li> -->
                                     <li class="mor-slide-open">
                                         <ul>
                                             <li> <a>drangon fruits</a></li>
@@ -145,13 +145,13 @@ include('connect_db.php');
                                             <li> <a href="#">zucchini</a></li>
                                         </ul>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a class="mor-slide-click">
                                             more category
                                             <i class="fa fa-angle-down pro-down" ></i>
                                             <i class="fa fa-angle-up pro-up" ></i>
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </div>
                             <div class="brand-logo">
@@ -170,7 +170,7 @@ include('connect_db.php');
                                         </li>
                                         <!--HOME-->
                                         <li>
-                                            <a href="#">Home</a>
+                                            <a href="category.php">Home</a>
                                             <!-- <ul>
                                                 <li><a target="_blank" href="index.html">layout 1</a></li>
                                                 <li><a target="_blank" href="layout-2.html">layout 2</a></li>
@@ -407,8 +407,8 @@ include('connect_db.php');
                                         <li><a href="#">pages</a>
                                             <ul>
                                                 <li>
-                                                    <a href="#">account</a>
-                                                    <ul>
+                                                    <a href="profile.php">account</a>
+                                                    <!-- <ul>
                                                         <li><a href="wishlist.html">wishlist</a></li>
                                                         <li><a href="cart.html">cart</a></li>
                                                         <li><a href="dashboard.html">Dashboard</a></li>
@@ -418,26 +418,27 @@ include('connect_db.php');
                                                         <li><a href="forget-pwd.html">forget password</a></li>
                                                         <li><a href="profile.html">profile </a></li>
                                                         <li><a href="checkout.html">checkout</a></li>
-                                                    </ul>
+                                                    </ul> -->
                                                 </li>
                                                 <li><a href="about-page.html">about us</a></li>
-                                                <li><a href="search.html">search</a></li>
-                                                <li><a href="typography.html">typography </a></li>
+                                                <li><a href="cart.php">cart</a></li>
+                                                <li><a href="favourite.php">wishlist </a></li>
                                                 <li><a href="review.html">review </a></li>
-                                                <li><a href="order-success.html">order success</a></li>
-                                                <li><a href="order-history.html">order history</a></li>
-                                                <li>
+                                                <li><a href="my_orders.php">order status</a></li>
+                                                <li><a href="order_history">order history</a></li>
+                                                <!-- <li>
                                                     <a href="#">compare</a>
                                                     <ul>
                                                         <li><a href="compare.html">compare</a></li>
                                                         <li><a href="compare-2.html">compare-2</a></li>
                                                     </ul>
-                                                </li>
-                                                <li><a href="collection.html">collection</a></li>
+                                                </li> -->
+                                                <!-- <li><a href="collection.html">collection</a></li>
                                                 <li><a href="look-book.html">lookbook</a></li>
                                                 <li><a href="404.html">404</a></li>
-                                                <li><a href="coming-soon.html">coming soon </a></li>
-                                                <li><a href="faq.html">FAQ</a></li>
+                                                <li><a href="coming-soon.html">coming soon </a></li> -->
+                                                <li><a href="faq.php">FAQ</a></li>
+                                                <li><a href="logout.php">Logout</a></li>
                                             </ul>
                                         </li>
                                         <!--product-end end-->
@@ -578,9 +579,10 @@ include('connect_db.php');
                         </div>
                         <div class="category-right">
                             <div class="contact-block">
-                                <div>
-                                    <i class="fa fa-volume-control-phone"></i>
-                                    <span><span>Call Us - 8095566699</span></span>
+                                <div style = "text-align:center">
+                                <a href="contact_us.php" ><span><span>Contact US</span></span></a>
+                                    <!-- <i class="fa fa-volume-control-phone"></i> -->
+                                    <!-- <a href="contact_us.php" ><span><span>Contact US</span></span></a> -->
                                 </div>
                             </div>
                             <div class="btn-group">
@@ -590,7 +592,7 @@ include('connect_db.php');
                                     </div>
                                     <div class="gift-offer">
                                         <p>gift box</p>
-                                        <span>Festivel Offer</span>
+                                        <!-- <span>Festivel Offer</span> -->
                                     </div>
                                 </div>
                                 <div class="dropdown-menu gift-dropdown">
@@ -3429,7 +3431,7 @@ include('connect_db.php');
                                     <img src="../assets/images/logo.jpeg" class="img-fluid  " alt="logo">
                                 </div>
                                 <div class="footer-detail">
-                                <p>About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us</p>
+                                <!-- <p>About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us</p> -->
                                     <ul class="paymant-bottom">
                                         <li><a href="#"><img src="../assets/images/layout-1/pay/1.png" class="img-fluid" alt="pay"></a></li>
                                         <li><a href="#"><img src="../assets/images/layout-1/pay/2.png" class="img-fluid" alt="pay"></a></li>
@@ -3482,30 +3484,16 @@ include('connect_db.php');
                                                         <div class="footer-contant">
                                                             <ul>
                                                                 <li><a href="#">about us</a></li>
-                                                                <li><a href="#">contact us</a></li>
+                                                                <li><a href="contact_us.php">contact us</a></li>
                                                                 <li><a href="#">terms & conditions</a></li>
-                                                                <li><a href="#">returns & exchanges</a></li>
-                                                                <li><a href="#">shipping & delivery</a></li>
+                                                                <li><a href="faq.php">faq</a></li>
+                                                                <!-- <li><a href="#">returns & exchanges</a></li>
+                                                                <li><a href="#">shipping & delivery</a></li> -->
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="footer-box">
-                                                        <div class="footer-title">
-                                                            <h5>quick link</h5>
-                                                        </div>
-                                                        <div class="footer-contant">
-                                                            <ul>
-                                                                <li><a href="#">store location</a></li>
-                                                                <li><a href="#"> my account</a></li>
-                                                                <li><a href="#"> orders tracking</a></li>
-                                                                <li><a href="#"> size guide</a></li>
-                                                                <li><a href="#">FAQ </a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div class="col-md-5">
                                                     <div class="footer-box footer-contact-box">
                                                         <div class="footer-title">

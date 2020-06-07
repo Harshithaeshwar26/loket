@@ -762,7 +762,7 @@ $product_name = $_REQUEST['id'];
     
                                     
                                         
-                            <td><a href="favourite_2.php?id='.$product_name.'"><i class="fa fa-heart" ></i></a></td>
+                            <td><a href="favourite_1.php?id='.$product_name.'"><i class="fa fa-heart" ></i></a></td>
                             
                             
                             <td><a href="cart_2.php?id='.$item_name.'" class="icon"><i class="fa fa-trash"></i></a></td>
@@ -795,7 +795,7 @@ $product_name = $_REQUEST['id'];
                 </div>
             </div>
             <div class="row cart-buttons">
-                <div class="col-12"><a href="#" class="btn btn-normal">continue shopping</a> <a href="#" class="btn btn-normal ml-3">check out</a></div>
+                <div class="col-12"><a href="category.php" class="btn btn-normal">continue shopping</a> <a href="#" class="btn btn-normal ml-3">check out</a></div>
             </div>
         </div>
     </section>
