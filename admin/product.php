@@ -69,7 +69,7 @@ $final_cost = $_POST['final_cost'];
 $product_code = $_POST['product_code'];
 $category_name = $_POST['category_name'];
 $sub_category_name = $_POST['sub_category_name'];
-$shop_id = $_POST['shop_id'];
+$shop_name= $_POST['shop_name'];
 $colour = $_POST['colour'];
 $size = $_POST['size'];
 $height = $_POST['height'];
@@ -83,6 +83,13 @@ $description = $_POST['description'];
 // $product_image = "../assets/images/collection/BigDeal_images/abc/".$_FILES["fileToUpload"]["name"];
 // echo $product_name;
 // print_r($_POST);
+$sql1 = "SELECT * FROM shops WHERE shop_name = '$shop_name'";
+$result1 = $conn->query($sql1);
+if($result1->num_rows>=0){
+  while($row=$result1->fetch_assoc()){
+    $shop_id = $row['shop_id'];
+  }
+}
 $sql = "INSERT INTO admin_product(product_id, product_name, initial_cost,final_cost, product_quantity, product_code,sub_category_name,category_name,shop_id,colour, size, height, weight, depth,expiry_date,offer_code, total_tax) VALUES (NULL, '$product_name','$initial_cost','$final_cost', '$product_quantity','$product_code','$sub_category_name','$category_name','$shop_id','$colour','$size','$height','$weight','$depth','$expiry_date','$offer_code','$total_tax');"; 
 $result = $conn->query($sql);
 // echo $sql;
@@ -132,7 +139,7 @@ if($result->num_rows>=0){
     <!-- Page Header Start-->
     <div class="page-main-header">
         <div class="main-header-left">
-            <div class="logo-wrapper"><a href="index.html"><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
+            <div class="logo-wrapper"><a href="add-product.php"><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
         </div>
         <div class="main-header-right row">
             <div class="nav-right col">
@@ -159,7 +166,7 @@ if($result->num_rows>=0){
                     <p>Ux Designer</p>
                 </div> -->
                 <!-- <ul class="sidebar-menu">
-                    <li><a class="sidebar-header" href="index.html"><i data-feather="home"></i><span>Dashboard</span></a></li>
+                    <li><a class="sidebar-header" href="add-product.php"><i data-feather="home"></i><span>Dashboard</span></a></li>
                     <li><a class="sidebar-header" href="#"><i data-feather="box"></i> <span>Products</span><i class="fa fa-angle-right pull-right"></i></a>
                         <ul class="sidebar-submenu">
                             <li>
@@ -336,7 +343,7 @@ if($result->num_rows>=0){
                         </div>
                         <div class="col-lg-6">
                             <ol class="breadcrumb pull-right">
-                                <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="add-product.php"><i data-feather="home"></i></a></li>
                                 <!-- <li class="breadcrumb-item">Physical</li> -->
                                 <li class="breadcrumb-item active">Add Product</li>
                             </ol>
