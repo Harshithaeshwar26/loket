@@ -759,9 +759,9 @@ $_SESSION['order_id'] = $order_id;
                                         <label class="field-label">Country</label>
                                         <select>
                                             <option>India</option>
-                                            <option>South Africa</option>
+                                            <!-- <option>South Africa</option>
                                             <option>United State</option>
-                                            <option>Australia</option>
+                                            <option>Australia</option> -->
                                         </select>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -773,7 +773,7 @@ $_SESSION['order_id'] = $order_id;
                                         <input type="text" name="field-name" value="<?php echo $city?>" placeholder="">
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <label class="field-label">State / County</label>
+                                        <label class="field-label">State</label>
                                         <input type="text" name="field-name" value="<?php echo $state?>" placeholder="">
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
@@ -784,7 +784,7 @@ $_SESSION['order_id'] = $order_id;
                                     <ul>
                                         <li><input type="checkbox" name="shipping-option" id="account-option"> &ensp;</li>
                                         <li><label for="account-option">Same Shipping Details</label></li>
-                                        &emsp;&emsp;
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         <li>
                                             <a class="btn btn-rounded btn-outline" onclick="myFunction()">
                                                 Enter New Address
@@ -898,48 +898,23 @@ $_SESSION['order_id'] = $order_id;
                                     </ul>
                                 </div>
                                 <div class="payment-box">
-                                    <div class="upper-box">
+                                    <!-- <div class="upper-box">
                                         <div class="payment-options">
                                             <ul>
-                                                <!-- <li>
-                                                    <div class="radio-option">
-                                                        <input type="radio" name="payment-group" id="payment-1" checked="checked">
-                                                        <label for="payment-1">Check Payments<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="radio-option">
-                                                        <input type="radio" name="payment-group" id="payment-2">
-                                                        <label for="payment-2">Cash On Delivery<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
-                                                    </div>
-                                                </li>
                                                 <li>
                                                     <div class="radio-option paypal">
                                                         <input type="radio" name="payment-group" id="payment-3">
-                                                        <label for="payment-3">PayPal<span class="image"><img src="assets/images/paypal.png" alt=""></span></label>
+                                                        <label for="payment-3">Instamojo<span class="image"><img src="assets/images/paypal.png" alt=""></span></label>
                                                     </div>
-                                                </li> -->
-                                                <li>
                                                 </li>
-                                            
+                                            </ul>
                                         </div>
                                         </form>
-                                    </div>
-                                    <?php
-                                    if($availability != 1){
-                                        echo'<form method = "POST" action = "check_availability.php">
-                                        <li><input type="text" class="form-control" name = "zipcode" id="zipcode" style = "width:350px;" placeholder="Enter Zipcode To Check Availability" required=""></li>
-                                        <li><input type="text" class="form-control" name = "product_name" id="product_name" value= "'. $product_name.'" style = "width:500px;" hidden></li>&emsp;&emsp;&emsp;
-                                        <li><input class="btn btn-rounded btn-outline" type = "submit" name = "submit"></li>
-                                            
-                                        </form>';
-                                    }
-                                    else{
-                                        echo    '<div class="text-right"><a href="test.php" class="btn-normal btn">Proceed to Payment</a></div>';
-                                    }
-                                    ?>
-                                </ul>
-                                    
+                                    </div> -->
+                                    <ul>
+                                        <li><div><a href="test.php" class="btn btn-rounded btn-outline">Proceed to Payment</a></div></li>
+                                        <li><img src="" alt=""></img></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
