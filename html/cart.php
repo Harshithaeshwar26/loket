@@ -762,7 +762,7 @@ $product_name = $_REQUEST['id'];
     
                                     
                                         
-                            <td><a href="favourite_2.php?id='.$product_name.'"><i class="fa fa-heart" ></i></a></td>
+                            <td><a href="favourite_1.php?id='.$product_name.'"><i class="fa fa-heart" ></i></a></td>
                             
                             
                             <td><a href="cart_2.php?id='.$item_name.'" class="icon"><i class="fa fa-trash"></i></a></td>
@@ -795,7 +795,7 @@ $product_name = $_REQUEST['id'];
                 </div>
             </div>
             <div class="row cart-buttons">
-                <div class="col-12"><a href="#" class="btn btn-normal">continue shopping</a> <a href="#" class="btn btn-normal ml-3">check out</a></div>
+                <div class="col-12"><a href="category.php" class="btn btn-normal">continue shopping</a> <a href="#" class="btn btn-normal ml-3">check out</a></div>
             </div>
         </div>
     </section>
@@ -1298,16 +1298,7 @@ $product_name = $_REQUEST['id'];
 <!-- Add to setting bar end-->
 
  <!-- notification product -->
-  <div class="product-notification" id="dismiss">
-    <span  onclick="dismiss();" class="close" aria-hidden="true">×</span>
-    <div class="media">
-      <img class="mr-2" src="../assets/images/layout-6/product/5.jpg" alt="Generic placeholder image">
-      <div class="media-body">
-        <h5 class="mt-0 mb-1">Latest trending</h5>
-        Cras sit amet nibh libero, in gravida nulla.
-      </div>
-    </div>
-  </div>
+  
   <!-- notification product -->
 
 
