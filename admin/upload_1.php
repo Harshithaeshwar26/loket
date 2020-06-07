@@ -54,6 +54,13 @@ if ($uploadOk == 0) {
     // echo "Sorry, there was an error uploading your file.";
   }
 }
+$sql1 = "SELECT * FROM admin_sub_category ORDER BY id DESC LIMIT 1;";
+$result1= $conn->query($sql1);
+if($result1->num_rows>=0){
+    while($row=$result1->fetch_assoc()){
+      $sub_category_name = $row['sub_category_name'];
+    }
+  }
 $sub_category_image = "..assets/images/collection/BigDeal_images/602-402/".basename($_FILES["fileToUpload"]["name"]);
 $sql = "UPDATE admin_sub_category SET sub_category_image = '$sub_category_image' WHERE sub_category_name = '$sub_category_name';";
 $result = $conn->query($sql);
