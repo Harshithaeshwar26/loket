@@ -1,3 +1,10 @@
+<?php
+include('connect_db.php');
+$order_id = $_REQUEST['id'];
+$order_status = $_REQUEST['id1'];
+$sql = "UPDATE order_status SET status = '$order_status' WHERE item_id = '$order_id';";
+$result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +62,7 @@
                 <div class="col-xl-5 col-md-7 col-sm-6">
                     <div class="top-header-left">
                         <div class="shpping-order">
-                            <h6>free shipping on order over Rs.99 </h6>
+                            <h6>free shipping on order over $99 </h6>
                         </div>
                         <div class="app-link">
                             <h6>
@@ -651,11 +658,11 @@
             <div class="col">
                 <div class="breadcrumb-contain">
                     <div>
-                        <h2>order-history</h2>
+                        <h2>Order History</h2>
                         <ul>
                             <li><a href="#">home</a></li>
                             <li><i class="fa fa-angle-double-right"></i></li>
-                            <li><a href="#">order-history</a></li>
+                            <li><a href="#">Order History</a></li>
                         </ul>
                     </div>
                 </div>
@@ -666,6 +673,16 @@
 <!-- breadcrumb End -->
 
 <!--section start-->
+<?php
+$sql1 = "SELECT * FROM order_status WHERE status = 'delivered';";
+$result1 = $conn->query($sql1);
+if($result1->num_rows>0){
+    while($row=$result1->fetch_assoc()){
+        $product_name = $row['product_name'];
+        $order_id = $row['item_id'];
+        $final_cost = $row['final_cost'];
+        $product_quantity = $row['product_quantity'];
+        echo'
 <section class="cart-section order-history section-big-py-space">
     <div class="custom-container">
         <div class="row">
@@ -673,8 +690,8 @@
                 <table class="table cart-table table-responsive-xs">
                     <thead>
                     <tr class="table-head">
-                        <th scope="col">product</th>
-                        <th scope="col">description</th>
+                        <th scope="col">product name</th>
+                        <th scope="col">order details</th>
                         <th scope="col">price</th>
                         <th scope="col">detail</th>
                         <th scope="col">status</th>
@@ -683,9 +700,9 @@
                     <tbody>
                     <tr>
                         <td>
-                            <a href="#"><img src="../assets/images/product-sidebar/001.jpg" alt="product" class="img-fluid  "></a>
+                            <p>'.$product_name.'</p>
                         </td>
-                        <td><a href="#">order no: <span class="dark-data">15454841</span> <br>cotton shirt</a>
+                        <td><a href="#">order id: <span class="dark-data">'.$order_id.'</span> <br>Delivered Location </a>
                             <div class="mobile-cart-content row">
                                 <div class="col-xs-3">
                                     <div class="qty-box">
@@ -695,25 +712,26 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-3">
-                                    <h4 class="td-color">Rs.63.00</h4></div>
+                                    <h4 class="td-color">Rs. '.$final_cost.'</h4></div>
                                 <div class="col-xs-3">
                                     <h2 class="td-color"><a href="#" class="icon"><i class="ti-close"></i></a></h2></div>
                             </div>
                         </td>
                         <td>
-                            <h4>Rs.63.00</h4></td>
+                            <h4>Rs.'.$final_cost.'</h4></td>
                         <td>
                             <span>Quntity: 1</span>
                         </td>
                         <td>
                             <div class="responsive-data">
-                                <h4 class="price">Rs.63.00</h4>
+                                <h4 class="price">$63.00</h4>
                                 <span>Quntity: 1</span>
                             </div>
                             <span class="dark-data">Delivered</span> (jul 01, 2019)
                         </td>
                     </tr>
                     </tbody>
+                    
                 </table>
             </div>
         </div>
@@ -721,7 +739,9 @@
             <div class="col-12 pull-right"><a href="#" class="btn btn-normal btn-sm">show all orders</a></div>
         </div>
     </div>
-</section>
+</section>';
+    }
+}?>
 <!--section end-->
 
 
@@ -915,7 +935,7 @@
                                 <h4>item name</h4>
                             </a>
                             <h4>
-                                <span>1 x Rs. 299.00</span>
+                                <span>1 x $ 299.00</span>
                             </h4>
                         </div>
                     </div>
@@ -935,7 +955,7 @@
                                 <h4>item name</h4>
                             </a>
                             <h4>
-                                <span>1 x Rs. 299.00</span>
+                                <span>1 x $ 299.00</span>
                             </h4>
                         </div>
                     </div>
@@ -952,7 +972,7 @@
                             <a href="#">
                                 <h4>item name</h4>
                             </a>
-                            <h4><span>1 x Rs. 299.00</span></h4>
+                            <h4><span>1 x $ 299.00</span></h4>
                         </div>
                     </div>
                     <div class="close-circle">
@@ -965,7 +985,7 @@
             <ul class="cart_total">
                 <li>
                     <div class="total">
-                        <h5>subtotal : <span>Rs.299.00</span></h5>
+                        <h5>subtotal : <span>$299.00</span></h5>
                     </div>
                 </li>
                 <li>
@@ -1041,7 +1061,7 @@
                                 <span>, blue</span>
                             </h4>
                             <h4>
-                                <span>Rs. 299.00</span>
+                                <span>$ 299.00</span>
                             </h4>
                         </div>
                     </div>
@@ -1065,7 +1085,7 @@
                                 <span>, blue</span>
                             </h4>
                             <h4>
-                                <span>Rs. 299.00</span>
+                                <span>$ 299.00</span>
                             </h4>
                         </div>
                     </div>
@@ -1084,7 +1104,7 @@
                                 <span>sm</span>
                                 <span>, blue</span>
                             </h4>
-                            <h4><span>Rs. 299.00</span></h4>
+                            <h4><span>$ 299.00</span></h4>
                         </div>
                     </div>
                     <div class="close-circle">
@@ -1097,7 +1117,7 @@
             <ul class="cart_total">
                 <li>
                     <div class="total">
-                        <h5>subtotal : <span>Rs.299.00</span></h5>
+                        <h5>subtotal : <span>$299.00</span></h5>
                     </div>
                 </li>
                 <li>

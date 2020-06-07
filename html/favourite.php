@@ -679,6 +679,7 @@ include('connect_db.php');
                             <th scope="col">product name</th>
                             <th scope="col">price</th>
                             <th scope="col">quantity</th>
+                            <th scope="col">add to cart</th>
                             <th scope="col">action</th>
                             <th scope="col">total</th>
                         </tr>
@@ -739,7 +740,8 @@ include('connect_db.php');
                                     
                             </td>
                            
-                            
+                            <td><a href="cart_1.php?id='.$product_name.'" ><i class="fa fa-shopping-cart" ></i></a></td>
+
                             <td><a href="favourite_2.php?id='.$item_name.'" class="icon"><i class="fa fa-trash"></i></a></td>
                             <td>
                                 <h2 class="" style = "color:#1167b1">Rs '.$item_price.'</h2></td>
@@ -1272,16 +1274,7 @@ include('connect_db.php');
 <!-- Add to setting bar end-->
 
  <!-- notification product -->
-  <div class="product-notification" id="dismiss">
-    <span  onclick="dismiss();" class="close" aria-hidden="true">×</span>
-    <div class="media">
-      <img class="mr-2" src="../assets/images/layout-6/product/5.jpg" alt="Generic placeholder image">
-      <div class="media-body">
-        <h5 class="mt-0 mb-1">Latest trending</h5>
-        Cras sit amet nibh libero, in gravida nulla.
-      </div>
-    </div>
-  </div>
+  
   <!-- notification product -->
 
 
