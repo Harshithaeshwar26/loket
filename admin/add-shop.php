@@ -7,6 +7,9 @@ include('connect_db.php');
 <!DOCTYPE html>
 <html lang="en">
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,12 +41,11 @@ include('connect_db.php');
 
 <!-- page-wrapper Start-->
 <div class="page-wrapper">
-    
 
     <!-- Page Header Start-->
     <div class="page-main-header">
         <div class="main-header-left">
-            <div class="logo-wrapper"><a href="index.html"><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
+            <div class="logo-wrapper"><a href="add-product.php"><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
         </div>
         <div class="main-header-right row">
             <div class="nav-right col">
@@ -67,7 +69,7 @@ include('connect_db.php');
                     <p>Loket Admin</p>
                 </div>
                 <ul class="sidebar-menu">
-                    <li><a class="sidebar-header" href="index.html"><i data-feather="home"></i><span>Dashboard</span></a></li>
+                    <li><a class="sidebar-header" href="add-product.php"><i data-feather="home"></i><span>Dashboard</span></a></li>
                     <li><a class="sidebar-header" href="add-product.php"><i data-feather="box"></i> <span>Product</span><i class="fa fa-angle-right pull-right"></i></a>
                         <ul class="sidebar-submenu">
                             <li>
@@ -153,10 +155,10 @@ include('connect_db.php');
                             </li> -->
                         </ul>
                     </li>
-                    <li><a class="sidebar-header" href="add-product.php"><i data-feather="box"></i> <span>Shops</span><i class="fa fa-angle-right pull-right"></i></a>
+                    <li><a class="sidebar-header" href="add-shop.php"><i data-feather="box"></i> <span>Shops</span><i class="fa fa-angle-right pull-right"></i></a>
                         <ul class="sidebar-submenu">
                             <li>
-                                <a href="add-product.php"><i class="fa fa-circle"></i>
+                                <a href="add-shop.php"><i class="fa fa-circle"></i>
                                     <span>Add Shops</span> 
                                 </a>
                             </li>
@@ -248,7 +250,7 @@ include('connect_db.php');
                         </div>
                         <div class="col-lg-6">
                             <ol class="breadcrumb pull-right">
-                                <!-- <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
+                                <!-- <li class="breadcrumb-item"><a href="add-product.php"><i data-feather="home"></i></a></li>
                                 <li class="breadcrumb-item active">Add Product</li> -->
                             </ol>
                         </div>

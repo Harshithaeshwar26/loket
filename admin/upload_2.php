@@ -54,8 +54,15 @@ if ($uploadOk == 0) {
     // echo "Sorry, there was an error uploading your file.";
   }
 }
+$sql1 = "SELECT * FROM admin_category ORDER BY id DESC LIMIT 1;";
+$result1= $conn->query($sql1);
+if($result1->num_rows>=0){
+    while($row=$result1->fetch_assoc()){
+      $category_name = $row['category_name'];
+    }
+  }
 $category_image = "..assets/images/collection/BigDeal_images/1920-550/".basename($_FILES["fileToUpload"]["name"]);
-$sql = "UPDATE admin_product SET category_image = '$category_image' WHERE category_name = '$category_name';";
+$sql = "UPDATE admin_category SET category_image = '$category_image' WHERE category_name = '$category_name';";
 $result = $conn->query($sql);
 if($result->num_rows>=0){
   echo '<script>

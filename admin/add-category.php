@@ -1,3 +1,9 @@
+<?php
+session_start();
+include('connect_db.php');
+$product_code = rand(111111111111111111,9999999999999999);
+$_SESSION['product_code'] = $product_code;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +42,7 @@
     <!-- Page Header Start-->
     <div class="page-main-header">
         <div class="main-header-left">
-            <div class="logo-wrapper"><a href="index.html"><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
+            <div class="logo-wrapper"><a href="add-product.php"><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
         </div>
         <div class="main-header-right row">
             <div class="nav-right col">
@@ -60,7 +66,7 @@
                     <p>Loket Admin</p>
                 </div>
                 <ul class="sidebar-menu">
-                    <li><a class="sidebar-header" href="index.html"><i data-feather="home"></i><span>Dashboard</span></a></li>
+                    <li><a class="sidebar-header" href="add-product.php"><i data-feather="home"></i><span>Dashboard</span></a></li>
                     <li><a class="sidebar-header" href="add-product.php"><i data-feather="box"></i> <span>Product</span><i class="fa fa-angle-right pull-right"></i></a>
                         <ul class="sidebar-submenu">
                             <li>
@@ -118,7 +124,7 @@
                         <ul class="sidebar-submenu">
                             <li>
                                 <a href="add-sub_category.php"><i class="fa fa-circle"></i>
-                                    <span>Add Category</span> 
+                                    <span>Add Sub Category</span> 
                                 </a>
                             </li>
                             <!-- <li>
@@ -146,10 +152,10 @@
                             </li> -->
                         </ul>
                     </li>
-                    <li><a class="sidebar-header" href="add-product.php"><i data-feather="box"></i> <span>Shops</span><i class="fa fa-angle-right pull-right"></i></a>
+                    <li><a class="sidebar-header" href="add-shop.php"><i data-feather="box"></i> <span>Shops</span><i class="fa fa-angle-right pull-right"></i></a>
                         <ul class="sidebar-submenu">
                             <li>
-                                <a href="add-product.php"><i class="fa fa-circle"></i>
+                                <a href="add-shop.php"><i class="fa fa-circle"></i>
                                     <span>Add Shops</span> 
                                 </a>
                             </li>
@@ -227,6 +233,7 @@
             </div>
         </div>
         <div class="page-body">
+        <div class="page-body">
 
             <!-- Container-fluid starts-->
             <div class="container-fluid">
@@ -241,7 +248,7 @@
                         </div>
                         <div class="col-lg-6">
                             <ol class="breadcrumb pull-right">
-                                <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="add-product.php"><i data-feather="home"></i></a></li>
                                 <!-- <li class="breadcrumb-item">Physical</li> -->
                                 <li class="breadcrumb-item active">Add Category</li>
                             </ol>

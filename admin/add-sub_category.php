@@ -36,7 +36,7 @@
     <!-- Page Header Start-->
     <div class="page-main-header">
         <div class="main-header-left">
-            <div class="logo-wrapper"><a href="index.html"><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
+            <div class="logo-wrapper"><a href="add-product.php"><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
         </div>
         <div class="main-header-right row">
             <div class="nav-right col">
@@ -60,7 +60,7 @@
                     <p>Loket Admin</p>
                 </div>
                 <ul class="sidebar-menu">
-                    <li><a class="sidebar-header" href="index.html"><i data-feather="home"></i><span>Dashboard</span></a></li>
+                    <li><a class="sidebar-header" href="add-product.php"><i data-feather="home"></i><span>Dashboard</span></a></li>
                     <li><a class="sidebar-header" href="add-product.php"><i data-feather="box"></i> <span>Product</span><i class="fa fa-angle-right pull-right"></i></a>
                         <ul class="sidebar-submenu">
                             <li>
@@ -146,10 +146,10 @@
                             </li> -->
                         </ul>
                     </li>
-                    <li><a class="sidebar-header" href="add-product.php"><i data-feather="box"></i> <span>Shops</span><i class="fa fa-angle-right pull-right"></i></a>
+                    <li><a class="sidebar-header" href="add-shop.php"><i data-feather="box"></i> <span>Shops</span><i class="fa fa-angle-right pull-right"></i></a>
                         <ul class="sidebar-submenu">
                             <li>
-                                <a href="add-product.php"><i class="fa fa-circle"></i>
+                                <a href="add-shop.php"><i class="fa fa-circle"></i>
                                     <span>Add Shops</span> 
                                 </a>
                             </li>
@@ -241,7 +241,7 @@
                         </div>
                         <div class="col-lg-6">
                             <ol class="breadcrumb pull-right">
-                                <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="add-product.php"><i data-feather="home"></i></a></li>
                                 <!-- <li class="breadcrumb-item">Physical</li> -->
                                 <li class="breadcrumb-item active">Add Sub Category</li>
                             </ol>
@@ -307,11 +307,31 @@
                                                 </div>
                                             </div> -->
                                             <div class="form">
-                                                <div class="form-group mb-3 row">
-                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" required="">
+                                            <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Sub Category Name :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "sub_category_name" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
+                                                <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
+                                                    <?php
+                                                    include('connect_db.php');
+                                                    $sql = "SELECT * FROM admin_category";
+                                                    $result = $conn->query($sql);
+
+                                                    if ($result->num_rows > 0) {
+
+                                                        echo "<select name='category_name' class='form-control digits col-xl-8 col-sm-7'>";
+                                                        // output data of each row
+                                                        while($row = $result->fetch_assoc()) {
+                                                        echo "<option value='" . $row['category_name'] . "'>" . $row['category_name'] . "</option>";
+                                                        }
+                                                        echo "</select>";
+                                                    }
+                                                ?>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div>
+                                               
                                                 <!-- <div class="form-group row">
                                                     <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Sub Category:</label>
                                                     <select class="form-control digits col-xl-8 col-sm-7" name = "sub_category_name" id="exampleFormControlSelect1">
@@ -334,11 +354,11 @@
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "colour" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>-->
-                                                <div class="form-group mb-3 row">
+                                                <!-- <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Sub Category Name :</label>
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "sub_category_name" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
-                                                </div>
+                                                </div> -->
                                                 <!--div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Height :</label>
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "height" type="text" required="">
@@ -402,7 +422,6 @@
             </div>
         </footer>
         <!-- footer end-->
-
     </div>
 
 </div>
