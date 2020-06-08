@@ -795,7 +795,7 @@ $product_name = $_REQUEST['id'];
                 </div>
             </div>
             <div class="row cart-buttons">
-                <div class="col-12"><a href="category.php" class="btn btn-normal">continue shopping</a> <a href="#" class="btn btn-normal ml-3">check out</a></div>
+                <div class="col-12"><a href="category.php" class="btn btn-normal">continue shopping</a> <a href="checkout_2.php" class="btn btn-normal ml-3">check out</a></div>
             </div>
         </div>
     </section>
