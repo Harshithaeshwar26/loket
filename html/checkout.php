@@ -94,6 +94,14 @@ $_SESSION['order_id'] = $order_id;
     }
     }
 
+    function myFunction1() {
+    var x = document.getElementById("myDIV1");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    }
     </script>
 
 </head>
@@ -898,22 +906,37 @@ $_SESSION['order_id'] = $order_id;
                                     </ul>
                                 </div>
                                 <div class="payment-box">
-                                    <!-- <div class="upper-box">
-                                        <div class="payment-options">
-                                            <ul>
-                                                <li>
-                                                    <div class="radio-option paypal">
-                                                        <input type="radio" name="payment-group" id="payment-3">
-                                                        <label for="payment-3">Instamojo<span class="image"><img src="assets/images/paypal.png" alt=""></span></label>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        </form>
-                                    </div> -->
                                     <ul>
+                                        <li>
+                                            <a class="btn btn-rounded btn-outline" onclick="myFunction1()">
+                                               Schedule Delivery Time
+                                            </a>
+                                        </li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                        <div id="myDIV1">
+                                            <div class="payment-options">
+                                                <ul>
+                                                    <li>
+                                                        <div class="radio-option">
+                                                            <input type="radio" name="payment-group" id="payment-1" checked="checked">
+                                                            <label for="payment-1">Check Payments<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="radio-option">
+                                                            <input type="radio" name="payment-group" id="payment-2">
+                                                            <label for="payment-2">Cash On Delivery<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="radio-option">
+                                                            <input type="radio" name="payment-group" id="payment-3">
+                                                            <label for="payment-3">PayPal<span class="image"><img src="assets/images/paypal.png" alt=""></span></label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                         <li><div><a href="test.php" class="btn btn-rounded btn-outline">Proceed to Payment</a></div></li>
-                                        <li><img src="" alt=""></img></li>
                                     </ul>
                                 </div>
                             </div>
