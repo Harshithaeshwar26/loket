@@ -645,39 +645,6 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="success-text"><i class="fa fa-check-circle" aria-hidden="true"></i>
-                    <h2>thank you</h2>
-                    <h4>Transaction successful</h4>
-                    <p>Payment is successfully processsed and your order is on the way</p>
-                    <p>Transaction ID:267676GHERT105467</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Section ends -->
-
-<!-- thank-you section start -->
-<section class="section-big-py-space light-layout">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="success-text"><i style="color:#ffaa1d;" class="fa fa-spinner" aria-hidden="true"></i>
-                    <h2>Transaction pending..!</h2>
-                    <p>Payment is in process. Please wait for a while</p>
-                    <p>Transaction ID:267676GHERT105467</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Section ends -->
-
-<!-- thank-you section start -->
-<section class="section-big-py-space light-layout">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
                 <div class="success-text"><i style="color:red;" class="fa fa-times-circle" aria-hidden="true"></i>
                     <h2>Transaction cancelled</h2>
                     <p>Payment is unsuccessful. Please try again later</p>
