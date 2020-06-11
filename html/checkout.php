@@ -217,7 +217,7 @@ $_SESSION['order_id'] = $order_id;
                     </div>
                     <div class="input-block">
                         <div class="input-box">
-                            <form class="big-deal-form">
+                            <!-- <form class="big-deal-form">
                                 <div class="input-group ">
                                     <div class="input-group-prepend">
                                         <span class="search"><i class="fa fa-search"></i></span>
@@ -231,7 +231,7 @@ $_SESSION['order_id'] = $order_id;
                                         </select>
                                     </div>
                                 </div>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                     <div class="cart-block cart-hover-div " onclick="openCart()">
@@ -615,10 +615,10 @@ $_SESSION['order_id'] = $order_id;
                                                     <div class="container">
                                                         <div class="row">
                                                             <div class="col-xl-12">
-                                                                <form>
+                                                                <!-- <form>
                                                                     <div class="form-group"><input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search a Product"></div>
                                                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                                                                </form>
+                                                                </form> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -731,7 +731,7 @@ $_SESSION['order_id'] = $order_id;
     <div class="custom-container">
         <div class="checkout-page contact-page">
             <div class="checkout-form">
-                <form>
+                <!-- <form> -->
                     <div class="row">
                         <div class="col-lg-6 col-sm-12 col-xs-12">
                             <div class="checkout-title">
@@ -912,7 +912,34 @@ $_SESSION['order_id'] = $order_id;
                                         </form>
                                     </div> -->
                                     <ul>
-                                        <li><div><a href="test.php" class="btn btn-rounded btn-outline">Proceed to Payment</a></div></li>
+                                        <li><div class="container">
+	<div class="page-header">
+        <!-- <h1><a href="index.php">Instamojo Payment</a></h1> -->
+		<form action="pay.php" method="POST" accept-charset="utf-8">
+			<input type="hidden" name="product_name" value="<?php echo $product_name; ?>"> 
+			<input type="hidden" name="product_price" value="<?php echo $final_cost; ?>">
+			<div class="form-group">
+			<!-- <label>Your Name</label> -->
+			<input type="text" class="form-control" name="name" placeholder="Enter your name" value = "<?php echo $fname?>" hidden>	 
+			</div>
+			<div class="form-group">
+			<!-- <label>Your Phone</label> -->
+			<input type="text" class="form-control" name="phone" placeholder="Enter your phone number" value = "<?php echo $phone_number?>" hidden> 
+			</div>
+			<div class="form-group"> 
+			<!-- <label>Your Email</label> -->
+			<input type="email" class="form-control" name="email" placeholder="Enter you email" value = "<?php echo $email_address?>" hidden> 
+			</div>
+			<div class="form-group">
+			<!-- <label>Amount</label> -->
+			<input type="email" class="form-control" name="amount" Value="<?php echo $final_cost?>" readonly hidden>
+			</div>
+			<p><input type="submit" class="btn btn-success btn-lg" value="Click here to Pay"></p>
+		</form>
+ 
+    
+    </div> <!-- /container -->
+		</div></li>
                                         <li><img src="" alt=""></img></li>
                                     </ul>
                                 </div>
@@ -1194,7 +1221,7 @@ $_SESSION['order_id'] = $order_id;
                 </a>
             </div>
         </div>
-        <form class="theme-form">
+        <!-- <form class="theme-form">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" class="form-control" id="email" placeholder="Email" required="">
@@ -1210,7 +1237,7 @@ $_SESSION['order_id'] = $order_id;
                 <h5 class="forget-class"><a href="forget-pwd.html" class="d-block">forget password?</a></h5>
                 <h6 class="forget-class"><a href="register.html" class="d-block">new to store? Signup now</a></h6>
             </div>
-        </form>
+        </form> -->
     </div>
 </div>
 <!-- Add to account bar end-->

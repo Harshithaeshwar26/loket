@@ -2,22 +2,6 @@
 session_start();
 include('connect_db.php');
 $order_id = $_SESSION['order_id'];
-$sql2 = "SELECT * FROM Users where email_address = 'harshithaeshwar269@gmail.com';";
-$result2 = $conn->query($sql2);
-if($result2->num_rows>=0){
-    while($row=$result2->fetch_assoc()){
-        $fname = $row['fname'];
-        $email_address = $row['email_address'];
-        $phone_number = $row['phone_number'];
-        $address_1 = $row['address_1'];
-        $address_2 = $row['address_2'];
-        $city = $row['city'];
-        $state = $row['state'];
-        $zipcode = $row['zipcode'];
-        $country = $row['country'];
-
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -697,7 +681,7 @@ if($result2->num_rows>=0){
 
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label>First Name</label>
-                                        <input type="text" name="field-name" value="<?php echo $fname?>" placeholder="">
+                                        <input type="text" name="field-name" value="" placeholder="">
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label>Last Name</label>
@@ -705,101 +689,40 @@ if($result2->num_rows>=0){
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label class="field-label">Phone</label>
-                                        <input type="text" name="field-name" value="<?php echo $phone_number?>" placeholder="">
+                                        <input type="text" name="field-name" value="" placeholder="">
                                     </div>
                                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                                         <label class="field-label">Email Address</label>
-                                        <input type="text" name="field-name" value="<?php echo $email_address?>" placeholder="">
+                                        <input type="text" name="field-name" value="" placeholder="">
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Country</label>
                                         <select>
                                             <option>India</option>
-                                            <!-- <option>South Africa</option>
+                                            <option>South Africa</option>
                                             <option>United State</option>
-                                            <option>Australia</option> -->
+                                            <option>Australia</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Address</label>
-                                        <input type="text" name="field-name" value="<?php echo $address_1?>" placeholder="Street address">
+                                        <input type="text" name="field-name" value="" placeholder="Street address">
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                         <label class="field-label">Town/City</label>
-                                        <input type="text" name="field-name" value="<?php echo $city?>" placeholder="">
+                                        <input type="text" name="field-name" value="" placeholder="">
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <label class="field-label">State</label>
-                                        <input type="text" name="field-name" value="<?php echo $state?>" placeholder="">
+                                        <label class="field-label">State / County</label>
+                                        <input type="text" name="field-name" value="" placeholder="">
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
                                         <label class="field-label">Postal Code</label>
-                                        <input type="text" name="field-name" value="<?php echo $zipcode?>" placeholder="">
+                                        <input type="text" name="field-name" value="" placeholder="">
                                     </div>
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                    <ul>
-                                        <li><input type="checkbox" name="shipping-option" id="account-option"> &ensp;</li>
-                                        <li><label for="account-option">Same Shipping Details</label></li>
-                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                                        <li>
-                                            <a class="btn btn-rounded btn-outline" onclick="myFunction()">
-                                                Enter New Address
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <br>
-                                    <div id="myDIV" style="text-align:center;">
-                                        <div class="custom-container">
-                                            <div class="checkout-page contact-page">
-                                                <div class="checkout-form">
-                                                    
-                                                        <div class="row">
-                                                            <!-- <div class="col-lg-6 col-sm-12 col-xs-12"> -->
-                                                                <div class="theme-form">
-                                                                    <div class="row check-out ">
-
-                                                                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                                                            <label>First Name</label>
-                                                                            <input type="text" name="field-name" value="" placeholder="">
-                                                                        </div>
-                                                                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                                                            <label>Last Name</label>
-                                                                            <input type="text" name="field-name" value="" placeholder="">
-                                                                        </div>
-                                                                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                                                            <label class="field-label">Phone</label>
-                                                                            <input type="text" name="field-name" value="" placeholder="">
-                                                                        </div>
-                                                                        <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                                                            <label class="field-label">Email Address</label>
-                                                                            <input type="text" name="field-name" value="" placeholder="">
-                                                                        </div>
-                                                                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                                                            <label class="field-label">City</label>
-                                                                            <input type="text" name="field-name" value="" placeholder="">
-                                                                        </div>
-                                                                        <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                                                            <label class="field-label">State</label>
-                                                                            <input type="text" name="field-name" value="" placeholder="">
-                                                                        </div>
-                                                                        <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                                                            <label class="field-label">Country</label>
-                                                                            <input type="text" name="field-name" value="" placeholder="">
-                                                                        </div>
-                                                                        <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                                                            <label class="field-label">Postal Code</label>
-                                                                            <input type="text" name="field-name" value="" placeholder="">
-                                                                        </div>
-                                                                        <input class="btn btn-rounded btn-block" type = "submit" name = "submit">
-                                                                    </div>
-                                                                </div>
-                                                            <!-- </div> -->
-                                                        </div>
-                                                   
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <input type="checkbox" name="shipping-option" id="account-option"> &ensp;
+                                        <label for="account-option">Create An Account?</label>
                                     </div>
                                 </div>
                             </div>
@@ -811,27 +734,30 @@ if($result2->num_rows>=0){
                                         <div>Product <span>Total</span></div>
                                     </div>
                                     <?php
-                                    $sql = "SELECT * FROM products WHERE product_name = '$product_name';";
+                                    $sql = "SELECT * FROM items;";
                                     $result = $conn->query($sql);
                                     if($result->num_rows>0){
                                         while($row = $result->fetch_assoc()){
-                                            $product_name = $row['product_name'];
+                                            $product_name = $row['item_name'];
                                             $product_quantity = $row['product_quantity'];
-                                            $final_cost = $row['final_cost'];
-                                            $product_image = $row['product_image'];
-                                            $status = "ordered";
+                                            $final_cost = $row['item_price'];
                                             echo '<ul class="qty">
                                             <li>'.$product_name.' × 1 <span>Rs '.$final_cost.'</span></li>
                                             
                                             </ul>';
                                         }
                                     }
-                                    $total_cost = $final_cost + 20;
-                                    $sql1 = "INSERT INTO order_status(item_id,initial_cost,fname,final_cost,product_name,final_cost, product_quantity, status, product_image) VALUES('$order_id','$final_cost','$fname','$final_cost','$product_quantity','$status','$product_image');";
+                                    $sql1 = "SELECT SUM(item_price) as total_price FROM items;";
                                     $result1 = $conn->query($sql1);
+                                    if($result1->num_rows>0){
+                                        while($row=$result1->fetch_assoc()){
+                                            $total_price = $row['total_price'];
+                                        }
+                                    }
+                                    $total_price_1 = $total_price + 20;
                                     ?>
                                     <ul class="sub-total">
-                                        <li>Subtotal <span class="count">Rs <?php echo $final_cost?></span></li>
+                                        <li>Subtotal <span class="count">Rs <?php echo $total_price?></span></li>
                                         <li>Shipping
                                             <div class="shipping">
                                                 <div class="shopping-option">
@@ -850,32 +776,40 @@ if($result2->num_rows>=0){
                                         </li>
                                     </ul>
                                     <ul class="total">
-                                        <li>Total <span class="count">Rs <?php echo $total_cost?></span></li>
+                                        <li>Total <span class="count">Rs <?php echo $total_price_1?></span></li>
                                     </ul>
                                 </div>
                                 <div class="payment-box">
-                                    <!-- <div class="upper-box">
+                                    <div class="upper-box">
                                         <div class="payment-options">
                                             <ul>
                                                 <li>
+                                                    <div class="radio-option">
+                                                        <input type="radio" name="payment-group" id="payment-1" checked="checked">
+                                                        <label for="payment-1">Check Payments<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="radio-option">
+                                                        <input type="radio" name="payment-group" id="payment-2">
+                                                        <label for="payment-2">Cash On Delivery<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
+                                                    </div>
+                                                </li>
+                                                <li>
                                                     <div class="radio-option paypal">
                                                         <input type="radio" name="payment-group" id="payment-3">
-                                                        <label for="payment-3">Instamojo<span class="image"><img src="assets/images/paypal.png" alt=""></span></label>
+                                                        <label for="payment-3">PayPal<span class="image"><img src="assets/images/paypal.png" alt=""></span></label>
                                                     </div>
                                                 </li>
                                             </ul>
                                         </div>
-                                        </form>
-                                    </div> -->
-                                    <ul>
-                                        <li><div><a href="test.php" class="btn btn-rounded btn-outline">Proceed to Payment</a></div></li>
-                                        <li><img src="" alt=""></img></li>
-                                    </ul>
+                                    </div>
+                                    <div class="text-right"><a href="#" class="btn-normal btn">Place Order</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-               
+                </form>
             </div>
         </div>
     </div>
