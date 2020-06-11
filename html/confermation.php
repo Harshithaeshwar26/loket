@@ -1,3 +1,19 @@
+<?php
+include '../src/instamojo.php';
+$api = new Instamojo\Instamojo('test_0cf201539311159827b3e0c1923', 'test_8076ca821d24829f71324b38b5b','https://test.instamojo.com/api/1.1/');
+$payid = $_GET["payment_request_id"];
+try {
+$response = $api->paymentRequestStatus($payid);
+echo "<h4>Payment ID: " . $response['payments'][0]['payment_id'] . "</h4>" ;
+echo "<h4>Payment Name: " . $response['payments'][0]['buyer_name'] . "</h4>" ;
+echo "<h4>Payment Email: " . $response['payments'][0]['buyer_email'] . "</h4>" ;
+echo "<pre>";
+print_r($response);
+}
+catch (Exception $e) {
+print('Error: ' . $e->getMessage());
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

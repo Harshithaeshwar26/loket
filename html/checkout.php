@@ -94,6 +94,14 @@ $_SESSION['order_id'] = $order_id;
     }
     }
 
+    function myFunction1() {
+    var x = document.getElementById("myDIV1");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    }
     </script>
 
 </head>
@@ -898,19 +906,6 @@ $_SESSION['order_id'] = $order_id;
                                     </ul>
                                 </div>
                                 <div class="payment-box">
-                                    <!-- <div class="upper-box">
-                                        <div class="payment-options">
-                                            <ul>
-                                                <li>
-                                                    <div class="radio-option paypal">
-                                                        <input type="radio" name="payment-group" id="payment-3">
-                                                        <label for="payment-3">Instamojo<span class="image"><img src="assets/images/paypal.png" alt=""></span></label>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        </form>
-                                    </div> -->
                                     <ul>
                                         <li><div class="container">
 	<div class="page-header">
