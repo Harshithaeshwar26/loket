@@ -1,8 +1,3 @@
-<?php
-session_start();
-include('connect_db.php');
-$order_id = $_SESSION['order_id'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,19 +31,6 @@ $order_id = $_SESSION['order_id'];
 
     <!-- Theme css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/color3.css" media="screen" id="color">
-
-    <script>
-
-    function myFunction1() {
-    var x = document.getElementById("myDIV1");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-    }
-    
-    </script>
 </head>
 <body>
 
@@ -69,7 +51,7 @@ $order_id = $_SESSION['order_id'];
                 <div class="col-xl-5 col-md-7 col-sm-6">
                     <div class="top-header-left">
                         <div class="shpping-order">
-                            <h6>free shipping on order over $99 </h6>
+                            <h6>free shipping on order over Rs.99 </h6>
                         </div>
                         <div class="app-link">
                             <h6>
@@ -658,177 +640,146 @@ $order_id = $_SESSION['order_id'];
 </header>
 <!--header end-->
 
-<!-- breadcrumb start -->
-<div class="breadcrumb-main ">
+<!-- thank-you section start -->
+<section class="section-big-py-space light-layout">
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="breadcrumb-contain">
-                    <div>
-                        <h2>checkout</h2>
+            <div class="col-md-12">
+                <div class="success-text"><i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <h2>thank you</h2>
+                    <h4>Transaction successful</h4>
+                    <p>Payment is successfully processsed and your order is on the way</p>
+                    <p>Transaction ID:267676GHERT105467</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section ends -->
+
+<!-- thank-you section start -->
+<section class="section-big-py-space light-layout">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="success-text"><i style="color:#ffaa1d;" class="fa fa-spinner" aria-hidden="true"></i>
+                    <h2>Transaction pending..!</h2>
+                    <p>Payment is in process. Please wait for a while</p>
+                    <p>Transaction ID:267676GHERT105467</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section ends -->
+
+<!-- thank-you section start -->
+<section class="section-big-py-space light-layout">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="success-text"><i style="color:red;" class="fa fa-times-circle" aria-hidden="true"></i>
+                    <h2>Transaction cancelled</h2>
+                    <p>Payment is unsuccessful. Please try again later</p>
+                    <p>Transaction ID:267676GHERT105467</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Section ends -->
+
+
+<!-- order-detail section start -->
+<section class="section-big-py-space mt--5 bg-light">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="product-order">
+                    <h3>your order details</h3>
+                    <div class="row product-order-detail">
+                        <div class="col-3"><img src="../assets/images/layout-4/product/1.jpg" alt="" class="img-fluid "></div>
+                        <div class="col-3 order_detail">
+                            <div>
+                                <h4>product name</h4>
+                                <h5>cotton shirt</h5></div>
+                        </div>
+                        <div class="col-3 order_detail">
+                            <div>
+                                <h4>quantity</h4>
+                                <h5>1</h5></div>
+                        </div>
+                        <div class="col-3 order_detail">
+                            <div>
+                                <h4>price</h4>
+                                <h5>Rs.555.00</h5></div>
+                        </div>
+                    </div>
+                    <div class="row product-order-detail">
+                        <div class="col-3"><img src="../assets/images/layout-4/product/2.jpg" alt="" class="img-fluid "></div>
+                        <div class="col-3 order_detail">
+                            <div>
+                                <h4>product name</h4>
+                                <h5>cotton shirt</h5></div>
+                        </div>
+                        <div class="col-3 order_detail">
+                            <div>
+                                <h4>quantity</h4>
+                                <h5>1</h5></div>
+                        </div>
+                        <div class="col-3 order_detail">
+                            <div>
+                                <h4>price</h4>
+                                <h5>Rs.555.00</h5></div>
+                        </div>
+                    </div>
+                    <div class="total-sec">
                         <ul>
-                            <li><a href="#">home</a></li>
-                            <li><i class="fa fa-angle-double-right"></i></li>
-                            <li><a href="#">checkout</a></li>
+                            <li>subtotal <span>Rs.55.00</span></li>
+                            <li>shipping <span>Rs.12.00</span></li>
+                            <li>tax(GST) <span>Rs.10.00</span></li>
                         </ul>
+                    </div>
+                    <div class="final-total">
+                        <h3>total <span>Rs.77.00</span></h3></div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="row order-success-sec">
+                    <div class="col-sm-6">
+                        <h4>summery</h4>
+                        <ul class="order-detail">
+                            <li>order ID: 5563853658932</li>
+                            <li>Order Date: October 22, 2018</li>
+                            <li>Order Total: Rs.907.28</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6">
+                        <h4>shipping address</h4>
+                        <ul class="order-detail">
+                            <li>gerg harvell</li>
+                            <li>568, suite ave.</li>
+                            <li>Austrlia, 235153</li>
+                            <li>Contact No. 987456321</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-12 payment-mode">
+                        <h4>payment method</h4>
+                        <p>Pay on Delivery (Cash/Card). Cash on delivery (COD) availabel. Card/Net banking acceptance subject to device availability.</p>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="delivery-sec">
+                        <a class="btn btn-rounded btn-block ">
+                            <i></i>  Track Your Order
+                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- breadcrumb End -->
-
-<!-- section start -->
-<section class="section-big-py-space bg-light">
-    <div class="custom-container">
-        <div class="checkout-page contact-page">
-            <div class="checkout-form">
-                <form>
-                    <div class="row">
-                        <div class="col-lg-6 col-sm-12 col-xs-12">
-                            <div class="checkout-title">
-                                <h3>Billing Details</h3></div>
-                            <div class="theme-form">
-                                <div class="row check-out ">
-
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <label>First Name</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <label>Last Name</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <label class="field-label">Phone</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
-                                        <label class="field-label">Email Address</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                        <label class="field-label">Country</label>
-                                        <select>
-                                            <option>India</option>
-                                            <option>South Africa</option>
-                                            <option>United State</option>
-                                            <option>Australia</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                        <label class="field-label">Address</label>
-                                        <input type="text" name="field-name" value="" placeholder="Street address">
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                        <label class="field-label">Town/City</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <label class="field-label">State / County</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
-                                    </div>
-                                    <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <label class="field-label">Postal Code</label>
-                                        <input type="text" name="field-name" value="" placeholder="">
-                                    </div>
-                                    <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                        <input type="checkbox" name="shipping-option" id="account-option"> &ensp;
-                                        <label for="account-option">Create An Account?</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-sm-12 col-xs-12">
-                            <div class="checkout-details theme-form  section-big-mt-space">
-                                <div class="order-box">
-                                    <div class="title-box">
-                                        <div>Product <span>Total</span></div>
-                                    </div>
-                                    <?php
-                                    $sql = "SELECT * FROM items;";
-                                    $result = $conn->query($sql);
-                                    if($result->num_rows>0){
-                                        while($row = $result->fetch_assoc()){
-                                            $product_name = $row['item_name'];
-                                            $product_quantity = $row['product_quantity'];
-                                            $final_cost = $row['item_price'];
-                                            echo '<ul class="qty">
-                                            <li>'.$product_name.' × 1 <span>Rs '.$final_cost.'</span></li>
-                                            
-                                            </ul>';
-                                        }
-                                    }
-                                    $sql1 = "SELECT SUM(item_price) as total_price FROM items;";
-                                    $result1 = $conn->query($sql1);
-                                    if($result1->num_rows>0){
-                                        while($row=$result1->fetch_assoc()){
-                                            $total_price = $row['total_price'];
-                                        }
-                                    }
-                                    $total_price_1 = $total_price + 20;
-                                    ?>
-                                    <ul class="sub-total">
-                                        <li>Subtotal <span class="count">Rs <?php echo $total_price?></span></li>
-                                        <li>Shipping
-                                            <div class="shipping">
-                                                <div class="shopping-option">
-                                                    
-                                                    <label for="local-pickup">Rs 20</label>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>Tax
-                                            <div class="shipping">
-                                                <div class="shopping-option">
-                                                    
-                                                    <label for="local-pickup"></label>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <ul class="total">
-                                        <li>Total <span class="count">Rs <?php echo $total_price_1?></span></li>
-                                    </ul>
-                                </div>
-                                <div class="payment-box">
-                                    <div class="upper-box">
-                                        <div class="payment-options">
-                                            <ul>
-                                                <li>
-                                                    <div class="radio-option">
-                                                        <input type="radio" name="payment-group" id="payment-1" checked="checked">
-                                                        <label for="payment-1">Check Payments<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="radio-option">
-                                                        <input type="radio" name="payment-group" id="payment-2">
-                                                        <label for="payment-2">Cash On Delivery<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="radio-option paypal">
-                                                        <input type="radio" name="payment-group" id="payment-3">
-                                                        <label for="payment-3">PayPal<span class="image"><img src="assets/images/paypal.png" alt=""></span></label>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="text-right"><a href="#" class="btn-normal btn">Place Order</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 </section>
-<!-- section end -->
-
+<!-- Section ends -->
 
 <!--footer start-->
 <footer class="footer-2">
@@ -840,7 +791,7 @@ $order_id = $_SESSION['order_id'];
                         <div class="col-lg-4 col-md-12 pr-lg-0">
                             <div class="footer-left">
                                 <div class="footer-logo">
-                                    <img src="../assets/images/layout-2/logo/logo.png" class="img-fluid" alt="logo">
+                                    <img src="../assets/images/logo.jpeg" class="img-fluid  " alt="logo-header">
                                 </div>
                                 <div class="footer-detail">
                                     <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>
@@ -1020,7 +971,7 @@ $order_id = $_SESSION['order_id'];
                                 <h4>item name</h4>
                             </a>
                             <h4>
-                                <span>1 x $ 299.00</span>
+                                <span>1 x Rs. 299.00</span>
                             </h4>
                         </div>
                     </div>
@@ -1040,7 +991,7 @@ $order_id = $_SESSION['order_id'];
                                 <h4>item name</h4>
                             </a>
                             <h4>
-                                <span>1 x $ 299.00</span>
+                                <span>1 x Rs. 299.00</span>
                             </h4>
                         </div>
                     </div>
@@ -1057,7 +1008,7 @@ $order_id = $_SESSION['order_id'];
                             <a href="#">
                                 <h4>item name</h4>
                             </a>
-                            <h4><span>1 x $ 299.00</span></h4>
+                            <h4><span>1 x Rs. 299.00</span></h4>
                         </div>
                     </div>
                     <div class="close-circle">
@@ -1070,7 +1021,7 @@ $order_id = $_SESSION['order_id'];
             <ul class="cart_total">
                 <li>
                     <div class="total">
-                        <h5>subtotal : <span>$299.00</span></h5>
+                        <h5>subtotal : <span>Rs.299.00</span></h5>
                     </div>
                 </li>
                 <li>
@@ -1146,7 +1097,7 @@ $order_id = $_SESSION['order_id'];
                                 <span>, blue</span>
                             </h4>
                             <h4>
-                                <span>$ 299.00</span>
+                                <span>Rs. 299.00</span>
                             </h4>
                         </div>
                     </div>
@@ -1170,7 +1121,7 @@ $order_id = $_SESSION['order_id'];
                                 <span>, blue</span>
                             </h4>
                             <h4>
-                                <span>$ 299.00</span>
+                                <span>Rs. 299.00</span>
                             </h4>
                         </div>
                     </div>
@@ -1189,7 +1140,7 @@ $order_id = $_SESSION['order_id'];
                                 <span>sm</span>
                                 <span>, blue</span>
                             </h4>
-                            <h4><span>$ 299.00</span></h4>
+                            <h4><span>Rs. 299.00</span></h4>
                         </div>
                     </div>
                     <div class="close-circle">
@@ -1202,7 +1153,7 @@ $order_id = $_SESSION['order_id'];
             <ul class="cart_total">
                 <li>
                     <div class="total">
-                        <h5>subtotal : <span>$299.00</span></h5>
+                        <h5>subtotal : <span>Rs.299.00</span></h5>
                     </div>
                 </li>
                 <li>
@@ -1253,9 +1204,6 @@ $order_id = $_SESSION['order_id'];
 
 <!-- menu js-->
 <script src="../assets/js/menu.js"></script>
-
-<!-- popper js-->
-<script src="../assets/js/popper.min.js" ></script>
 
 <!-- slick js-->
 <script  src="../assets/js/slick.js"></script>
