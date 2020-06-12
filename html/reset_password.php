@@ -723,7 +723,7 @@ function my_simple_crypt( $string, $action = 'd') {
                           <div class="form-group">
                               <input type="password" name = "pwd" class="form-control" id="pwd" placeholder="Enter Your Password" required="">
                           </div>
-                        </div><input type = "submit" name = "submit" class="btn btn-normal">Submit</a>
+                        </div><input type = "submit" name = "submit" class="btn btn-normal"></a>
                     </div>
                 </form>
                 </div>
