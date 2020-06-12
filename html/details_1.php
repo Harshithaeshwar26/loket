@@ -980,7 +980,7 @@ include('connect_db.php');
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="top-review" role="tabpanel" aria-labelledby="review-top-tab">
-                                        <form class="theme-form">
+                                        <form method = "POST" action = "product_reviews.php">
                                             <div class="form-row">
                                                 <div class="col-md-12">
                                                     <div class="media">
@@ -992,22 +992,26 @@ include('connect_db.php');
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="name">Name</label>
-                                                    <input type="text" class="form-control" id="name" placeholder="Enter Your name" required>
+                                                    <input type="text" class="form-control" name = "fname" id="name" placeholder="Enter Your name" required>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <label for="email">Email</label>
-                                                    <input type="text" class="form-control" id="email" placeholder="Email" required>
+                                                    <input type="text" class="form-control" name = "email_address" id="email" placeholder="Email" required>
                                                 </div>
                                                 <div class="col-md-12">
                                                     <label for="review">Review Title</label>
-                                                    <input type="text" class="form-control" id="review" placeholder="Enter your Review Subjects" required>
+                                                    <input type="text" class="form-control" name = "reviews" id="review" placeholder="Enter your Review Subjects" required>
                                                 </div>
                                                 <div class="col-md-12">
+                                                    <label for="review">Review Title</label>
+                                                    <input type="text" class="form-control" name = "product_name" id="review" value = "<?php echo $product_name?>" hidden>
+                                                </div>
+                                                <!-- <div class="col-md-12">
                                                     <label for="review">Review Title</label>
                                                     <textarea class="form-control" placeholder="Wrire Your Testimonial Here" id="exampleFormControlTextarea1" rows="6"></textarea>
-                                                </div>
+                                                </div> -->
                                                 <div class="col-md-12">
-                                                    <button class="btn btn-normal" type="submit">Submit YOur Review</button>
+                                                    <input type = "submit" class="btn btn-normal" name = "submit">Submit YOur Review</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -1113,7 +1117,7 @@ include('connect_db.php');
                                     <img src="../assets/images/logo.jpeg" class="img-fluid  " alt="logo">
                                 </div>
                                 <div class="footer-detail">
-                                <p>About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us</p>
+                                <!-- <p>About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us</p> -->
                                     <ul class="paymant-bottom">
                                         <li><a href="#"><img src="../assets/images/layout-1/pay/1.png" class="img-fluid" alt="pay"></a></li>
                                         <li><a href="#"><img src="../assets/images/layout-1/pay/2.png" class="img-fluid" alt="pay"></a></li>
@@ -1166,30 +1170,16 @@ include('connect_db.php');
                                                         <div class="footer-contant">
                                                             <ul>
                                                                 <li><a href="#">about us</a></li>
-                                                                <li><a href="#">contact us</a></li>
+                                                                <li><a href="contact_us.php">contact us</a></li>
                                                                 <li><a href="#">terms & conditions</a></li>
-                                                                <li><a href="#">returns & exchanges</a></li>
-                                                                <li><a href="#">shipping & delivery</a></li>
+                                                                <li><a href="faq.php">faq</a></li>
+                                                                <!-- <li><a href="#">returns & exchanges</a></li>
+                                                                <li><a href="#">shipping & delivery</a></li> -->
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="footer-box">
-                                                        <div class="footer-title">
-                                                            <h5>quick link</h5>
-                                                        </div>
-                                                        <div class="footer-contant">
-                                                            <ul>
-                                                                <li><a href="#">store location</a></li>
-                                                                <li><a href="#"> my account</a></li>
-                                                                <li><a href="#"> orders tracking</a></li>
-                                                                <li><a href="#"> size guide</a></li>
-                                                                <li><a href="#">FAQ </a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div class="col-md-5">
                                                     <div class="footer-box footer-contact-box">
                                                         <div class="footer-title">
