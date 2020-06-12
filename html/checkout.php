@@ -955,14 +955,14 @@ $_SESSION['order_id'] = $order_id;
         <div class="row">
             <div class="col-12">
                 <div class="footer-main-contian">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12 pr-lg-0">
+                    <div class="row ">
+                        <div class="col-lg-4 col-md-12 ">
                             <div class="footer-left">
                                 <div class="footer-logo">
-                                    <img src="../assets/images/layout-2/logo/logo.png" class="img-fluid" alt="logo">
+                                    <img src="../assets/images/logo.jpeg" class="img-fluid  " alt="logo">
                                 </div>
                                 <div class="footer-detail">
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>
+                                <!-- <p>About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us</p> -->
                                     <ul class="paymant-bottom">
                                         <li><a href="#"><img src="../assets/images/layout-1/pay/1.png" class="img-fluid" alt="pay"></a></li>
                                         <li><a href="#"><img src="../assets/images/layout-1/pay/2.png" class="img-fluid" alt="pay"></a></li>
@@ -973,20 +973,20 @@ $_SESSION['order_id'] = $order_id;
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-12 p-l-md-0">
+                        <div class="col-lg-8 col-md-12 ">
                             <div class="footer-right">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="subscribe-section">
                                             <div class="row">
-                                                <div class="col-md-5 pr-lg-0">
+                                                <!-- <div class="col-md-5 ">
                                                     <div class="subscribe-block">
                                                         <div class="subscrib-contant ">
-                                                            
+                                                            <h4>subscribe to newsletter</h4>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-7 p-l-md-0">
+                                                </div> -->
+                                                <!-- <div class="col-md-7 ">
                                                     <div class="subscribe-block">
                                                         <div class="subscrib-contant">
                                                             <div class="input-group" >
@@ -1000,7 +1000,7 @@ $_SESSION['order_id'] = $order_id;
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -1015,30 +1015,16 @@ $_SESSION['order_id'] = $order_id;
                                                         <div class="footer-contant">
                                                             <ul>
                                                                 <li><a href="#">about us</a></li>
-                                                                <li><a href="#">contact us</a></li>
+                                                                <li><a href="contact_us.php">contact us</a></li>
                                                                 <li><a href="#">terms & conditions</a></li>
-                                                                <li><a href="#">returns & exchanges</a></li>
-                                                                <li><a href="#">shipping & delivery</a></li>
+                                                                <li><a href="faq.php">faq</a></li>
+                                                                <!-- <li><a href="#">returns & exchanges</a></li>
+                                                                <li><a href="#">shipping & delivery</a></li> -->
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="footer-box">
-                                                        <div class="footer-title">
-                                                            <h5>quick link</h5>
-                                                        </div>
-                                                        <div class="footer-contant">
-                                                            <ul>
-                                                                <li><a href="#">store location</a></li>
-                                                                <li><a href="#"> my account</a></li>
-                                                                <li><a href="#"> orders tracking</a></li>
-                                                                <li><a href="#"> size guide</a></li>
-                                                                <li><a href="#">FAQ </a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div class="col-md-5">
                                                     <div class="footer-box footer-contact-box">
                                                         <div class="footer-title">
@@ -1046,10 +1032,10 @@ $_SESSION['order_id'] = $order_id;
                                                         </div>
                                                         <div class="footer-contant">
                                                             <ul class="contact-list">
-                                                                <li><i class="fa fa-map-marker"></i><span>big deal store demo store <br> <span> india-3654123</span></span></li>
-                                                                <li><i class="fa fa-phone"></i><span>call us: 123-456-7898</span></li>
-                                                                <li><i class="fa fa-envelope-o"></i><span>email us: support@bigdeal.com</span></li>
-                                                                <li><i class="fa fa-fax"></i><span>fax 123456</span></li>
+                                                                <!-- <li><i class="fa fa-map-marker"></i><span>big deal store demo store <br> <span> india-3654123</span></span></li> -->
+                                                                <li><i class="fa fa-phone"></i><span>call us: 8095566699</span></li>
+                                                                <li><i class="fa fa-envelope-o"></i><span>email us: contact.azeempatel@gmail.com</span></li>
+                                                                <!-- <li><i class="fa fa-fax"></i><span>fax 123456</span></li> -->
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -1098,7 +1084,7 @@ $_SESSION['order_id'] = $order_id;
             <div class="row">
                 <div class="col-12">
                     <div class="sub-footer-contain">
-                        <p><span>2018 - 19 </span>copy right by themeforest powered by pixel strap</p>
+                        <!-- <p><span>2018 - 19 </span>copy right by themeforest powered by pixel strap</p> -->
                     </div>
                 </div>
             </div>
