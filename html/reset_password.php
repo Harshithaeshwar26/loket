@@ -2,8 +2,8 @@
 include('connect_db.php');
 if(isset($_POST['submit'])){
  $email_address = $_POST['email_address'];
- $password = $_POST['pwd'];
- $pwd = password_hash($password, PASSWORD_DEFAULT);
+ $pwd = md5($_POST['pwd']);
+//  $pwd = password_hash($password, PASSWORD_DEFAULT);
  $sql = "UPDATE Users SET password = '$pwd' WHERE email_address = '$email_address';";
  $result = $conn->query($sql);
  if($result->num_rows>=0){
