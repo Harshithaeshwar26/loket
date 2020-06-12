@@ -213,28 +213,28 @@ include('connect_db.php');
                     <form method = "POST" action = "registration.php">
                         <div class="form-row">
                             <div class="col-md-12 form-group">
-                                <label for="email">First Name</label>
+                                <!-- <label for="email">First Name</label> -->
                                 <input type="text" name = "fname" class="form-control" id="fname" placeholder="First Name" required="">
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="review">Last Name</label>
+                                <!-- <label for="review">Last Name</label> -->
                                 <input type="text" name = "lname" class="form-control" id="lname" placeholder="Last Name" required="">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-12 form-group">
-                                <label for="email">Email</label>
+                                <!-- <label for="email">Email</label> -->
                                 <input type="email" name = "email_address" class="form-control" id="email" placeholder="Email" required="">
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="phone_number">Phone Number</label>
+                                <!-- <label for="phone_number">Phone Number</label> -->
                                 <input type="text" name = "phone_number" class="form-control" id="email" placeholder="Phone Number" required="">
                             </div>
                             <div class="col-md-12 form-group">
-                                <label for="review">Password</label>
+                                <!-- <label for="review">Password</label> -->
                                 <input type="password" name = "pwd" pattern="(?=.*[a-z])(?=.*[A-Z]).{6,}" name = "password" class="form-control" id="review" placeholder="Enter your password" required="">
                             </div>
-                            <div class="col-md-12 form-group"><input type = "submit" name = "submit" class="view-btn color-2 w-100 mt-20"><span></span></a></div>
+                            <div class="col-md-12 form-group text-center"><input type = "submit" name = "submit" class="btn btn-white btn-outline"><span></span></a></div>
                         </div>
                         <div class="form-row">
                             <div class="col-md-12 ">
