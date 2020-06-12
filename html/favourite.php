@@ -791,7 +791,7 @@ include('connect_db.php');
                                     <img src="../assets/images/logo.jpeg" class="img-fluid  " alt="logo">
                                 </div>
                                 <div class="footer-detail">
-                                <p>About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us</p>
+                                <!-- <p>About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us</p> -->
                                     <ul class="paymant-bottom">
                                         <li><a href="#"><img src="../assets/images/layout-1/pay/1.png" class="img-fluid" alt="pay"></a></li>
                                         <li><a href="#"><img src="../assets/images/layout-1/pay/2.png" class="img-fluid" alt="pay"></a></li>
@@ -844,30 +844,16 @@ include('connect_db.php');
                                                         <div class="footer-contant">
                                                             <ul>
                                                                 <li><a href="#">about us</a></li>
-                                                                <li><a href="#">contact us</a></li>
+                                                                <li><a href="contact_us.php">contact us</a></li>
                                                                 <li><a href="#">terms & conditions</a></li>
-                                                                <li><a href="#">returns & exchanges</a></li>
-                                                                <li><a href="#">shipping & delivery</a></li>
+                                                                <li><a href="faq.php">faq</a></li>
+                                                                <!-- <li><a href="#">returns & exchanges</a></li>
+                                                                <li><a href="#">shipping & delivery</a></li> -->
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="footer-box">
-                                                        <div class="footer-title">
-                                                            <h5>quick link</h5>
-                                                        </div>
-                                                        <div class="footer-contant">
-                                                            <ul>
-                                                                <li><a href="#">store location</a></li>
-                                                                <li><a href="#"> my account</a></li>
-                                                                <li><a href="#"> orders tracking</a></li>
-                                                                <li><a href="#"> size guide</a></li>
-                                                                <li><a href="#">FAQ </a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div class="col-md-5">
                                                     <div class="footer-box footer-contact-box">
                                                         <div class="footer-title">

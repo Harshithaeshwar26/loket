@@ -20,6 +20,14 @@ foreach($decoded_json->results as $results)
     }
 }
 // echo $zipcode;
+$zipcode_1 = "23508";
+if($zipcode_1 != $zipcode){
+    $availability = 0;
+}
+else {
+    $availability = 1;
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -191,7 +199,7 @@ foreach($decoded_json->results as $results)
                                         <!--HOME-->
                                         <li>
                                         <a href="category.php">Home</a>
-                                            <!-- <a href="category.php"><?php echo $zipcode?></a> -->
+                                            <a href="category.php"><?php echo $availability?></a>
                                             <!-- <ul>
                                                 <li><a target="_blank" href="add-product.php">layout 1</a></li>
                                                 <li><a target="_blank" href="layout-2.html">layout 2</a></li>
@@ -1077,10 +1085,18 @@ foreach($decoded_json->results as $results)
                                     add to cart
                                 </button>
                             </div>
-                            <div class="addtocart_btn">
-                            <button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
-                                                Buy Now
-                            </button>
+                            <div class="addtocart_btn">';
+                            if($availability == 1){
+                                echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                Buy Now
+                                 </button>';
+                            }
+                            else if($availability == 0){
+                                echo '<button class="add-button" disabled> <a class="addtocart_btn"style="color:red"></a>
+                                Currently Delivery is not available in your locatio 
+                                 </button>';
+                            }
+                            echo'
                             </div>
                         </div>
                     </div>';
@@ -1381,13 +1397,22 @@ foreach($decoded_json->results as $results)
                                             <i class="fa fa-heart" aria-hidden="true"></i>
                                             </a></span></span>
                                         </div>
-                                        <div class ="addtocart_btn">
-                                        <button class="add-button"><a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white">Buy Now</a>
-                                        </button>
+                                        <div class="addtocart_btn">';
+                                        if($availability == 1){
+                                            echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                            Buy Now
+                                                </button>';
+                                        }
+                                        else if($availability == 0){
+                                            echo '<button class="button" disabled> <a class="addtocart_btn"style="color:red"></a>
+                                            Currently Delivery is not available in your location
+                                                </button>';
+                                        }
+                                        echo'
                                         </div>
                                         <br>
                                         <div class ="addtocart_btn">
-                                        <button class="add-button"><a class="addtocart_btn" href="cart_1.php?id='.$product_name.'" style="color:white">Add to Cart</a>
+                                        <button class="add-button" style = "color: "#ffaa1d"><a class="addtocart_btn" href="cart_1.php?id='.$product_name.'" style="color:white">Add to Cart</a>
                                         </button>
                                         </div>
                                     </div>
