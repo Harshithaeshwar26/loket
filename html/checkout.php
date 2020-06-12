@@ -904,37 +904,68 @@ $_SESSION['order_id'] = $order_id;
                                     <ul class="total">
                                         <li>Total <span class="count">Rs <?php echo $total_cost?></span></li>
                                     </ul>
+                                    <form action="" method="POST" accept-charset="utf-8">
+                                    <button
+                                        onclick="this.disabled=true;document.getElementById('down7913').disabled=false;"
+                                        type="submit"
+                                        class="positive btn btn-rounded"
+                                        name="up7913"
+                                        id="up7913"
+                                    >
+                                        9:00am - 11:00am 
+                                    </button>
+                                    
+                                    <button
+                                        onclick="this.disabled=true;document.getElementById('up7913').disabled=false;"
+                                        type="submit"
+                                        class="negative btn btn-rounded"
+                                        name="down7913"
+                                        id="down7913"
+                                    >
+                                        1:00pm - 3:00pm
+                                    </button>
+
+                                    <button
+                                        onclick="this.disabled=true;document.getElementById('down7913').disabled=false;"
+                                        type="submit"
+                                        class="negative btn btn-rounded"
+                                        name="down7913"
+                                        id="down7913"
+                                    >
+                                        6:00pm - 8:00pm
+                                    </button>
+                                    </form>
                                 </div>
                                 <div class="payment-box">
                                     <ul>
                                         <li><div class="container">
-	<div class="page-header">
-        <!-- <h1><a href="index.php">Instamojo Payment</a></h1> -->
-		<form action="pay.php" method="POST" accept-charset="utf-8">
-			<input type="hidden" name="product_name" value="<?php echo $product_name; ?>"> 
-			<input type="hidden" name="product_price" value="<?php echo $final_cost; ?>">
-			<div class="form-group">
-			<!-- <label>Your Name</label> -->
-			<input type="text" class="form-control" name="name" placeholder="Enter your name" value = "<?php echo $fname?>" hidden>	 
-			</div>
-			<div class="form-group">
-			<!-- <label>Your Phone</label> -->
-			<input type="text" class="form-control" name="phone" placeholder="Enter your phone number" value = "<?php echo $phone_number?>" hidden> 
-			</div>
-			<div class="form-group"> 
-			<!-- <label>Your Email</label> -->
-			<input type="email" class="form-control" name="email" placeholder="Enter you email" value = "<?php echo $email_address?>" hidden> 
-			</div>
-			<div class="form-group">
-			<!-- <label>Amount</label> -->
-			<input type="email" class="form-control" name="amount" Value="<?php echo $final_cost?>" readonly hidden>
-			</div>
-			<p><input type="submit" class="btn btn-success btn-lg" value="Click here to Pay"></p>
-		</form>
- 
-    
-    </div> <!-- /container -->
-		</div></li>
+                                        <div class="page-header">
+                                            <!-- <h1><a href="index.php">Instamojo Payment</a></h1> -->
+                                            <form action="pay.php" method="POST" accept-charset="utf-8">
+                                                <input type="hidden" name="product_name" value="<?php echo $product_name; ?>"> 
+                                                <input type="hidden" name="product_price" value="<?php echo $final_cost; ?>">
+                                                <div class="form-group">
+                                                <!-- <label>Your Name</label> -->
+                                                <input type="text" class="form-control" name="name" placeholder="Enter your name" value = "<?php echo $fname?>" hidden>	 
+                                                </div>
+                                                <div class="form-group">
+                                                <!-- <label>Your Phone</label> -->
+                                                <input type="text" class="form-control" name="phone" placeholder="Enter your phone number" value = "<?php echo $phone_number?>" hidden> 
+                                                </div>
+                                                <div class="form-group"> 
+                                                <!-- <label>Your Email</label> -->
+                                                <input type="email" class="form-control" name="email" placeholder="Enter you email" value = "<?php echo $email_address?>" hidden> 
+                                                </div>
+                                                <div class="form-group">
+                                                <!-- <label>Amount</label> -->
+                                                <input type="email" class="form-control" name="amount" Value="<?php echo $final_cost?>" readonly hidden>
+                                                </div>
+                                                <p><input type="submit" class="btn btn-success btn-lg" value="Click here to Pay"></p>
+                                            </form>
+                                    
+                                        
+                                        </div> <!-- /container -->
+                                            </div></li>
                                         <li><img src="" alt=""></img></li>
                                     </ul>
                                 </div>
