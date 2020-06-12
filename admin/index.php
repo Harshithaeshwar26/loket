@@ -38,7 +38,14 @@
         <div class="main-header-left">
             <div class="logo-wrapper"><a href=""><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
         </div>
-        <div class="main-header-right row">
+         <div class="main-header-right row">
+        <div class="mobile-sidebar">
+                <div class="media-body text-right switch-sm">
+                    <label class="switch">
+                        <input id="sidebar-toggle" type="checkbox" checked="checked"><span class="switch-state"></span>
+                    </label>
+                </div>
+            </div>
             <div class="nav-right col">
                 
                     <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize"></i></a></li>
