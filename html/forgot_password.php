@@ -675,7 +675,7 @@
                           <div class="form-group">
                               <input type="text" name = "email_address" class="form-control" id="email" placeholder="Enter Your Email" required="">
                           </div>
-                        </div><input type = "submit" name = "submit" class="btn btn-normal">Submit</a>
+                        </div><input type = "submit" name = "submit" class="btn btn-normal"></a>
                     </div>
                 </form>
                 </div>
