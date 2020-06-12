@@ -68,13 +68,12 @@ if(isset($_POST['submit'])){
         setTimeout(function () { 
             swal({
               title: "Forgot Password",
-              text: "A link to reset your password has been sent to your registered email address",
-              type: "success",
-              confirmButtonText: "OK"
+              text: "A link has been sent to your registered email address",
+              type: "success"
             },
             function(isConfirm){
               if (isConfirm) {
-                window.location.href = "register.php";
+                window.location.href = "login.php";
               }
             }); }, 1000);
         </script>';
@@ -85,12 +84,11 @@ if(isset($_POST['submit'])){
                 swal({
                   title: "Forgot Password",
                   text: "Email address has not been registered",
-                  type: "error",
-                  confirmButtonText: "OK"
+                  type: "error"
                 },
                 function(isConfirm){
                   if (isConfirm) {
-                    window.location.href = "register.php";
+                    window.location.href = "login.php";
                   }
                 }); }, 1000);
             </script>';

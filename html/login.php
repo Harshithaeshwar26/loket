@@ -679,11 +679,15 @@
                             <label for="review">Password</label>
                             <input type="password" class="form-control" id="review" name = "pwd" placeholder="Enter your password" required="">
                         </div>
-                        <input type = "submit" name = "submit">
-                        <a class="float-right txt-default mt-2" href="forgot_password.php" id="fgpwd">Forgot your password?</a>
+                        <div class="text-center"><input class="btn btn-white btn-outline" type = "submit" name = "submit"></div>
+                        <br>
+                        <ul>
+                            <li><a class="txt-default" href="forgot_password.php" id="fgpwd">Forgot your password?</a></li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            <li><a href="register.php" class="txt-default pt-3 d-block">Create an Account</a></li>
+                        </ul>
                     </form>
-                    <p class="mt-3">Sign up for a free account at our store. Registration is quick and easy. It allows you to be able to order from our shop. To start shopping click register.</p>
-                    <a href="register.html" class="txt-default pt-3 d-block">Create an Account</a>
+                    
+                   
                 </div>
                 </form>
             </div>
