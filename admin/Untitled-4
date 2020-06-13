@@ -1,8 +1,8 @@
 <?php
 session_start();
 include('connect_db.php');
-// $product_code = rand(111111111111111111,9999999999999999);
-// $_SESSION['product_code'] = $product_code;
+$product_code = rand(111111111111111111,9999999999999999);
+$_SESSION['product_code'] = $product_code;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,19 +44,12 @@ include('connect_db.php');
         <div class="main-header-left">
             <div class="logo-wrapper"><a href="add-product.php"><img class="blur-up lazyloaded" src="../assets/images/logo.jpeg" alt=""></a></div>
         </div>
-         <div class="main-header-right row">
-        <div class="mobile-sidebar">
-                <div class="media-body text-right switch-sm">
-                    <label class="switch">
-                        <input id="sidebar-toggle" type="checkbox" checked="checked"><span class="switch-state"></span>
-                    </label>
-                </div>
-            </div>
+        <div class="main-header-right row">
             <div class="nav-right col">
                 
                     <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i data-feather="maximize"></i></a></li>
                 
-                 
+                <div class="d-lg-none mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
             </div>
         </div>
     </div>
@@ -240,6 +233,29 @@ include('connect_db.php');
             </div>
         </div>
         <div class="page-body">
+        <div class="page-body">
+
+            <!-- Container-fluid starts-->
+            <div class="container-fluid">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="page-header-left">
+                                <h3>Add Category
+                                    <small>Loket Admin panel</small>
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <ol class="breadcrumb pull-right">
+                                <li class="breadcrumb-item"><a href="add-product.php"><i data-feather="home"></i></a></li>
+                                <!-- <li class="breadcrumb-item">Physical</li> -->
+                                <li class="breadcrumb-item active">Add Category</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Container-fluid Ends-->
 
             <!-- Container-fluid starts-->
@@ -248,14 +264,32 @@ include('connect_db.php');
                     <div class="col-sm-12">
                         <div class="card">
                             <div class="card-header">
-                                <h5>Add Product</h5>
+                                <h5>Add Sub Category</h5>
                             </div>
                             <div class="card-body">
                                 <div class="row product-adding">
+                                    <!-- <div class="col-xl-5">
+                                        <div class="add-product">
+                                            <div class="row">
+                                                <div class="col-xl-9 xl-50 col-sm-6 col-9">
+                                                    <img src="../assets/images/pro3/1.jpg" alt="" class="img-fluid image_zoom_1 blur-up lazyloaded">
+                                                </div>
+                                                <div class="col-xl-3 xl-50 col-sm-6 col-3">
+                                                    <ul class="file-upload-product">
+                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
+                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
+                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
+                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
+                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
+                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div> -->
                                     </div>
                                     <div class="col-xl-12">
-                                        <form method = "POST" action = "product.php" >
-                                            <div class="form">
+                                        <form method = "POST" action = "category.php" >
+                                            <!-- <div class="form">
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Product Name:</label>
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" name = "product_name" type="text" required="">
@@ -263,125 +297,87 @@ include('connect_db.php');
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Initital Price :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "initial_cost" type="text" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "final_cost" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
 
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Final Price :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "final_cost" type="number" min="1" max="100000" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "final_cost" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Code :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" name = "" value = "<?php echo $product_code?>" size="16" maxlength="16" disabled type="text" required="">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" name = "product_code" type="text" required="">
                                                     <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
                                                 </div>
-
-                                                <div class="form-group mb-3 row">
-                                                    <!-- <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Code :</label> -->
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" name = "product_code" value = "<?php echo $product_code?>" hidden type="text" required="">
-                                                    <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
-                                                </div>
-                                            
+                                            </div> -->
+                                            <div class="form">
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
-                                                    <?php
-                                                    $sql = "SELECT * FROM admin_category";
-                                                    $result = $conn->query($sql);
-
-                                                    if ($result->num_rows > 0) {
-
-                                                        echo "<select name='category_name' class='form-control digits col-xl-8 col-sm-7'>";
-                                                        // output data of each row
-                                                        while($row = $result->fetch_assoc()) {
-                                                        echo "<option value='" . $row['category_name'] . "'>" . $row['category_name'] . "</option>";
-                                                        }
-                                                        echo "</select>";
-                                                    }
-                                                ?>
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>  
-                                                <div class="form-group mb-3 row">
-                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Sub Category Name :</label>
-                                                    <?php
-                                                    $sql = "SELECT * FROM admin_sub_category";
-                                                    $result = $conn->query($sql);
-
-                                                    if ($result->num_rows > 0) {
-
-                                                        echo "<select name='sub_category_name' class='form-control digits col-xl-8 col-sm-7'>";
-                                                        // output data of each row
-                                                        while($row = $result->fetch_assoc()) {
-                                                        echo "<option value='" . $row['sub_category_name'] . "'>" . $row['sub_category_name'] . "</option>";
-                                                        }
-                                                        echo "</select>";
-                                                    }
-                                                ?>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
-
-                                                
-                                                <div class="form-group mb-3 row">
-                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Shop Name :</label>
-                                                <?php
-                                                    $sql = "SELECT * FROM shops";
-                                                    $result = $conn->query($sql);
-
-                                                    if ($result->num_rows > 0) {
-
-                                                        echo "<select name='shop_name' class='form-control digits col-xl-8 col-sm-7'>";
-                                                        // output data of each row
-                                                        while($row = $result->fetch_assoc()) {
-                                                        echo "<option value='" . $row['shop_name'] . "'>" . $row['shop_name'] . "</option>";
-                                                        }
-                                                        echo "</select>";
-                                                    }
-                                                ?>                      
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                
-                                                <div class="form-group mb-3 row">
-                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Quantity :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "quantity" type="number" min="1" max="100" required="">
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="form-group mb-3 row">
+                                                <!-- <div class="form-group row">
+                                                    <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Sub Category:</label>
+                                                    <select class="form-control digits col-xl-8 col-sm-7" name = "sub_category_name" id="exampleFormControlSelect1">
+                                                        <option>Mobile Phones</option>
+                                                        <option>Headphones</option>
+                                                        <option>Ear phones</option>
+                                                        <option>Charger</option>
+                                                    </select>
+                                                </div> -->
+                                                <!-- <div class="form-group row">
+                                                    <label class="col-xl-3 col-sm-4 mb-0">Sub Category Name :</label>
+                                                    <fieldset class="qty-box col-xl-9 col-xl-8 col-sm-7 pl-0">
+                                                        <div class="input-group">
+                                                            <input class="touchspin" name = "sub_category_name"  type="text" value="1">
+                                                        </div>
+                                                    </fieldset>
+                                                </div> -->
+                                                <!-- <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Colour :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "colour" type="text">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "colour" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="form-group mb-3 row">
-                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Size :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "size" type="text">
+                                                </div>-->
+                                                <!-- <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Sub Category Name :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "sub_category_name" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="form-group mb-3 row">
+                                                </div> -->
+                                                <!--div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Height :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "height" type="text">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "height" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Weight :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "weight" type="text">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "weight" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Depth :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "depth" type="text">
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "depth" type="text" required="">
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
                                                 <div class="form-group mb-3 row">
                                                     <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Expiry Date :</label>
                                                     <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "expiry_date" type="date" required="">
-                                                    <div class="valid-feedback">Looks good!</div>
+                                                    <div class="valid-feedback">Looks good!</div> -->
                                                 </div>
                                                 <div class="form-group mb-3 row">
-                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Offer Code :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "offer_code" type="text">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Description:</label>
+                                                    <textarea class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "description" type="text"></textarea>
                                                     <div class="valid-feedback">Looks good!</div>
                                                 </div>
+                                                <!-- <div class="form-group row">
+                                                    <label class="col-xl-3 col-sm-4">Upload Image :</label>
+                                                    <div class="col-xl-8 col-sm-7 pl-0 description-sm">
+                                                        <li> <input type="file" name="fileToUpload" id="fileToUpload"></li>
+                                                        
+                                                    </div>
+                                                </div> -->
                                             </div>
                                             <div class="offset-xl-3 offset-sm-4">
                                                 <input type="submit" name = "submit" class="btn btn-primary">
@@ -413,7 +409,6 @@ include('connect_db.php');
             </div>
         </footer>
         <!-- footer end-->
-
     </div>
 
 </div>
