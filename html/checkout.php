@@ -3,6 +3,7 @@ session_start();
 include('connect_db.php');
 $product_name = $_REQUEST['id'];
 $availability = $_REQUEST['id1'];
+$total_cost_1 = $_REQUEST['id1'];
 $sql2 = "SELECT * FROM Users where email_address = 'harshithaeshwar269@gmail.com';";
 $result2 = $conn->query($sql2);
 if($result2->num_rows>=0){
@@ -879,6 +880,7 @@ $_SESSION['order_id'] = $order_id;
                                         }
                                     }
                                     $total_cost = $final_cost + 20;
+                                    $final_cost = $final_cost - $total_cost_1;
                                     $sql1 = "INSERT INTO order_status(item_id,initial_cost,fname,final_cost,product_name,final_cost, product_quantity, status, product_image) VALUES('$order_id','$final_cost','$fname','$final_cost','$product_quantity','$status','$product_image');";
                                     $result1 = $conn->query($sql1);
                                     ?>
@@ -929,9 +931,10 @@ $_SESSION['order_id'] = $order_id;
 			<!-- <label>Amount</label> -->
 			<input type="email" class="form-control" name="amount" Value="<?php echo $final_cost?>" readonly hidden>
 			</div>
-			<p><input type="submit" class="btn btn-success btn-lg" value="Click here to Pay"></p>
+            <p><input type="submit" class="btn btn-success btn-lg" value="Click here to Pay"></p>
+            
 		</form>
- 
+        <a href = "apply_coupons.php?"><button class="button"><span>Apply Coupon</span></button></a>
     
     </div> <!-- /container -->
 		</div></li>
