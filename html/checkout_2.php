@@ -794,7 +794,7 @@ $order_id = $_SESSION['order_id'];
                                 </div>
                                 <div class="payment-box">
                                     <div class="upper-box">
-                                        <div class="payment-options">
+                                        <!-- <div class="payment-options">
                                             <ul>
                                                 <li>
                                                     <div class="radio-option">
@@ -815,9 +815,30 @@ $order_id = $_SESSION['order_id'];
                                                     </div>
                                                 </li>
                                             </ul>
-                                        </div>
+                                        </div> -->
                                     </div>
-                                    <div class="text-right"><a href="#" class="btn-normal btn">Place Order</a></div>
+                                    <form action="pay.php" method="POST" accept-charset="utf-8">
+			<input type="hidden" name="product_name" value="abc"> 
+			<input type="hidden" name="product_price" value="<?php echo $final_cost; ?>">
+			<div class="form-group">
+			<!-- <label>Your Name</label> -->
+			<input type="text" class="form-control" name="name" placeholder="Enter your name" value = "<?php echo $fname?>" hidden>	 
+			</div>
+			<div class="form-group">
+			<!-- <label>Your Phone</label> -->
+			<input type="text" class="form-control" name="phone" placeholder="Enter your phone number" value = "<?php echo $phone_number?>" hidden> 
+			</div>
+			<div class="form-group"> 
+			<!-- <label>Your Email</label> -->
+			<input type="email" class="form-control" name="email" placeholder="Enter you email" value = "<?php echo $email_address?>" hidden> 
+			</div>
+			<div class="form-group">
+			<!-- <label>Amount</label> -->
+			<input type="email" class="form-control" name="amount" Value="<?php echo $final_cost?>" readonly hidden>
+			</div>
+            <p><input type="submit" class="btn btn-success btn-lg" value="Click here to Pay"></p>
+            
+		</form>
                                 </div>
                             </div>
                         </div>
