@@ -824,6 +824,7 @@ include('connect_db.php');
                     $final_cost_1 = $row['final_cost'];
                     $individual_image_1 = $row['individual_image'];
                     $discount_1 = ($initial_cost_1 - $final_cost_1)/($initial_cost_1) * 100;
+                    
                 }
             }?>
                 <div class="col-lg-9 col-sm-12 col-xs-12">

@@ -3,6 +3,7 @@ session_start();
 include('connect_db.php');
 $product_name = $_REQUEST['id'];
 $availability = $_REQUEST['id1'];
+$total_cost_1 = $_REQUEST['id1'];
 $sql2 = "SELECT * FROM Users where email_address = 'harshithaeshwar269@gmail.com';";
 $result2 = $conn->query($sql2);
 if($result2->num_rows>=0){
@@ -879,6 +880,7 @@ $_SESSION['order_id'] = $order_id;
                                         }
                                     }
                                     $total_cost = $final_cost + 20;
+                                    $final_cost = $final_cost - $total_cost_1;
                                     $sql1 = "INSERT INTO order_status(item_id,initial_cost,fname,final_cost,product_name,final_cost, product_quantity, status, product_image) VALUES('$order_id','$final_cost','$fname','$final_cost','$product_quantity','$status','$product_image');";
                                     $result1 = $conn->query($sql1);
                                     ?>
@@ -939,33 +941,34 @@ $_SESSION['order_id'] = $order_id;
                                 <div class="payment-box">
                                     <ul>
                                         <li><div class="container">
-                                        <div class="page-header">
-                                            <!-- <h1><a href="index.php">Instamojo Payment</a></h1> -->
-                                            <form action="pay.php" method="POST" accept-charset="utf-8">
-                                                <input type="hidden" name="product_name" value="<?php echo $product_name; ?>"> 
-                                                <input type="hidden" name="product_price" value="<?php echo $final_cost; ?>">
-                                                <div class="form-group">
-                                                <!-- <label>Your Name</label> -->
-                                                <input type="text" class="form-control" name="name" placeholder="Enter your name" value = "<?php echo $fname?>" hidden>	 
-                                                </div>
-                                                <div class="form-group">
-                                                <!-- <label>Your Phone</label> -->
-                                                <input type="text" class="form-control" name="phone" placeholder="Enter your phone number" value = "<?php echo $phone_number?>" hidden> 
-                                                </div>
-                                                <div class="form-group"> 
-                                                <!-- <label>Your Email</label> -->
-                                                <input type="email" class="form-control" name="email" placeholder="Enter you email" value = "<?php echo $email_address?>" hidden> 
-                                                </div>
-                                                <div class="form-group">
-                                                <!-- <label>Amount</label> -->
-                                                <input type="email" class="form-control" name="amount" Value="<?php echo $final_cost?>" readonly hidden>
-                                                </div>
-                                                <p><input type="submit" class="btn btn-success btn-lg" value="Click here to Pay"></p>
-                                            </form>
-                                    
-                                        
-                                        </div> <!-- /container -->
-                                            </div></li>
+	<div class="page-header">
+        <!-- <h1><a href="index.php">Instamojo Payment</a></h1> -->
+		<form action="pay.php" method="POST" accept-charset="utf-8">
+			<input type="hidden" name="product_name" value="<?php echo $product_name; ?>"> 
+			<input type="hidden" name="product_price" value="<?php echo $final_cost; ?>">
+			<div class="form-group">
+			<!-- <label>Your Name</label> -->
+			<input type="text" class="form-control" name="name" placeholder="Enter your name" value = "<?php echo $fname?>" hidden>	 
+			</div>
+			<div class="form-group">
+			<!-- <label>Your Phone</label> -->
+			<input type="text" class="form-control" name="phone" placeholder="Enter your phone number" value = "<?php echo $phone_number?>" hidden> 
+			</div>
+			<div class="form-group"> 
+			<!-- <label>Your Email</label> -->
+			<input type="email" class="form-control" name="email" placeholder="Enter you email" value = "<?php echo $email_address?>" hidden> 
+			</div>
+			<div class="form-group">
+			<!-- <label>Amount</label> -->
+			<input type="email" class="form-control" name="amount" Value="<?php echo $final_cost?>" readonly hidden>
+			</div>
+            <p><input type="submit" class="btn btn-success btn-lg" value="Click here to Pay"></p>
+            
+		</form>
+        <a href = "apply_coupons.php?"><button class="button"><span>Apply Coupon</span></button></a>
+    
+    </div> <!-- /container -->
+		</div></li>
                                         <li><img src="" alt=""></img></li>
                                     </ul>
                                 </div>

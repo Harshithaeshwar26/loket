@@ -1,3 +1,6 @@
+<?php
+include('connect_db.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -706,79 +709,36 @@
         
             <div class="col-xl-12 col-lg-6 col-md-8 offset-xl-0 offset-lg-3 offset-md-2">
                 <div class="theme-card" style="border-style:solid; border-width:5px; border-color:#d3d3d3; background-color:white;">
-                    <h3 class="text-center">Coupons On Category</h3>
+                    <h3 class="text-center">Coupons Category</h3>
                     <section class="section-pt-space">
                     <div class="custom-container">
                         <div class="row">
                             <div class="col-12 pr-0">
                                 <div class="slide-5 no-arrow">
                                 <div>
-                                    <div class="paymant-offer-mian">
+                                <?php
+                                $sql = "SELECT * FROM coupons";
+                                $result = $conn->query($sql);
+                                if($result->num_rows>0){
+                                    while($row=$result->fetch_assoc()){
+                                        $value = $row['value'];
+                                        $cost = $row['cost'];
+                                        $coupon_code = $row['coupon_code'];
+                                        echo'<div class="paymant-offer-mian">
                                         <div>
-                                            <img src="../assets/images/layout-6/payment-offer/1.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Category Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
+                                            
+                                            <h2>Rs.'.$value.'</h2><br>
+                                            <h3>'.$coupon_code.'</h3>
+                                            <h4>shop for <span>Rs. '.$cost.'</span></h4>
+                                            <a href = "checkout.php?id1='.$value.'"><button class="button"><span>Apply Coupon</span></button></a>
                                         </div>
-                                    </div>
+                                    </div>';
+                                    }
+                                }
+                                ?>                               
+                                    
                                 </div>
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/2.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Category Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/1.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Category Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/2.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Category Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/1.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Category Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/2.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Category Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -792,94 +752,6 @@
 <!--Section ends-->
 
 <!--section start-->
-<section class="login-page section-big-py-space bg-light">
-    <div class="custom-container">
-        
-            <div class="col-xl-12 col-lg-6 col-md-8 offset-xl-0 offset-lg-3 offset-md-2">
-                <div class="theme-card" style="border-style:solid; border-width:5px; border-color:#d3d3d3; background-color:white;">
-                    <h3 class="text-center">Coupons On Season</h3>
-                    <section class="section-pt-space">
-                    <div class="custom-container">
-                        <div class="row">
-                            <div class="col-12 pr-0">
-                                <div class="slide-5 no-arrow">
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/1.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Season Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/2.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Season Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/1.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Season Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/2.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Season Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/1.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Season Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="paymant-offer-mian">
-                                        <div>
-                                            <img src="../assets/images/layout-6/payment-offer/2.png" alt="paymet-offer" class="img-fluid">
-                                            <h2>Rs.</h2><br>
-                                            <h3>Season Name</h3>
-                                            <h4>shop for <span>Rs. +</span></h4>
-                                            <button class="button"><span>Coupon Code</span></button>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!--payment offer end-->
-                </div>
-            </div>
-        
-    </div>
-</section>
 <!--Section ends-->
 
 

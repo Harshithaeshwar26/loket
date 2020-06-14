@@ -22,7 +22,7 @@ foreach($decoded_json->results as $results)
 // echo $zipcode;
 $zipcode_1 = "23508";
 if($zipcode_1 != $zipcode){
-    $availability = 0;
+    $availability = 1;
 }
 else {
     $availability = 1;
@@ -1090,8 +1090,8 @@ else {
                                  </button>';
                             }
                             else if($availability == 0){
-                                echo '<button class="add-button" disabled> <a class="addtocart_btn"style="color:red"></a>
-                                Currently Delivery is not available in your locatio 
+                                echo '<button class="add-button"> <a class="addtocart_btn"style="color:red"></a>
+                                Currently Delivery is not available in your location
                                  </button>';
                             }
                             echo'
