@@ -28,6 +28,13 @@ else {
     $availability = 1;
 
 }
+$sql_12 = "SELECT SUM(`order_id`) as total_orders FROM order_status WHERE status = 'ordered'";
+$result_12 = $conn->query($sql_12);
+if($result_12->num_rows>0){
+    while($row=$result_12->fetch_assoc()){
+        $total_orders = $row['total_orders'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -1341,7 +1348,7 @@ else {
             <div class="col pr-0">
                 <div class="theme-tab product no-arrow mb--5">
                     <div class="tab-content-cls ">
-                        <div id="tab-1" class="tab-content active default product">
+                        <div id="tab-1">
                             <div class="product-slide-6 no-arrow">
                             <?php
                             $sql1 = "SELECT * FROM products;";
@@ -1354,7 +1361,7 @@ else {
                                     $product_image = $row['product_image'];
                                     $discount = ($initial_cost - $final_cost)/($initial_cost) * 100;  
                                     echo' <div>
-                                    <div class="product-box ">
+                                    <div class="product-box">
                                         <div class="product-imgbox">
                                             <div class="product-front">
                                                 <img src="'.$product_image.'" class="img-fluid" alt="product">
