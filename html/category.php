@@ -69,7 +69,7 @@ if($result_12->num_rows>0){
     <!-- Theme css -->
     
     <link rel="stylesheet" type="text/css" href="../assets/css/color3.css" media="screen" id="color">
-    <!-- <style>
+    <style>
         .regular{
     width: 1150px;
     margin: 0 auto;
@@ -84,7 +84,7 @@ if($result_12->num_rows>0){
     variableWidth: true;
 });
     });
-    </script> -->
+    </script>
 
 </head>
 <body class="bg-light">
@@ -1380,7 +1380,7 @@ if($result_12->num_rows>0){
 <!--tab product-->
 
 <!-- product tab  -->
-<section class="ratio_asos product  section-big-pb-space ">
+<section class="regular ">
     <div class="custom-container addtocart_count">
         <div class="row" >
             <div class="col pr-0" >
