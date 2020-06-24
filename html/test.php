@@ -1,59 +1,70 @@
-﻿<?php
-    include('connect_db.php');
-    $zipcode="573201";
-    $url = "https://maps.googleapis.com/maps/api/geocode/json?address=".$zipcode."&key=AIzaSyDeb2feCGV_WQXXYX4Rk9GgApaS58jhU1g";
-    $details=file_get_contents($url);
-    $result = json_decode($details,true);
-   
-    $lat=$result['results'][0]['geometry']['location']['lat'];
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      // Note: This example requires that you consent to location sharing when
+      // prompted by your browser. If you see the error "The Geolocation service
+      // failed.", it means you probably did not give permission for the browser to
+      // locate you.
+      var map, infoWindow;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 6
+        });
+        infoWindow = new google.maps.InfoWindow;
 
-    $lng=$result['results'][0]['geometry']['location']['lng'];
-    echo $url;
-    echo "Latitude :" .$lat;
-    echo '<br>';
-    echo "Longitude :" .$lng;
-    $sql1 = "SELECT * FROM delivery_location LIMIT 1 ORDER BY timestamp DESC;";
-    $result1 = $conn->query($sql1);
-    if($result1->num_rows>0){
-        while($row=$result1->fetch_assoc()){
-            $lat1 = $row['delivery_x'];
-            $lng1 = $row['delivery_y'];
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
         }
-    }
-    $username = "Harshitha";
-   ;
-    echo $result;
-    echo $sql;
-    $hmaps_request= "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=$lat,$lng&destinations=$lat1%2C$lng1&key=AIzaSyDeb2feCGV_WQXXYX4Rk9GgApaS58jhU1g";
-						$data = file_get_contents($hmaps_request);
-						$data = json_decode($data);
-							$time = 0;
-							$distance = 0;
-							foreach($data->rows[0]->elements as $road) {
-								$time += $road->duration->text;
-								$distance += $road->distance->text;
-							}
-							$distance_1=$distance;
-							$time_1 = $table[1];
-							$distance_2 = $distance_1 * 1.609; 
-                            $time_2 = $time_1 + 15;
-                            // echo $distance;
-                            // echo $time;
-                            echo $distance_2;
-                            echo"<br>";
-                            echo $time_2;
-    $sql = "INSERT INTO user_location(username,user_x, user_y,distance,timestamp) VALUES('$username','$lat', '$lng','$distance_2', CURRENT_TIME());";
-    $result = $conn->query($sql); 
-    if($distance_2<6){
-      echo'<script>
-      window.location = "payments.php";
-      </script>';
-    } 
-    else{
-        echo'<script>
-        alert("Delivery boy not available please try after sometime");
-        window.location = "category.php";
-        </script>';
-    }                 
-    ?>
-    
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeb2feCGV_WQXXYX4Rk9GgApaS58jhU1g&callback=initMap">
+    </script>
+    <!-- <script src="//maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places&key=AIzaSyDeb2feCGV_WQXXYX4Rk9GgApaS58jhU1g" async="" defer="defer" type="text/javascript"></script> -->
+  </body>
+</html>
