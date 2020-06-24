@@ -2,7 +2,7 @@
 include('connect_db.php');
 $lat = $_REQUEST['lat'];
 $long = $_REQUEST['long'];
-$username = "harshitha";
+$username = "aditya";
 $sql = "INSERT INTO delivery_location(username, delivery_x, delivery_y, timestamp) VALUES('$username', '$lat', '$long', CURRENT_TIME());";
 $result = $conn->query($sql);
 ?>
