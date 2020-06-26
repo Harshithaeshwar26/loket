@@ -28,13 +28,6 @@ else {
     $availability = 1;
 
 }
-$sql_12 = "SELECT SUM(`order_id`) as total_orders FROM order_status WHERE status = 'ordered'";
-$result_12 = $conn->query($sql_12);
-if($result_12->num_rows>0){
-    while($row=$result_12->fetch_assoc()){
-        $total_orders = $row['total_orders'];
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,9 +62,6 @@ if($result_12->num_rows>0){
     <!-- Theme css -->
     
     <link rel="stylesheet" type="text/css" href="../assets/css/color3.css" media="screen" id="color">
-
-
-
 
 </head>
 <body class="bg-light">
@@ -162,40 +152,18 @@ if($result_12->num_rows>0){
                                             back <i class="fa fa-angle-right pl-2"></i>
                                         </div>
                                     </li>
-                                    <div class="nav-left">
-                                    <nav class="navbar" data-toggle="collapse" data-target="#navbarToggleExternalContent">
-                                        <button class="navbar-toggler" type="button">
-                                            <span class="navbar-icon"><i class="fa fa-arrow-down"></i></span>
-                                        </button>
-                                        <h5 class="mb-0 ml-3 text-white title-font">Shop by category</h5>
-                                    </nav>
-                                    <div class="collapse show nav-desk" id="navbarToggleExternalContent">
-                                        <ul class="nav-cat title-font mt-0">
-                                        <?php
-                                        $sql_2 = "SELECT * FROM category;";
-                                        $result_2 = $conn->query($sql_2);
-                                        if($result_2->num_rows>0){
-                                            while($row=$result_2->fetch_assoc()){
-                                                $category_name = $row['category_name'];
-                                                $category_icon = $row['category_icon'];
-                                                        echo'<a href="category_1.php?id='.$category_name.'"><li> <img src="'.$category_icon.'" alt="category-product">'.$category_name.' </a></li>';
-                                            }
-                                        }
-                                        ?>
-                                                <ul class="mor-slide-open">
-                                                    <li> <img src="../assets/images/layout-1/nav-img/08.png" alt="category-product"> <a>drangon fruits</a></li>
-                                                    <li><img src="../assets/images/layout-1/nav-img/09.png" alt="category-product"> <a href="#">kiwi</a></li>
-                                                    <li> <img src="../assets/images/layout-1/nav-img/10.png" alt="category-product"> <a href="#">mangosteen</a></li>
-                                                    <li> <img src="../assets/images/layout-1/nav-img/11.png" alt="category-product"> <a href="#">grape</a></li>
-                                                    <li> <img src="../assets/images/layout-1/nav-img/12.png" alt="category-product"> <a href="#">zucchini</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a class="mor-slide-click">more category <i class="fa fa-angle-down pro-down"></i><i class="fa fa-angle-up pro-up"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                    <!-- <li> <a href="#">foodgrains</a></li>
+                                    <li> <a href="#">bakery</a></li>
+                                    <li> <a href="#">beverage</a></li>
+                                    <li> <a href="#">snacks</a></li>
+                                    <li> <a href="#">kitchen</a></li>
+                                    <li> <a href="#">beauty</a></li>
+                                    <li> <a href="#">FRESH FRUIT</a></li>
+                                    <li> <a href="#">banana</a></li>
+                                    <li> <a href="#">kiwi</a></li>
+                                    <li> <a href="#">mangosteen</a></li>
+                                    <li> <a href="#">grape</a></li>
+                                    <li> <a href="#">zucchini</a></li> -->
                                     <li class="mor-slide-open">
                                         <ul>
                                             <li> <a>drangon fruits</a></li>
@@ -231,17 +199,15 @@ if($result_12->num_rows>0){
                                         <!--HOME-->
                                         <li>
                                         <a href="category.php">Home</a>
-                                            <!-- <a href="category.php"><?php echo $availability?></a> -->
-                                           
-                                                <li><a target="_blank" href="profile.php">Profile</a></li>
-                                                <li><a target="_blank" href="cart.php">Cart</a></li>
-                                                <li><a target="_blank" href="faq.php">Faq</a></li>
-                                                <li><a target="_blank" href="contact_us.php">Contact Us</a></li>
-                                                <li><a target="_blank" href="favourites.php">Favourite</a></li>
-                                                <li><a target="_blank" href="order_status.php">Order Status</a></li>
-                                                <li><a target="_blank" href="order_history.php">Order History</a></li>
-                                                <li><a target="_blank" href="logout.php">Logout</a></li>
-                                            
+                                            <a href="category.php"><?php echo $availability?></a>
+                                            <!-- <ul>
+                                                <li><a target="_blank" href="add-product.php">layout 1</a></li>
+                                                <li><a target="_blank" href="layout-2.html">layout 2</a></li>
+                                                <li><a target="_blank" href="layout-3.html">layout 3</a></li>
+                                                <li><a target="_blank" href="layout-4.html">layout 4</a></li>
+                                                <li><a target="_blank" href="layout-5.html">layout 5</a></li>
+                                                <li><a target="_blank" href="layout-6.html">layout 6</a></li>
+                                            </ul> -->
                                         </li>
                                         <!--HOME-END-->
 
@@ -467,10 +433,10 @@ if($result_12->num_rows>0){
                                         <!--mega-meu end-->
 
                                         <!--pages-meu start-->
-                                        <!-- <li><a href="#">pages</a> -->
+                                        <li><a href="#">pages</a>
                                             <ul>
                                                 <li>
-                                                    <!-- <a href="profile.php">account</a> -->
+                                                    <a href="profile.php">account</a>
                                                     <!-- <ul>
                                                         <li><a href="wishlist.html">wishlist</a></li>
                                                         <li><a href="cart.html">cart</a></li>
@@ -483,12 +449,12 @@ if($result_12->num_rows>0){
                                                         <li><a href="checkout.html">checkout</a></li>
                                                     </ul> -->
                                                 </li>
-                                                <!-- <li><a href="about-page.html">about us</a></li>
+                                                <li><a href="about-page.html">about us</a></li>
                                                 <li><a href="cart.php">cart</a></li>
                                                 <li><a href="favourite.php">wishlist </a></li>
                                                 <li><a href="review.html">review </a></li>
                                                 <li><a href="my_orders.php">order status</a></li>
-                                                <li><a href="order_history">order history</a></li> -->
+                                                <li><a href="order_history">order history</a></li>
                                                 <!-- <li>
                                                     <a href="#">compare</a>
                                                     <ul>
@@ -873,7 +839,7 @@ if($result_12->num_rows>0){
                 <div class="media">
                     <svg height="679pt" viewBox="0 -117 679.99892 679" width="679pt" xmlns="http://www.w3.org/2000/svg"><path d="m12.347656 378.382812h37.390625c4.371094 37.714844 36.316407 66.164063 74.277344 66.164063 37.96875 0 69.90625-28.449219 74.28125-66.164063h241.789063c4.382812 37.714844 36.316406 66.164063 74.277343 66.164063 37.96875 0 69.902344-28.449219 74.285157-66.164063h78.890624c6.882813 0 12.460938-5.578124 12.460938-12.460937v-352.957031c0-6.882813-5.578125-12.464844-12.460938-12.464844h-432.476562c-6.875 0-12.457031 5.582031-12.457031 12.464844v69.914062h-105.570313c-4.074218.011719-7.890625 2.007813-10.21875 5.363282l-68.171875 97.582031-26.667969 37.390625-9.722656 13.835937c-1.457031 2.082031-2.2421872 4.558594-2.24999975 7.101563v121.398437c-.09765625 3.34375 1.15624975 6.589844 3.47656275 9.003907 2.320312 2.417968 5.519531 3.796874 8.867187 3.828124zm111.417969 37.386719c-27.527344 0-49.851563-22.320312-49.851563-49.847656 0-27.535156 22.324219-49.855469 49.851563-49.855469 27.535156 0 49.855469 22.320313 49.855469 49.855469 0 27.632813-22.21875 50.132813-49.855469 50.472656zm390.347656 0c-27.53125 0-49.855469-22.320312-49.855469-49.847656 0-27.535156 22.324219-49.855469 49.855469-49.855469 27.539063 0 49.855469 22.320313 49.855469 49.855469.003906 27.632813-22.21875 50.132813-49.855469 50.472656zm140.710938-390.34375v223.34375h-338.375c-6.882813 0-12.464844 5.578125-12.464844 12.460938 0 6.882812 5.582031 12.464843 12.464844 12.464843h338.375v79.761719h-66.421875c-4.382813-37.710937-36.320313-66.15625-74.289063-66.15625-37.960937 0-69.898437 28.445313-74.277343 66.15625h-192.308594v-271.324219h89.980468c6.882813 0 12.464844-5.582031 12.464844-12.464843 0-6.882813-5.582031-12.464844-12.464844-12.464844h-89.980468v-31.777344zm-531.304688 82.382813h99.703125v245.648437h-24.925781c-4.375-37.710937-36.3125-66.15625-74.28125-66.15625-37.960937 0-69.90625 28.445313-74.277344 66.15625h-24.929687v-105.316406l3.738281-5.359375h152.054687c6.882813 0 12.460938-5.574219 12.460938-12.457031v-92.226563c0-6.882812-5.578125-12.464844-12.460938-12.464844h-69.796874zm-30.160156 43h74.777344v67.296875h-122.265625zm0 0"/></svg>
                     <div class="media-body">
-                        <h5>Express Delivery</h5>
+                        <h5>free shipping</h5>
                     </div>
                 </div>
             </div>
@@ -927,7 +893,7 @@ if($result_12->num_rows>0){
             </div>
             <div class="col-lg-3 col-md-6  col-sm-12 ">
                 <div class="media">
-                    <!-- <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 295.82 295.82" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 295.82 295.82">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 295.82 295.82" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 295.82 295.82">
                         <g>
                             <g>
                                 <path d="m269.719,43.503h-243.617c-13.921,0-26.102,12.181-26.102,26.102v156.611c0,13.921 12.181,26.102 26.102,26.102h243.617c13.921,0 26.102-12.181 26.102-26.102v-156.611c-0.001-13.921-12.182-26.102-26.102-26.102zm-243.617,17.401h243.617c5.22,0 8.701,3.48 8.701,8.701v13.921h-261.019v-13.921c-1.06581e-14-5.22 3.481-8.701 8.701-8.701zm252.317,40.023v13.921h-261.018v-13.921h261.018zm-8.7,133.989h-243.617c-5.22,0-8.701-3.48-8.701-8.701v-93.966h261.018v93.966c0,5.221-3.48,8.701-8.7,8.701z"/>
@@ -935,9 +901,10 @@ if($result_12->num_rows>0){
                                 <path d="m151.391,191.413h-106.148c-5.22,0-8.701,3.48-8.701,8.701s3.48,8.701 8.701,8.701h106.147c3.48,0 8.701-3.48 8.701-8.701s-3.48-8.701-8.7-8.701z"/>
                             </g>
                         </g>
-                    </svg> -->
-                    <!-- <div class="media-body"></h5>
-                    </div> -->
+                    </svg>
+                    <div class="media-body">
+                        <h5>EASY RETURN</h5>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6  col-sm-12 ">
@@ -1059,7 +1026,7 @@ if($result_12->num_rows>0){
 <!--product box start -->
 <section class=" ratio_asos product  section-big-pb-space">
     <div class="custom-container  addtocart_count ">
-        <div class="row" class = "col-md-12">
+        <div class="row">
             <div class="col pr-0">
                 <div class="product-slide-6 no-arrow">
                 <?php
@@ -1097,11 +1064,7 @@ if($result_12->num_rows>0){
                                     on sale
                                 </div>
                                 <div class="new-label1">'.round($discount,0).'%</div>
-                                <div class="new-label1">
-                                <a href="cart_1.php?id='.$product_name.'"><span class="cart-product" ><?php echo $total_items?></span><i class="icon-shopping-cart" style="color:black"></i></a>
-                                </div>
                             </div>
-
                             <div class="product-detail detail-center1">
                                 <ul class="rating-star">
                                     <li><i class="fa fa-star"></i></li>
@@ -1110,12 +1073,16 @@ if($result_12->num_rows>0){
                                     <li><i class="fa fa-star"></i></li>
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
-                                <a href = "details_1.php?id='.$product_name.'"><h6>'.$product_name.'</h6></a>
+                                <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
                                 <span class="detail-price">'.$initial_cost.'<span>'.$final_cost.' &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
                                 <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
                             </a></span></span>
                             </div>
-                            
+                            <div class="addtocart_btn">
+                                <button class="add-button add_cart" onclick = "window.location.href= cart.php" title="Add to cart">
+                                    add to cart
+                                </button>
+                            </div>
                             <div class="addtocart_btn">';
                             if($availability == 1){
                                 echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
@@ -1134,6 +1101,7 @@ if($result_12->num_rows>0){
                     }
                 }
                 ?>
+                    
                   
                     <!-- <div>
                         <div class="product-box">
@@ -1354,12 +1322,12 @@ if($result_12->num_rows>0){
 <section class="section-pt-space " >
     <div class="tab-product-main">
         <div class="tab-prodcut-contain">
-        <ul class="tabs tab-title">
-                <li class="current"><a href="tab-1">Dry Fruits</a></li>
-                <li class=""><a href="tab-2">Household</a></li>
-                <li class=""><a href="tab-3">Snacks and Beverages</a></li>
-                <li class=""><a href="tab-4">Hair Care Essentials</a></li>
-                <li class=""><a href="tab-5">Baby Care</a></li>
+            <ul class="tabs tab-title">
+                <li class="current"><a href="tab-1">electronics</a></li>
+                <li class=""><a href="tab-2">Grocery</a></li>
+                <li class=""><a href="tab-3">hardware</a></li>
+                <li class=""><a href="tab-4">medicines</a></li>
+                <li class=""><a href="tab-5">sports</a></li>
             </ul>
         </div>
     </div>
@@ -1367,16 +1335,13 @@ if($result_12->num_rows>0){
 <!--tab product-->
 
 <!-- product tab  -->
-
-
-<section class="ratio_asos product  section-big-pb-space ">
-
+<section class="section-py-space ratio_square ">
     <div class="custom-container addtocart_count">
-        <div class="row" >
-            <div class="col pr-0" >
+        <div class="row">
+            <div class="col pr-0">
                 <div class="theme-tab product no-arrow mb--5">
                     <div class="tab-content-cls ">
-                        <div id="tab-1">
+                        <div id="tab-1" class="tab-content active default product">
                             <div class="product-slide-6 no-arrow">
                             <?php
                             $sql1 = "SELECT * FROM products;";
@@ -1389,7 +1354,7 @@ if($result_12->num_rows>0){
                                     $product_image = $row['product_image'];
                                     $discount = ($initial_cost - $final_cost)/($initial_cost) * 100;  
                                     echo' <div>
-                                    <div class="product-box">
+                                    <div class="product-box ">
                                         <div class="product-imgbox">
                                             <div class="product-front">
                                                 <img src="'.$product_image.'" class="img-fluid" alt="product">
@@ -1408,9 +1373,6 @@ if($result_12->num_rows>0){
                                                
                                             </div>
                                             <div class="new-label1">'.round($discount).'%</div>
-                                            <div class="new-label1">
-                                <a href="cart_1.php?id='.$product_name.'"><span class="cart-product" ><?php echo $total_items?></span><i class="icon-shopping-cart" style="color:black"></i></a>
-                                </div>
                                             
 
                                         </div>
@@ -1443,131 +1405,18 @@ if($result_12->num_rows>0){
                                         echo'
                                         </div>
                                         <br>
+                                        <div class ="addtocart_btn">
+                                        <button class="add-button" style = "color: "#ffaa1d"><a class="addtocart_btn" href="cart_1.php?id='.$product_name.'" style="color:white">Add to Cart</a>
+                                        </button>
+                                        </div>
                                     </div>
                                 </div>';
                                 }
                             }
-                            echo'<div>
-                            <div class="product-box">
-                            <div class="tab-product-main" style = "border-radius: 25px;">
-                            <div class="tab-prodcut-contain">
-                            <ul class="tabs tab-title">
-                            <li><a href="category_1.php?id='.$category_name.'">View More</a></li>
-                        </ul>
-                        </div>
-                        </div>
-                        </div>
-                                
-                        </div>';
                             ?>
-                            <!-- <div>
-                        <div class="product-box">
-                            <div class="product-imgbox">
-                                <div class="product-front">
-                                    <img src="../assets/images/layout-6/product/3.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-back">
-                                    <img src="../assets/images/layout-6/product/a3.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-icon">
-                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
-                                        <i class="ti-bag" ></i>
-                                    </button>
-                                    <a href="javascript:void(0)" title="Add to Wishlist">
-                                        <i class="ti-heart" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="compare.html" title="Compare">
-                                        <i class="fa fa-exchange" aria-hidden="true"></i>
-                                    </a>
-
-                                </div> -->
-                            <!-- </div>
-                            <div class="product-detail detail-center1">
-                                <ul class="rating-star">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h6>Vaccinium cyanococcus .</h6>
-                                <span class="detail-price">$56.21<span>$24.00</span></span>
-                            </div> -->
-                            <!-- <div class="addtocart_btn">
-                                <button class="add-button add_cart" title="Add to cart">
-                                    add to cart
-                                </button>
-                                <div class="qty-box cart_qty">
-                                    <div class="input-group">
-                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
-                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
-                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div> -->
-                        <!-- </div>
-                    </div> -->
-                    
-                            <!-- <div class="product-imgbox">
-                                <div class="product-front">
-                                    <img src="../assets/images/layout-6/product/5.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-back">
-                                    <img src="../assets/images/layout-6/product/a5.jpg" class="img-fluid" alt="product">
-                                </div>
-                                <div class="product-icon">
-                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
-                                        <i class="ti-bag" ></i>
-                                    </button>
-                                    <a href="javascript:void(0)" title="Add to Wishlist">
-                                        <i class="ti-heart" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="compare.html" title="Compare">
-                                        <i class="fa fa-exchange" aria-hidden="true"></i>
-                                    </a>
-
-                                </div>
-                                <div class="new-label1">50%</div>
-                                <div class="on-sale4">
-                                    on sale
-                                </div>
-                                <div class="new-label1">50%</div>
-                            </div> -->
-                            <!-- <div class="product-detail detail-center1">
-                                <ul class="rating-star">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                                <h6>Vaccinium cyanococcus .</h6>
-                                <span class="detail-price">$56.21<span>$24.00</span></span>
-                            </div> -->
-                            
-                                <!-- <div class="qty-box cart_qty">
-                                    <div class="input-group">
-                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
-                                            <i class="fa fa-minus" aria-hidden="true"></i>
-                                        </button>
-                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
-                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
-                                            <i class="fa fa-plus" aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div> -->
-                            <!-- </div> -->
-                        
+                                
+                                
+                        </div>
                     </div>
                         
                     </div>
@@ -1580,7 +1429,7 @@ if($result_12->num_rows>0){
 
 
 <!-- Parallax banner -->
-<section class="section-big-pt-space">
+<!-- <section class="section-big-pt-space">
     <div class="full-banner parallax text-left p-left">
         <img src="../assets/images/layout-6/parallax-banner/parelex.jpg" alt="" class="bg-img ">
         <div class="container">
@@ -1595,7 +1444,7 @@ if($result_12->num_rows>0){
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- Parallax banner end -->
 
 <!--title start-->
