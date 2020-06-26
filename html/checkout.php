@@ -906,6 +906,37 @@ $_SESSION['order_id'] = $order_id;
                                     <ul class="total">
                                         <li>Total <span class="count">Rs <?php echo $total_cost?></span></li>
                                     </ul>
+                                    <form action="" method="POST" accept-charset="utf-8">
+                                    <button
+                                        onclick="this.disabled=true;document.getElementById('down7913').disabled=false;"
+                                        type="submit"
+                                        class="positive btn btn-rounded"
+                                        name="up7913"
+                                        id="up7913"
+                                    >
+                                        9:00am - 11:00am 
+                                    </button>
+                                    
+                                    <button
+                                        onclick="this.disabled=true;document.getElementById('up7913').disabled=false;"
+                                        type="submit"
+                                        class="negative btn btn-rounded"
+                                        name="down7913"
+                                        id="down7913"
+                                    >
+                                        1:00pm - 3:00pm
+                                    </button>
+
+                                    <button
+                                        onclick="this.disabled=true;document.getElementById('down7913').disabled=false;"
+                                        type="submit"
+                                        class="negative btn btn-rounded"
+                                        name="down7913"
+                                        id="down7913"
+                                    >
+                                        6:00pm - 8:00pm
+                                    </button>
+                                    </form>
                                 </div>
                                 <div class="payment-box">
                                     <ul>
