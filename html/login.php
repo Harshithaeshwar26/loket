@@ -251,7 +251,7 @@
                                         <li>
                                             <a href="#" class="dark-menu-item">Home</a>
                                             <ul>
-                                                <li><a target="_blank" href="index.html">layout 1</a></li>
+                                                <li><a target="_blank" href="add-product.php">layout 1</a></li>
                                                 <li><a target="_blank" href="layout-2.html">layout 2</a></li>
                                                 <li><a target="_blank" href="layout-3.html">layout 3</a></li>
                                                 <li><a target="_blank" href="layout-4.html">layout 4</a></li>
@@ -422,7 +422,7 @@
                                                                         <ul>
                                                                             <li><a href="layout-5.html">cart modal popup</a></li>
                                                                             <li><a href="layout-6.html">qty. counter </a></li>
-                                                                            <li><a href="index.html">cart top</a></li>
+                                                                            <li><a href="add-product.php">cart top</a></li>
                                                                             <li><a href="layout-2.html">cart bottom</a></li>
                                                                             <li><a href="layout-3.html">cart left</a></li>
                                                                             <li><a href="layout-4.html">cart right</a></li>
@@ -679,11 +679,15 @@
                             <label for="review">Password</label>
                             <input type="password" class="form-control" id="review" name = "pwd" placeholder="Enter your password" required="">
                         </div>
-                        <input type = "submit" name = "submit">
-                        <a class="float-right txt-default mt-2" href="forgot_password.php" id="fgpwd">Forgot your password?</a>
+                        <div class="text-center"><input class="btn btn-white btn-outline" type = "submit" name = "submit"></div>
+                        <br>
+                        <ul>
+                            <li><a class="txt-default" href="forgot_password.php" id="fgpwd">Forgot your password?</a></li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                            <li><a href="register.php" class="txt-default pt-3 d-block">Create an Account</a></li>
+                        </ul>
                     </form>
-                    <p class="mt-3">Sign up for a free account at our store. Registration is quick and easy. It allows you to be able to order from our shop. To start shopping click register.</p>
-                    <a href="register.html" class="txt-default pt-3 d-block">Create an Account</a>
+                    
+                   
                 </div>
                 </form>
             </div>
@@ -1189,16 +1193,7 @@
 <!-- Add to setting bar end-->
 
  <!-- notification product -->
-  <div class="product-notification" id="dismiss">
-    <span  onclick="dismiss();" class="close" aria-hidden="true">×</span>
-    <div class="media">
-      <img class="mr-2" src="../assets/images/layout-6/product/5.jpg" alt="Generic placeholder image">
-      <div class="media-body">
-        <h5 class="mt-0 mb-1">Latest trending</h5>
-        Cras sit amet nibh libero, in gravida nulla.
-      </div>
-    </div>
-  </div>
+  
   <!-- notification product -->
 
 

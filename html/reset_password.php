@@ -1,8 +1,9 @@
 <?php
+include('connect_db.php');
 if(isset($_POST['submit'])){
  $email_address = $_POST['email_address'];
- $password = $_POST['pwd'];
- $pwd = password_hash($password, PASSWORD_DEFAULT);
+ $pwd = md5($_POST['pwd']);
+//  $pwd = password_hash($password, PASSWORD_DEFAULT);
  $sql = "UPDATE Users SET password = '$pwd' WHERE email_address = '$email_address';";
  $result = $conn->query($sql);
  if($result->num_rows>=0){
@@ -16,7 +17,7 @@ if(isset($_POST['submit'])){
         },
         function(isConfirm){
           if (isConfirm) {
-            window.location.href = "pmpLogin.php";
+            window.location.href = "login.php";
           }
         }); }, 1000);
     </script>';
@@ -294,7 +295,7 @@ function my_simple_crypt( $string, $action = 'd') {
                                         <li>
                                             <a href="#" class="dark-menu-item">Home</a>
                                             <ul>
-                                                <li><a target="_blank" href="index.html">layout 1</a></li>
+                                                <li><a target="_blank" href="add-product.php">layout 1</a></li>
                                                 <li><a target="_blank" href="layout-2.html">layout 2</a></li>
                                                 <li><a target="_blank" href="layout-3.html">layout 3</a></li>
                                                 <li><a target="_blank" href="layout-4.html">layout 4</a></li>
@@ -465,7 +466,7 @@ function my_simple_crypt( $string, $action = 'd') {
                                                                         <ul>
                                                                             <li><a href="layout-5.html">cart modal popup</a></li>
                                                                             <li><a href="layout-6.html">qty. counter </a></li>
-                                                                            <li><a href="index.html">cart top</a></li>
+                                                                            <li><a href="add-product.php">cart top</a></li>
                                                                             <li><a href="layout-2.html">cart bottom</a></li>
                                                                             <li><a href="layout-3.html">cart left</a></li>
                                                                             <li><a href="layout-4.html">cart right</a></li>
@@ -722,7 +723,7 @@ function my_simple_crypt( $string, $action = 'd') {
                           <div class="form-group">
                               <input type="password" name = "pwd" class="form-control" id="pwd" placeholder="Enter Your Password" required="">
                           </div>
-                        </div><input type = "submit" name = "submit" class="btn btn-normal">Submit</a>
+                        </div><input type = "submit" name = "submit" class="btn btn-normal"></a>
                     </div>
                 </form>
                 </div>

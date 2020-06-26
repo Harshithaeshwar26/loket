@@ -3,6 +3,7 @@ session_start();
 include('connect_db.php');
 $product_name = $_REQUEST['id'];
 $availability = $_REQUEST['id1'];
+$total_cost_1 = $_REQUEST['id1'];
 $sql2 = "SELECT * FROM Users where email_address = 'harshithaeshwar269@gmail.com';";
 $result2 = $conn->query($sql2);
 if($result2->num_rows>=0){
@@ -94,6 +95,14 @@ $_SESSION['order_id'] = $order_id;
     }
     }
 
+    function myFunction1() {
+    var x = document.getElementById("myDIV1");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+    }
     </script>
 
 </head>
@@ -217,7 +226,7 @@ $_SESSION['order_id'] = $order_id;
                     </div>
                     <div class="input-block">
                         <div class="input-box">
-                            <form class="big-deal-form">
+                            <!-- <form class="big-deal-form">
                                 <div class="input-group ">
                                     <div class="input-group-prepend">
                                         <span class="search"><i class="fa fa-search"></i></span>
@@ -231,7 +240,7 @@ $_SESSION['order_id'] = $order_id;
                                         </select>
                                     </div>
                                 </div>
-                            </form>
+                            </form> -->
                         </div>
                     </div>
                     <div class="cart-block cart-hover-div " onclick="openCart()">
@@ -314,7 +323,7 @@ $_SESSION['order_id'] = $order_id;
                                         <li>
                                             <a href="#" class="dark-menu-item">Home</a>
                                             <ul>
-                                                <li><a target="_blank" href="index.html">layout 1</a></li>
+                                                <li><a target="_blank" href="add-product.php">layout 1</a></li>
                                                 <li><a target="_blank" href="layout-2.html">layout 2</a></li>
                                                 <li><a target="_blank" href="layout-3.html">layout 3</a></li>
                                                 <li><a target="_blank" href="layout-4.html">layout 4</a></li>
@@ -485,7 +494,7 @@ $_SESSION['order_id'] = $order_id;
                                                                         <ul>
                                                                             <li><a href="layout-5.html">cart modal popup</a></li>
                                                                             <li><a href="layout-6.html">qty. counter </a></li>
-                                                                            <li><a href="index.html">cart top</a></li>
+                                                                            <li><a href="add-product.php">cart top</a></li>
                                                                             <li><a href="layout-2.html">cart bottom</a></li>
                                                                             <li><a href="layout-3.html">cart left</a></li>
                                                                             <li><a href="layout-4.html">cart right</a></li>
@@ -615,10 +624,10 @@ $_SESSION['order_id'] = $order_id;
                                                     <div class="container">
                                                         <div class="row">
                                                             <div class="col-xl-12">
-                                                                <form>
+                                                                <!-- <form>
                                                                     <div class="form-group"><input type="text" class="form-control" id="exampleInputPassword1" placeholder="Search a Product"></div>
                                                                     <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-                                                                </form>
+                                                                </form> -->
                                                             </div>
                                                         </div>
                                                     </div>
@@ -731,7 +740,7 @@ $_SESSION['order_id'] = $order_id;
     <div class="custom-container">
         <div class="checkout-page contact-page">
             <div class="checkout-form">
-                <form>
+                <!-- <form> -->
                     <div class="row">
                         <div class="col-lg-6 col-sm-12 col-xs-12">
                             <div class="checkout-title">
@@ -759,9 +768,9 @@ $_SESSION['order_id'] = $order_id;
                                         <label class="field-label">Country</label>
                                         <select>
                                             <option>India</option>
-                                            <option>South Africa</option>
+                                            <!-- <option>South Africa</option>
                                             <option>United State</option>
-                                            <option>Australia</option>
+                                            <option>Australia</option> -->
                                         </select>
                                     </div>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -773,7 +782,7 @@ $_SESSION['order_id'] = $order_id;
                                         <input type="text" name="field-name" value="<?php echo $city?>" placeholder="">
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
-                                        <label class="field-label">State / County</label>
+                                        <label class="field-label">State</label>
                                         <input type="text" name="field-name" value="<?php echo $state?>" placeholder="">
                                     </div>
                                     <div class="form-group col-md-12 col-sm-6 col-xs-12">
@@ -784,7 +793,7 @@ $_SESSION['order_id'] = $order_id;
                                     <ul>
                                         <li><input type="checkbox" name="shipping-option" id="account-option"> &ensp;</li>
                                         <li><label for="account-option">Same Shipping Details</label></li>
-                                        &emsp;&emsp;
+                                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                                         <li>
                                             <a class="btn btn-rounded btn-outline" onclick="myFunction()">
                                                 Enter New Address
@@ -871,6 +880,7 @@ $_SESSION['order_id'] = $order_id;
                                         }
                                     }
                                     $total_cost = $final_cost + 20;
+                                    $final_cost = $final_cost - $total_cost_1;
                                     $sql1 = "INSERT INTO order_status(item_id,initial_cost,fname,final_cost,product_name,final_cost, product_quantity, status, product_image) VALUES('$order_id','$final_cost','$fname','$final_cost','$product_quantity','$status','$product_image');";
                                     $result1 = $conn->query($sql1);
                                     ?>
@@ -898,48 +908,38 @@ $_SESSION['order_id'] = $order_id;
                                     </ul>
                                 </div>
                                 <div class="payment-box">
-                                    <div class="upper-box">
-                                        <div class="payment-options">
-                                            <ul>
-                                                <!-- <li>
-                                                    <div class="radio-option">
-                                                        <input type="radio" name="payment-group" id="payment-1" checked="checked">
-                                                        <label for="payment-1">Check Payments<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="radio-option">
-                                                        <input type="radio" name="payment-group" id="payment-2">
-                                                        <label for="payment-2">Cash On Delivery<span class="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="radio-option paypal">
-                                                        <input type="radio" name="payment-group" id="payment-3">
-                                                        <label for="payment-3">PayPal<span class="image"><img src="assets/images/paypal.png" alt=""></span></label>
-                                                    </div>
-                                                </li> -->
-                                                <li>
-                                                </li>
-                                            
-                                        </div>
-                                        </form>
-                                    </div>
-                                    <?php
-                                    if($availability != 1){
-                                        echo'<form method = "POST" action = "check_availability.php">
-                                        <li><input type="text" class="form-control" name = "zipcode" id="zipcode" style = "width:350px;" placeholder="Enter Zipcode To Check Availability" required=""></li>
-                                        <li><input type="text" class="form-control" name = "product_name" id="product_name" value= "'. $product_name.'" style = "width:500px;" hidden></li>&emsp;&emsp;&emsp;
-                                        <li><input class="btn btn-rounded btn-outline" type = "submit" name = "submit"></li>
-                                            
-                                        </form>';
-                                    }
-                                    else{
-                                        echo    '<div class="text-right"><a href="test.php" class="btn-normal btn">Proceed to Payment</a></div>';
-                                    }
-                                    ?>
-                                </ul>
-                                    
+                                    <ul>
+                                        <li><div class="container">
+	<div class="page-header">
+        <!-- <h1><a href="index.php">Instamojo Payment</a></h1> -->
+		<form action="pay.php" method="POST" accept-charset="utf-8">
+			<input type="hidden" name="product_name" value="<?php echo $product_name; ?>"> 
+			<input type="hidden" name="product_price" value="<?php echo $final_cost; ?>">
+			<div class="form-group">
+			<!-- <label>Your Name</label> -->
+			<input type="text" class="form-control" name="name" placeholder="Enter your name" value = "<?php echo $fname?>" hidden>	 
+			</div>
+			<div class="form-group">
+			<!-- <label>Your Phone</label> -->
+			<input type="text" class="form-control" name="phone" placeholder="Enter your phone number" value = "<?php echo $phone_number?>" hidden> 
+			</div>
+			<div class="form-group"> 
+			<!-- <label>Your Email</label> -->
+			<input type="email" class="form-control" name="email" placeholder="Enter you email" value = "<?php echo $email_address?>" hidden> 
+			</div>
+			<div class="form-group">
+			<!-- <label>Amount</label> -->
+			<input type="email" class="form-control" name="amount" Value="<?php echo $final_cost?>" readonly hidden>
+			</div>
+            <p><input type="submit" class="btn btn-success btn-lg" value="Click here to Pay"></p>
+            
+		</form>
+        <a href = "apply_coupons.php?"><button class="button"><span>Apply Coupon</span></button></a>
+    
+    </div> <!-- /container -->
+		</div></li>
+                                        <li><img src="" alt=""></img></li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -958,14 +958,14 @@ $_SESSION['order_id'] = $order_id;
         <div class="row">
             <div class="col-12">
                 <div class="footer-main-contian">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-12 pr-lg-0">
+                    <div class="row ">
+                        <div class="col-lg-4 col-md-12 ">
                             <div class="footer-left">
                                 <div class="footer-logo">
-                                    <img src="../assets/images/layout-2/logo/logo.png" class="img-fluid" alt="logo">
+                                    <img src="../assets/images/logo.jpeg" class="img-fluid  " alt="logo">
                                 </div>
                                 <div class="footer-detail">
-                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>
+                                <!-- <p>About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us About Us</p> -->
                                     <ul class="paymant-bottom">
                                         <li><a href="#"><img src="../assets/images/layout-1/pay/1.png" class="img-fluid" alt="pay"></a></li>
                                         <li><a href="#"><img src="../assets/images/layout-1/pay/2.png" class="img-fluid" alt="pay"></a></li>
@@ -976,20 +976,20 @@ $_SESSION['order_id'] = $order_id;
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-12 p-l-md-0">
+                        <div class="col-lg-8 col-md-12 ">
                             <div class="footer-right">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="subscribe-section">
                                             <div class="row">
-                                                <div class="col-md-5 pr-lg-0">
+                                                <!-- <div class="col-md-5 ">
                                                     <div class="subscribe-block">
                                                         <div class="subscrib-contant ">
-                                                            
+                                                            <h4>subscribe to newsletter</h4>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-7 p-l-md-0">
+                                                </div> -->
+                                                <!-- <div class="col-md-7 ">
                                                     <div class="subscribe-block">
                                                         <div class="subscrib-contant">
                                                             <div class="input-group" >
@@ -1003,7 +1003,7 @@ $_SESSION['order_id'] = $order_id;
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -1018,30 +1018,16 @@ $_SESSION['order_id'] = $order_id;
                                                         <div class="footer-contant">
                                                             <ul>
                                                                 <li><a href="#">about us</a></li>
-                                                                <li><a href="#">contact us</a></li>
+                                                                <li><a href="contact_us.php">contact us</a></li>
                                                                 <li><a href="#">terms & conditions</a></li>
-                                                                <li><a href="#">returns & exchanges</a></li>
-                                                                <li><a href="#">shipping & delivery</a></li>
+                                                                <li><a href="faq.php">faq</a></li>
+                                                                <!-- <li><a href="#">returns & exchanges</a></li>
+                                                                <li><a href="#">shipping & delivery</a></li> -->
                                                             </ul>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-3">
-                                                    <div class="footer-box">
-                                                        <div class="footer-title">
-                                                            <h5>quick link</h5>
-                                                        </div>
-                                                        <div class="footer-contant">
-                                                            <ul>
-                                                                <li><a href="#">store location</a></li>
-                                                                <li><a href="#"> my account</a></li>
-                                                                <li><a href="#"> orders tracking</a></li>
-                                                                <li><a href="#"> size guide</a></li>
-                                                                <li><a href="#">FAQ </a></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div class="col-md-5">
                                                     <div class="footer-box footer-contact-box">
                                                         <div class="footer-title">
@@ -1049,10 +1035,10 @@ $_SESSION['order_id'] = $order_id;
                                                         </div>
                                                         <div class="footer-contant">
                                                             <ul class="contact-list">
-                                                                <li><i class="fa fa-map-marker"></i><span>big deal store demo store <br> <span> india-3654123</span></span></li>
-                                                                <li><i class="fa fa-phone"></i><span>call us: 123-456-7898</span></li>
-                                                                <li><i class="fa fa-envelope-o"></i><span>email us: support@bigdeal.com</span></li>
-                                                                <li><i class="fa fa-fax"></i><span>fax 123456</span></li>
+                                                                <!-- <li><i class="fa fa-map-marker"></i><span>big deal store demo store <br> <span> india-3654123</span></span></li> -->
+                                                                <li><i class="fa fa-phone"></i><span>call us: 8095566699</span></li>
+                                                                <li><i class="fa fa-envelope-o"></i><span>email us: contact.azeempatel@gmail.com</span></li>
+                                                                <!-- <li><i class="fa fa-fax"></i><span>fax 123456</span></li> -->
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -1101,7 +1087,7 @@ $_SESSION['order_id'] = $order_id;
             <div class="row">
                 <div class="col-12">
                     <div class="sub-footer-contain">
-                        <p><span>2018 - 19 </span>copy right by themeforest powered by pixel strap</p>
+                        <!-- <p><span>2018 - 19 </span>copy right by themeforest powered by pixel strap</p> -->
                     </div>
                 </div>
             </div>
@@ -1219,7 +1205,7 @@ $_SESSION['order_id'] = $order_id;
                 </a>
             </div>
         </div>
-        <form class="theme-form">
+        <!-- <form class="theme-form">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="text" class="form-control" id="email" placeholder="Email" required="">
@@ -1235,7 +1221,7 @@ $_SESSION['order_id'] = $order_id;
                 <h5 class="forget-class"><a href="forget-pwd.html" class="d-block">forget password?</a></h5>
                 <h6 class="forget-class"><a href="register.html" class="d-block">new to store? Signup now</a></h6>
             </div>
-        </form>
+        </form> -->
     </div>
 </div>
 <!-- Add to account bar end-->

@@ -1,7 +1,13 @@
+<?php
+session_start();
+include('connect_db.php');
+$product_code = rand(111111111111111111,9999999999999999);
+$_SESSION['product_code'] = $product_code;
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +16,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
-    <title>Bigdeal - Premium Admin Template</title>
+    <title>Loket - E-commerce</title>
 
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -19,8 +25,14 @@
     <!-- Font Awesome-->
     <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
 
+    <!-- Ico-font-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/icofont.css">
+
     <!-- Flag icon-->
     <link rel="stylesheet" type="text/css" href="../assets/css/flag-icon.css">
+
+    <!-- Datepicker css-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/date-picker.css">
 
     <!-- Bootstrap css-->
     <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
@@ -36,7 +48,7 @@
     <!-- Page Header Start-->
     <div class="page-main-header">
         <div class="main-header-left">
-            <div class="logo-wrapper"><a href="index.html"><img class="blur-up lazyloaded" src="../assets/images/layout-2/logo/logo.png" alt=""></a></div>
+            <div class="logo-wrapper"><a href="add-product.php"><img class="blur-up lazyloaded" src="../assets/images/layout-2/logo/logo.png" alt=""></a></div>
         </div>
         <div class="main-header-right row">
             <div class="mobile-sidebar">
@@ -129,7 +141,7 @@
                     <p>Ux Designer</p>
                 </div>
                 <ul class="sidebar-menu">
-                    <li><a class="sidebar-header" href="index.html"><i data-feather="home"></i><span>Dashboard</span></a></li>
+                    <li><a class="sidebar-header" href="add-product.php"><i data-feather="home"></i><span>Dashboard</span></a></li>
                     <li><a class="sidebar-header" href="#"><i data-feather="box"></i> <span>Products</span><i class="fa fa-angle-right pull-right"></i></a>
                         <ul class="sidebar-submenu">
                             <li>
@@ -299,16 +311,16 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="page-header-left">
-                                <h3>Add Products
+                                <h3>Create Coupon
                                     <small>Bigdeal Admin panel</small>
                                 </h3>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <ol class="breadcrumb pull-right">
-                                <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
-                                <li class="breadcrumb-item">Physical</li>
-                                <li class="breadcrumb-item active">Add Product</li>
+                                <li class="breadcrumb-item"><a href="add-product.php"><i data-feather="home"></i></a></li>
+                                <li class="breadcrumb-item">Coupons </li>
+                                <li class="breadcrumb-item active">Create Coupon</li>
                             </ol>
                         </div>
                     </div>
@@ -318,86 +330,146 @@
 
             <!-- Container-fluid starts-->
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Add Product</h5>
-                            </div>
-                            <div class="card-body">
-                                <div class="row product-adding">
-                                    <div class="col-xl-5">
-                                        <div class="add-product">
-                                            <div class="row">
-                                                <div class="col-xl-9 xl-50 col-sm-6 col-9">
-                                                    <img src="../assets/images/pro3/1.jpg" alt="" class="img-fluid image_zoom_1 blur-up lazyloaded">
-                                                </div>
-                                                <div class="col-xl-3 xl-50 col-sm-6 col-3">
-                                                    <ul class="file-upload-product">
-                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                                        <li><div class="box-input-file"><input class="upload" type="file"><i class="fa fa-plus"></i></div></li>
-                                                    </ul>
+                <div class="card tab2-card">
+                    <div class="card-header">
+                        <h5>Discount Coupon Details</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="nav nav-tabs tab-coupon" id="myTab" role="tablist">
+                            <li class="nav-item"><a class="nav-link active show" id="general-tab" data-toggle="tab" href="#general" role="tab" aria-controls="general" aria-selected="true" data-original-title="" title="">General</a></li>
+                            <!-- <li class="nav-item"><a class="nav-link" id="restriction-tabs" data-toggle="tab" href="#restriction" role="tab" aria-controls="restriction" aria-selected="false" data-original-title="" title="">Restriction</a></li>
+                            <li class="nav-item"><a class="nav-link" id="usage-tab" data-toggle="tab" href="#usage" role="tab" aria-controls="usage" aria-selected="false" data-original-title="" title="">Usage</a></li> -->
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade active show" id="general" role="tabpanel" aria-labelledby="general-tab">
+                                <form method = "POST" action = "coupons.php">
+                                    <h4>General</h4>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <!-- <div class="form-group row">
+                                                <label for="validationCustom0" class="col-xl-3 col-md-4"><span>*</span> Coupan title</label>
+                                                <input class="form-control col-md-7" id="validationCustom0" type="text" required="">
+                                            </div> -->
+                                            <div class="form-group row">
+                                                <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span>Coupon Code</label>
+                                                <input class="form-control col-md-7" name = "coupon_code" id="validationCustom1" type="text" required="" >
+                                                <div class="valid-feedback">Please Provide a Valid Coupon Code.</div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span>Total Discount</label>
+                                                <input class="form-control col-md-7" name = "total_discount" id="validationCustom1" type="text" required="" >
+                                                <div class="valid-feedback">Please Provide a Valid Coupon Code.</div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="validationCustom1" class="col-xl-3 col-md-4"><span>*</span>Minimum amount</label>
+                                                <input class="form-control col-md-7" name = "amount" id="validationCustom1" type="text" required="" >
+                                                <div class="valid-feedback">Please Provide a Valid Coupon Code.</div>
+                                            </div>
+                                            <div class="form-group mb-3 row">
+                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
+                                                    <?php
+                                                    $sql = "SELECT * FROM admin_category";
+                                                    $result = $conn->query($sql);
+
+                                                    if ($result->num_rows > 0) {
+
+                                                        echo "<select name='category_name' class='form-control digits col-xl-8 col-sm-7'>";
+                                                        // output data of each row
+                                                        while($row = $result->fetch_assoc()) {
+                                                        echo "<option value='" . $row['category_name'] . "'>" . $row['category_name'] . "</option>";
+                                                        }
+                                                        echo "</select>";
+                                                    }
+                                                ?>
+                                                    <div class="valid-feedback">Looks good!</div>
+                                                </div> 
+                                            
+                                            <!-- <div class="form-group row">
+                                                <label class="col-xl-3 col-md-4">Start Date</label>
+                                                <input class="datepicker-here form-control digits col-md-7" type="text" data-language="en">
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-md-4">End Date</label>
+                                                <input class="datepicker-here form-control digits col-md-7" type="text" data-language="en">
+                                            </div> -->
+                                            <!-- <div class="form-group row">
+                                                <label class="col-xl-3 col-md-4">Free Shipping</label>
+                                                <div class="checkbox checkbox-primary col-md-7">
+                                                    <input id="checkbox-primary-1" type="checkbox" data-original-title="" title="">
+                                                    <label for="checkbox-primary-1">Allow Free Shipping</label>
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-md-4">Quantity</label>
+                                                <input class="form-control col-md-7" type="number" required="">
+                                            </div> -->
+                                            <!-- <div class="form-group row">
+                                                <label class="col-xl-3 col-md-4">Discount Type</label>
+                                                <select class="custom-select col-md-7" required="">
+                                                    <option value="">--Select--</option>
+                                                    <option value="1">Percent</option>
+                                                    <option value="2">Fixed</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-xl-3 col-md-4">Status</label>
+                                                <div class="checkbox checkbox-primary col-md-7">
+                                                    <input id="checkbox-primary-2" type="checkbox" data-original-title="" title="">
+                                                    <label for="checkbox-primary-2">Enable the Coupon</label>
+                                                </div>
+                                            </div> -->
                                         </div>
                                     </div>
-                                    <div class="col-xl-7">
-                                        <form class="needs-validation add-product-form" novalidate="">
-                                            <div class="form">
-                                                <div class="form-group mb-3 row">
-                                                    <label for="validationCustom01" class="col-xl-3 col-sm-4 mb-0">Title :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom01" type="text" required="">
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="form-group mb-3 row">
-                                                    <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Price :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" type="text" required="">
-                                                    <div class="valid-feedback">Looks good!</div>
-                                                </div>
-                                                <div class="form-group mb-3 row">
-                                                    <label for="validationCustomUsername" class="col-xl-3 col-sm-4 mb-0">Product Code :</label>
-                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustomUsername" type="text" required="">
-                                                    <div class="invalid-feedback offset-sm-4 offset-xl-3">Please choose Valid Code.</div>
-                                                </div>
-                                            </div>
-                                            <div class="form">
-                                                <div class="form-group row">
-                                                    <label for="exampleFormControlSelect1" class="col-xl-3 col-sm-4 mb-0">Select Size :</label>
-                                                    <select class="form-control digits col-xl-8 col-sm-7" id="exampleFormControlSelect1">
-                                                        <option>Small</option>
-                                                        <option>Medium</option>
-                                                        <option>Large</option>
-                                                        <option>Extra Large</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-sm-4 mb-0">Total Products :</label>
-                                                    <fieldset class="qty-box col-xl-9 col-xl-8 col-sm-7 pl-0">
-                                                        <div class="input-group">
-                                                            <input class="touchspin" type="text" value="1">
-                                                        </div>
-                                                    </fieldset>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <label class="col-xl-3 col-sm-4">Add Description :</label>
-                                                    <div class="col-xl-8 col-sm-7 pl-0 description-sm">
-                                                        <textarea id="editor1" name="editor1" cols="10" rows="4"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="offset-xl-3 offset-sm-4">
-                                                <button type="submit" class="btn btn-primary">Add</button>
-                                                <button type="button" class="btn btn-light">Discard</button>
-                                            </div>
-                                        </form>
+                                    <div class="pull-right">
+                                        <input type="submit" name = "submit" class="btn btn-primary">Submit</button>
                                     </div>
-                                </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="restriction" role="tabpanel" aria-labelledby="restriction-tabs">
+                                <form class="needs-validation" novalidate="">
+                                    <h4>Restriction</h4>
+                                    <div class="form-group row">
+                                        <label for="validationCustom3" class="col-xl-3 col-md-4">Products</label>
+                                        <input class="form-control col-md-7" id="validationCustom3" type="text" required="" >
+                                        <div class="valid-feedback">Please Provide a Product Name.</div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-xl-3 col-md-4">Category</label>
+                                        <select class="custom-select col-md-7" required="">
+                                            <option value="">--Select--</option>
+                                            <option value="1">Electronics</option>
+                                            <option value="2">Clothes</option>
+                                            <option value="2">Shoes</option>
+                                            <option value="2">Digital</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom4" class="col-xl-3 col-md-4">Minimum Spend</label>
+                                        <input class="form-control col-md-7" id="validationCustom4" type="number" >
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom5" class="col-xl-3 col-md-4">Maximum Spend</label>
+                                        <input class="form-control col-md-7" id="validationCustom5" type="number" >
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="usage" role="tabpanel" aria-labelledby="usage-tab">
+                                <form class="needs-validation" novalidate="">
+                                    <h4>Usage Limits</h4>
+                                    <div class="form-group row">
+                                        <label for="validationCustom6" class="col-xl-3 col-md-4">Per Limit</label>
+                                        <input class="form-control col-md-7" id="validationCustom6" type="number" >
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="validationCustom7" class="col-xl-3 col-md-4">Per Customer</label>
+                                        <input class="form-control col-md-7" id="validationCustom7" type="number" >
+                                    </div>
+                                </form>
                             </div>
                         </div>
+                        <!-- <div class="pull-right">
+                            <button type="button" class="btn btn-primary">Save</button>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -438,23 +510,10 @@
 <!-- Sidebar jquery-->
 <script src="../assets/js/sidebar-menu.js"></script>
 
-<!-- touchspin js-->
-<script src="../assets/js/touchspin/vendors.min.js"></script>
-<script src="../assets/js/touchspin/touchspin.js"></script>
-<script src="../assets/js/touchspin/input-groups.min.js"></script>
-
-<!-- form validation js-->
-<script src="../assets/js/dashboard/form-validation-custom.js"></script>
-
-<!-- ckeditor js-->
-<script src="../assets/js/editor/ckeditor/ckeditor.js"></script>
-<script src="../assets/js/editor/ckeditor/styles.js"></script>
-<script src="../assets/js/editor/ckeditor/adapters/jquery.js"></script>
-<script src="../assets/js/editor/ckeditor/ckeditor.custom.js"></script>
-
-<!-- Zoom js-->
-<script src="../assets/js/jquery.elevatezoom.js"></script>
-<script src="../assets/js/zoom-scripts.js"></script>
+<!--Datepicker jquery-->
+<script src="../assets/js/datepicker/datepicker.js"></script>
+<script src="../assets/js/datepicker/datepicker.en.js"></script>
+<script src="../assets/js/datepicker/datepicker.custom.js"></script>
 
 <!--Customizer admin-->
 <script src="../assets/js/admin-customizer.js"></script>

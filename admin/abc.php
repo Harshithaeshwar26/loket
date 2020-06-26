@@ -22,7 +22,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico" type="image/x-icon">
-    <title>Bigdeal - Premium Admin Template</title>
+    <title>Loket - E-commerce</title>
 
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -48,7 +48,7 @@
     <!-- Page Header Start-->
     <div class="page-main-header">
         <div class="main-header-left">
-            <div class="logo-wrapper"><a href="index.html"><img class="blur-up lazyloaded" src="../assets/images/layout-2/logo/logo.png" alt=""></a></div>
+            <div class="logo-wrapper"><a href="add-product.php"><img class="blur-up lazyloaded" src="../assets/images/layout-2/logo/logo.png" alt=""></a></div>
         </div>
         <div class="main-header-right row">
             <div class="mobile-sidebar">
@@ -122,7 +122,7 @@
                         </ul>
                     </li>
                 </ul>
-                <div class="d-lg-none mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
+                 
             </div>
         </div>
     </div>
@@ -141,7 +141,7 @@
                     <p>Ux Designer</p>
                 </div> -->
                 <!-- <ul class="sidebar-menu">
-                    <li><a class="sidebar-header" href="index.html"><i data-feather="home"></i><span>Dashboard</span></a></li>
+                    <li><a class="sidebar-header" href="add-product.php"><i data-feather="home"></i><span>Dashboard</span></a></li>
                     <li><a class="sidebar-header" href="#"><i data-feather="box"></i> <span>Products</span><i class="fa fa-angle-right pull-right"></i></a>
                         <ul class="sidebar-submenu">
                             <li>
@@ -318,7 +318,7 @@
                         </div>
                         <div class="col-lg-6">
                             <ol class="breadcrumb pull-right">
-                                <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="add-product.php"><i data-feather="home"></i></a></li>
                                 <li class="breadcrumb-item">Physical</li>
                                 <li class="breadcrumb-item active">Add Product</li>
                             </ol>
@@ -341,12 +341,15 @@
                                     <div class="col-xl-5">
                                         <div class="add-product">
                                             <div class="row">
-                                                <div class="col-xl-9 xl-50 col-sm-6 col-9">
+                                                <!-- <div class="col-xl-9 xl-50 col-sm-6 col-9">
                                                     <img src="../assets/images/pro3/1.jpg" alt="" class="img-fluid image_zoom_1 blur-up lazyloaded">
-                                                </div>
+                                                </div> -->
                                                 <div class="col-xl-3 xl-50 col-sm-6 col-3">
                                                     <ul class="file-upload-product">
                                                     <form action="upload.php" method="post" enctype="multipart/form-data">
+                                                    <!-- <label for="validationCustom02" class="col-xl-3 col-sm-4 mb-0">Category Name :</label>
+                                                    <input class="form-control col-xl-8 col-sm-7" id="validationCustom02" name = "category_name" type="text" required=""> -->
+                                                    <div class="valid-feedback">Looks good!</div>
                                                         Select image to upload:
                                                         <li> <input type="file" name="fileToUpload" id="fileToUpload"></li>
                                                         <li><input type="submit" value="Upload Image" name="submit"></li>
