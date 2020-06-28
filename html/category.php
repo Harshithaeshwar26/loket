@@ -1019,7 +1019,8 @@ else {
 
 <!--title start-->
 <div class="title4 section-my-space">
-    <h4>trending <span>product</span></h4>
+    <h4 class = "float-left pl-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #006400">Electronics <span></span></h4>
+    
 </div>
 <!--title end-->
 
@@ -1044,26 +1045,20 @@ else {
                             <div class="product-imgbox">
                                 <div class="product-front">
                                     <img src="'.$product_image.'" class="img-fluid" alt="product">
+                                </div>  ';
+                                if($discount>30){
+                                    echo'
+                                    <div class="on-sale4">
+                                        on sale
+                                    </div>';
+                                }
+                                echo'
+                                <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
+                                <div class="new-label1">
+                                <div class="cart-block mobile-cart cart-hover-div">
+                                        <a href="cart_1.php?id='.$product_name.'"><span class="cart-product" style="color:white"><?php echo $total_items?></span><i class="icon-shopping-cart style = "color: #eb044da6""></i></a>
+                                    </div>
                                 </div>
-                                 
-                                <div class="product-icon">
-                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
-                                        <i class="ti-bag" ></i>
-                                    </button>
-                                    <a href="javascript:void(0)" title="Add to Wishlist">
-                                        <i class="fa fa-heart" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
-                                        <i class="ti-search" aria-hidden="true"></i>
-                                    </a>
-                                    <a href="compare.html" title="Compare">
-                                        <i class="fa fa-exchange" aria-hidden="true"></i>
-                                    </a>
-                                </div>
-                                <div class="on-sale4">
-                                    on sale
-                                </div>
-                                <div class="new-label1">'.round($discount,0).'%</div>
                             </div>
                             <div class="product-detail detail-center1">
                                 <ul class="rating-star">
@@ -1074,18 +1069,14 @@ else {
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
-                                <span class="detail-price">'.$initial_cost.'<span>'.$final_cost.' &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
+                                <span class="detail-price">'.$final_cost.'<span style = "color: #bdbdbd"><del>'.$initial_cost.'</del> &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
                                 <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
                             </a></span></span>
+                            <i class="fa fa-heart"></i>
                             </div>
-                            <div class="addtocart_btn">
-                                <button class="add-button add_cart" onclick = "window.location.href= cart.php" title="Add to cart">
-                                    add to cart
-                                </button>
-                            </div>
-                            <div class="addtocart_btn">';
+                            <div class="addtocart_btn" style = "width:200%">';
                             if($availability == 1){
-                                echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                echo '<button class="add-button" style = "background-color: #ffaa1d;"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
                                 Buy Now
                                  </button>';
                             }
@@ -1139,7 +1130,7 @@ else {
                                 <h6>Vaccinium cyanococcus .</h6>
                                 <span class="detail-price">$56.21<span>$24.00</span></span>
                             </div>
-                            <div class="addtocart_btn">
+                            <div class="addtocart_btn" style = "width:200%">
                                 <button class="add-button add_cart" title="Add to cart">
                                     add to cart
                                 </button>
@@ -1198,7 +1189,7 @@ else {
                                 <h6>Vaccinium cyanococcus .</h6>
                                 <span class="detail-price">$56.21<span>$24.00</span></span>
                             </div>
-                            <div class="addtocart_btn">
+                            <div class="addtocart_btn" style = "width:200%">
                                 <button class="add-button add_cart" title="Add to cart">
                                     add to cart
                                 </button>
@@ -1221,6 +1212,956 @@ else {
         </div>
     </div>
 </section>
+
+<div class="title4 section-my-space">
+    <h4 class = "float-left pl-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: 	#800000">Groceries <span></span></h4>
+    <h6 class = "float-right pr-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #008eee">View <span>More</span></h6>
+</div>
+<!--title end-->
+
+<!--product box start -->
+<section class=" ratio_asos product  section-big-pb-space">
+    <div class="custom-container  addtocart_count ">
+        <div class="row">
+            <div class="col pr-0">
+                <div class="product-slide-6 no-arrow">
+                <?php
+                $sql = "SELECT * FROM products";
+                $result = $conn->query($sql);
+                if($result->num_rows>0){
+                    while($row=$result->fetch_assoc()){
+                        $product_name = $row['product_name'];
+                        $initial_cost = $row['initial_cost'];
+                        $final_cost = $row['final_cost'];
+                        $product_image = $row['product_image'];
+                        $discount = ($initial_cost - $final_cost)/($initial_cost) * 100;  
+                        echo'<div>
+                        <div class="product-box ">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="'.$product_image.'" class="img-fluid" alt="product">
+                                </div>';
+                                if($discount>30){
+                                    echo'
+                                    <div class="on-sale4">
+                                        on sale
+                                    </div>';
+                                }
+                                echo'
+                                <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
+                                <span class="detail-price">'.$initial_cost.'<span>'.$final_cost.' &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
+                                <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
+                            </a></span></span>
+                            <i class="fa fa-heart"></i></button>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">';
+                            if($availability == 1){
+                                echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                Buy Now
+                                 </button>';
+                            }
+                            else if($availability == 0){
+                                echo '<button class="add-button"> <a class="addtocart_btn"style="color:red"></a>
+                                Currently Delivery is not available in your location
+                                 </button>';
+                            }
+                            echo'
+                            </div>
+                        </div>
+                    </div>';
+                    }
+                }
+                ?>
+                    
+                  
+                    <!-- <div>
+                        <div class="product-box">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="../assets/images/layout-6/product/3.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-back">
+                                    <img src="../assets/images/layout-6/product/a3.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="ti-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h6>Vaccinium cyanococcus .</h6>
+                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" title="Add to cart">
+                                    add to cart
+                                </button>
+                                <div class="qty-box cart_qty">
+                                    <div class="input-group">
+                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
+                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="product-box">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="../assets/images/layout-6/product/5.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-back">
+                                    <img src="../assets/images/layout-6/product/a5.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="ti-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+
+                                </div>
+                                <div class="new-label1">50%</div>
+                                <div class="on-sale4">
+                                    on sale
+                                </div>
+                                <div class="new-label1">50%</div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h6>Vaccinium cyanococcus .</h6>
+                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" title="Add to cart">
+                                    add to cart
+                                </button>
+                                <div class="qty-box cart_qty">
+                                    <div class="input-group">
+                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
+                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="title4 section-my-space">
+    <h4 class = "float-left pl-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #006400">Medicines <span></span></h4>
+</div>
+<!--title end-->
+
+<!--product box start -->
+<section class=" ratio_asos product  section-big-pb-space">
+    <div class="custom-container  addtocart_count ">
+        <div class="row">
+            <div class="col pr-0">
+                <div class="product-slide-6 no-arrow">
+                <?php
+                $sql = "SELECT * FROM products";
+                $result = $conn->query($sql);
+                if($result->num_rows>0){
+                    while($row=$result->fetch_assoc()){
+                        $product_name = $row['product_name'];
+                        $initial_cost = $row['initial_cost'];
+                        $final_cost = $row['final_cost'];
+                        $product_image = $row['product_image'];
+                        $discount = ($initial_cost - $final_cost)/($initial_cost) * 100;  
+                        echo'<div>
+                        <div class="product-box ">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="'.$product_image.'" class="img-fluid" alt="product">
+                                </div>';
+                                if($discount>30){
+                                    echo'
+                                    <div class="on-sale4">
+                                        on sale
+                                    </div>';
+                                }
+                                echo'
+                                <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
+                                <span class="detail-price">'.$final_cost.'<span style = "color: #bdbdbd"><del>'.$initial_cost.'</del> &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
+                                <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
+                            </a></span></span>
+                            <i class="fa fa-heart"></i></button>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">';
+                            if($availability == 1){
+                                echo '<button class="add-button" style = "background-color: #ffaa1d;"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                Buy Now
+                                 </button>';
+                            }
+                            else if($availability == 0){
+                                echo '<button class="add-button"> <a class="addtocart_btn"style="color:red"></a>
+                                Currently Delivery is not available in your location
+                                 </button>';
+                            }
+                            echo'
+                            </div>
+                        </div>
+                    </div>';
+                    }
+                }
+                ?>
+                    
+                  
+                    <!-- <div>
+                        <div class="product-box">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="../assets/images/layout-6/product/3.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-back">
+                                    <img src="../assets/images/layout-6/product/a3.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="ti-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h6>Vaccinium cyanococcus .</h6>
+                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" title="Add to cart">
+                                    add to cart
+                                </button>
+                                <div class="qty-box cart_qty">
+                                    <div class="input-group">
+                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
+                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="product-box">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="../assets/images/layout-6/product/5.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-back">
+                                    <img src="../assets/images/layout-6/product/a5.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="ti-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+
+                                </div>
+                                <div class="new-label1">50%</div>
+                                <div class="on-sale4">
+                                    on sale
+                                </div>
+                                <div class="new-label1">50%</div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h6>Vaccinium cyanococcus .</h6>
+                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" title="Add to cart">
+                                    add to cart
+                                </button>
+                                <div class="qty-box cart_qty">
+                                    <div class="input-group">
+                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
+                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="title4 section-my-space">
+    <h4 class = "float-left pl-2" class = "float-left" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #800000">Hardware <span></span></h4>
+    <h6 class = "float-right pr-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #008eee">View <span>More</span></h6>
+</div>
+<!--title end-->
+
+<!--product box start -->
+<section class=" ratio_asos product  section-big-pb-space">
+    <div class="custom-container  addtocart_count ">
+        <div class="row">
+            <div class="col pr-0">
+                <div class="product-slide-6 no-arrow">
+                <?php
+                $sql = "SELECT * FROM products";
+                $result = $conn->query($sql);
+                if($result->num_rows>0){
+                    while($row=$result->fetch_assoc()){
+                        $product_name = $row['product_name'];
+                        $initial_cost = $row['initial_cost'];
+                        $final_cost = $row['final_cost'];
+                        $product_image = $row['product_image'];
+                        $discount = ($initial_cost - $final_cost)/($initial_cost) * 100;  
+                        echo'<div>
+                        <div class="product-box ">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="'.$product_image.'" class="img-fluid" alt="product">
+                                </div>';
+                                if($discount>30){
+                                    echo'
+                                    <div class="on-sale4">
+                                        on sale
+                                    </div>';
+                                }
+                                echo'
+                                <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
+                                <span class="detail-price">'.$final_cost.'<span style = "color: #bdbdbd"><del>'.$initial_cost.'</del> &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
+                                <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
+                            </a></span></span>
+                            <i class="fa fa-heart"></i></button>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">';
+                            if($availability == 1){
+                                echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                Buy Now
+                                 </button>';
+                            }
+                            else if($availability == 0){
+                                echo '<button class="add-button"> <a class="addtocart_btn"style="color:red"></a>
+                                Currently Delivery is not available in your location
+                                 </button>';
+                            }
+                            echo'
+                            </div>
+                        </div>
+                    </div>';
+                    }
+                }
+                ?>
+                    
+                  
+                    <!-- <div>
+                        <div class="product-box">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="../assets/images/layout-6/product/3.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-back">
+                                    <img src="../assets/images/layout-6/product/a3.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="ti-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h6>Vaccinium cyanococcus .</h6>
+                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" title="Add to cart">
+                                    add to cart
+                                </button>
+                                <div class="qty-box cart_qty">
+                                    <div class="input-group">
+                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
+                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="product-box">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="../assets/images/layout-6/product/5.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-back">
+                                    <img src="../assets/images/layout-6/product/a5.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="ti-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+
+                                </div>
+                                <div class="new-label1">50%</div>
+                                <div class="on-sale4">
+                                    on sale
+                                </div>
+                                <div class="new-label1">50%</div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h6>Vaccinium cyanococcus .</h6>
+                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" title="Add to cart">
+                                    add to cart
+                                </button>
+                                <div class="qty-box cart_qty">
+                                    <div class="input-group">
+                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
+                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="title4 section-my-space">
+    <h4 class = "float-left pl-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #006400">Sports <span></span></h4>
+    <h6 class = "float-right pr-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #008eee">View <span>More</span></h6>
+</div>
+<!--title end-->
+
+
+<!--product box start -->
+<section class=" ratio_asos product  section-big-pb-space">
+    <div class="custom-container  addtocart_count ">
+        <div class="row">
+            <div class="col pr-0">
+                <div class="product-slide-6 no-arrow">
+                <?php
+                $sql = "SELECT * FROM products";
+                $result = $conn->query($sql);
+                if($result->num_rows>0){
+                    while($row=$result->fetch_assoc()){
+                        $product_name = $row['product_name'];
+                        $initial_cost = $row['initial_cost'];
+                        $final_cost = $row['final_cost'];
+                        $product_image = $row['product_image'];
+                        $discount = ($initial_cost - $final_cost)/($initial_cost) * 100;  
+                        echo'<div>
+                        <div class="product-box ">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="'.$product_image.'" class="img-fluid" alt="product">
+                                </div>';
+                                if($discount>30){
+                                    echo'
+                                    <div class="on-sale4">
+                                        on sale
+                                    </div>';
+                                }
+                                echo'
+                                <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
+                                    <span class="detail-price">'.$final_cost.'<span style = "color: #bdbdbd"><del>'.$initial_cost.'</del> &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
+                                <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="false"  ></i></a>
+                            </a></span></span>
+                            <i class="fa fa-heart"></i></button>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">';
+                            if($availability == 1){
+                                echo '<button class="add-button" style = "background-color: #ffaa1d;"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                Buy Now
+                                 </button>';
+                            }
+                            else if($availability == 0){
+                                echo '<button class="add-button"> <a class="addtocart_btn"style="color:red"></a>
+                                Currently Delivery is not available in your location
+                                 </button>';
+                            }
+                            echo'
+                            </div>
+                        </div>
+                    </div>';
+                    }
+                }
+                ?>
+                    
+                  
+                    <!-- <div>
+                        <div class="product-box">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="../assets/images/layout-6/product/3.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-back">
+                                    <img src="../assets/images/layout-6/product/a3.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="ti-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h6>Vaccinium cyanococcus .</h6>
+                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" title="Add to cart">
+                                    add to cart
+                                </button>
+                                <div class="qty-box cart_qty">
+                                    <div class="input-group">
+                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
+                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="product-box">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="../assets/images/layout-6/product/5.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-back">
+                                    <img src="../assets/images/layout-6/product/a5.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="ti-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+
+                                </div>
+                                <div class="new-label1">50%</div>
+                                <div class="on-sale4">
+                                    on sale
+                                </div>
+                                <div class="new-label1">50%</div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h6>Vaccinium cyanococcus .</h6>
+                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" title="Add to cart">
+                                    add to cart
+                                </button>
+                                <div class="qty-box cart_qty">
+                                    <div class="input-group">
+                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
+                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="title4 section-my-space">
+    <h4 class>trending <span>product</span></h4>
+    <h6 class = "float-right pr-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #008eee">View <span>More</span></h6>
+</div>
+<!--title end-->
+
+<!--product box start -->
+<section class=" ratio_asos product  section-big-pb-space">
+    <div class="custom-container  addtocart_count ">
+        <div class="row">
+            <div class="col pr-0">
+                <div class="product-slide-6 no-arrow">
+                <?php
+                $sql = "SELECT * FROM products";
+                $result = $conn->query($sql);
+                if($result->num_rows>0){
+                    while($row=$result->fetch_assoc()){
+                        $product_name = $row['product_name'];
+                        $initial_cost = $row['initial_cost'];
+                        $final_cost = $row['final_cost'];
+                        $product_image = $row['product_image'];
+                        $discount = ($initial_cost - $final_cost)/($initial_cost) * 100;  
+                        echo'<div>
+                        <div class="product-box ">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="'.$product_image.'" class="img-fluid" alt="product">
+                                </div>';
+                                if($discount>30){
+                                echo'
+                                <div class="on-sale4">
+                                    on sale
+                                </div>';
+                                }
+                                echo'
+                                <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
+                                <span class="detail-price">'.$initial_cost.'<span>'.$final_cost.' &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
+                                <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart"></i></a>
+                            </a></span></span>
+                            <i class="fa fa-heart"></i></button>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">';
+                            if($availability == 1){
+                                echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                Buy Now
+                                 </button>';
+                            }
+                            else if($availability == 0){
+                                echo '<button class="add-button"> <a class="addtocart_btn"style="color:red"></a>
+                                Currently Delivery is not available in your location
+                                 </button>';
+                            }
+                            echo'
+                            </div>
+                        </div>
+                    </div>';
+                    }
+                }
+                ?>
+                
+                    <!-- <div>
+                        <div class="product-box">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="../assets/images/layout-6/product/3.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-back">
+                                    <img src="../assets/images/layout-6/product/a3.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="ti-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h6>Vaccinium cyanococcus .</h6>
+                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" title="Add to cart">
+                                    add to cart
+                                </button>
+                                <div class="qty-box cart_qty">
+                                    <div class="input-group">
+                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
+                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="product-box">
+                            <div class="product-imgbox">
+                                <div class="product-front">
+                                    <img src="../assets/images/layout-6/product/5.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-back">
+                                    <img src="../assets/images/layout-6/product/a5.jpg" class="img-fluid" alt="product">
+                                </div>
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="ti-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+
+                                </div>
+                                <div class="new-label1">50%</div>
+                                <div class="on-sale4">
+                                    on sale
+                                </div>
+                                <div class="new-label1">50%</div>
+                            </div>
+                            <div class="product-detail detail-center1">
+                                <ul class="rating-star">
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                    <li><i class="fa fa-star"></i></li>
+                                </ul>
+                                <h6>Vaccinium cyanococcus .</h6>
+                                <span class="detail-price">$56.21<span>$24.00</span></span>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" title="Add to cart">
+                                    add to cart
+                                </button>
+                                <div class="qty-box cart_qty">
+                                    <div class="input-group">
+                                        <button type="button" class="btn quantity-left-minus" data-type="minus" data-field="">
+                                            <i class="fa fa-minus" aria-hidden="true"></i>
+                                        </button>
+                                        <input type="text" name="quantity" class="form-control input-number qty-input" value="1">
+                                        <button type="button" class="btn quantity-right-plus" data-type="plus" data-field="">
+                                            <i class="fa fa-plus" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!--product box end-->
 
 
@@ -1319,7 +2260,7 @@ else {
 <!-- masonory-banner end -->
 
 <!--tab product-->
-<section class="section-pt-space " >
+<!-- <section class="section-pt-space " >
     <div class="tab-product-main">
         <div class="tab-prodcut-contain">
             <ul class="tabs tab-title">
@@ -1331,11 +2272,11 @@ else {
             </ul>
         </div>
     </div>
-</section>
+</section> -->
 <!--tab product-->
 
 <!-- product tab  -->
-<section class="section-py-space ratio_square ">
+<!-- <section class="section-py-space ratio_square ">
     <div class="custom-container addtocart_count">
         <div class="row">
             <div class="col pr-0">
@@ -1391,29 +2332,25 @@ else {
                                             <i class="fa fa-heart" aria-hidden="true"></i>
                                             </a></span></span>
                                         </div>
-                                        <div class="addtocart_btn">';
-                                        if($availability == 1){
-                                            echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                        
+                                       
+                                            <div class="addtocart_btn" style = "width:200%">
+                                            <button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
                                             Buy Now
-                                                </button>';
-                                        }
-                                        else if($availability == 0){
-                                            echo '<button class="button" disabled> <a class="addtocart_btn"style="color:red"></a>
+                                                </button>
+                                        
+                                            <div class="addtocart_btn" style = "width:200%">
+                                            <button class="button" disabled> <a class="addtocart_btn"style="color:red"></a>
                                             Currently Delivery is not available in your location
-                                                </button>';
-                                        }
-                                        echo'
+                                                </button>
                                         </div>
                                         <br>
-                                        <div class ="addtocart_btn">
-                                        <button class="add-button" style = "color: "#ffaa1d"><a class="addtocart_btn" href="cart_1.php?id='.$product_name.'" style="color:white">Add to Cart</a>
-                                        </button>
-                                        </div>
                                     </div>
                                 </div>';
                                 }
                             }
                             ?>
+                            
                                 
                                 
                         </div>
@@ -1424,7 +2361,7 @@ else {
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- product tab end -->
 
 
