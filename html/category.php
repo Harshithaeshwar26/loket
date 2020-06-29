@@ -1020,7 +1020,6 @@ else {
 <!--title start-->
 <div class="title4 section-my-space">
     <h4 class = "float-left pl-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #006400">Electronics <span></span></h4>
-    
 </div>
 <!--title end-->
 
@@ -1045,18 +1044,29 @@ else {
                             <div class="product-imgbox">
                                 <div class="product-front">
                                     <img src="'.$product_image.'" class="img-fluid" alt="product">
-                                </div>  ';
-                                if($discount>30){
-                                    echo'
-                                    <div class="on-sale4">
-                                        on sale
-                                    </div>';
-                                }
-                                echo'
+                                </div>
+                                 
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="on-sale4">
+                                    on sale
+                                </div>
                                 <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
                                 <div class="new-label1">
-                                <div class="cart-block mobile-cart cart-hover-div">
-                                        <a href="cart_1.php?id='.$product_name.'"><span class="cart-product" style="color:white"><?php echo $total_items?></span><i class="icon-shopping-cart style = "color: #eb044da6""></i></a>
+                                <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">
+                                        <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart "></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -1069,14 +1079,18 @@ else {
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
-                                <span class="detail-price">'.$final_cost.'<span style = "color: #bdbdbd"><del>'.$initial_cost.'</del> &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
+                                <span class="detail-price">'.$initial_cost.'<span>'.$final_cost.' &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
                                 <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
                             </a></span></span>
-                            <i class="fa fa-heart"></i>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" onclick = "window.location.href= cart.php" title="Add to cart">
+                                    add to cart
+                                </button>
                             </div>
                             <div class="addtocart_btn" style = "width:200%">';
                             if($availability == 1){
-                                echo '<button class="add-button" style = "background-color: #ffaa1d;"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
                                 Buy Now
                                  </button>';
                             }
@@ -1215,7 +1229,6 @@ else {
 
 <div class="title4 section-my-space">
     <h4 class = "float-left pl-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: 	#800000">Groceries <span></span></h4>
-    <h6 class = "float-right pr-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #008eee">View <span>More</span></h6>
 </div>
 <!--title end-->
 
@@ -1240,14 +1253,25 @@ else {
                             <div class="product-imgbox">
                                 <div class="product-front">
                                     <img src="'.$product_image.'" class="img-fluid" alt="product">
-                                </div>';
-                                if($discount>30){
-                                    echo'
-                                    <div class="on-sale4">
-                                        on sale
-                                    </div>';
-                                }
-                                echo'
+                                </div>
+                                 
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="on-sale4">
+                                    on sale
+                                </div>
                                 <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
                             </div>
                             <div class="product-detail detail-center1">
@@ -1262,7 +1286,11 @@ else {
                                 <span class="detail-price">'.$initial_cost.'<span>'.$final_cost.' &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
                                 <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
                             </a></span></span>
-                            <i class="fa fa-heart"></i></button>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" onclick = "window.location.href= cart.php" title="Add to cart">
+                                    add to cart
+                                </button>
                             </div>
                             <div class="addtocart_btn" style = "width:200%">';
                             if($availability == 1){
@@ -1429,14 +1457,25 @@ else {
                             <div class="product-imgbox">
                                 <div class="product-front">
                                     <img src="'.$product_image.'" class="img-fluid" alt="product">
-                                </div>';
-                                if($discount>30){
-                                    echo'
-                                    <div class="on-sale4">
-                                        on sale
-                                    </div>';
-                                }
-                                echo'
+                                </div>
+                                 
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="on-sale4">
+                                    on sale
+                                </div>
                                 <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
                             </div>
                             <div class="product-detail detail-center1">
@@ -1448,14 +1487,18 @@ else {
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
-                                <span class="detail-price">'.$final_cost.'<span style = "color: #bdbdbd"><del>'.$initial_cost.'</del> &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
+                                <span class="detail-price">'.$initial_cost.'<span>'.$final_cost.' &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
                                 <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
                             </a></span></span>
-                            <i class="fa fa-heart"></i></button>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" onclick = "window.location.href= cart.php" title="Add to cart">
+                                    add to cart
+                                </button>
                             </div>
                             <div class="addtocart_btn" style = "width:200%">';
                             if($availability == 1){
-                                echo '<button class="add-button" style = "background-color: #ffaa1d;"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
                                 Buy Now
                                  </button>';
                             }
@@ -1594,7 +1637,6 @@ else {
 
 <div class="title4 section-my-space">
     <h4 class = "float-left pl-2" class = "float-left" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #800000">Hardware <span></span></h4>
-    <h6 class = "float-right pr-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #008eee">View <span>More</span></h6>
 </div>
 <!--title end-->
 
@@ -1619,14 +1661,25 @@ else {
                             <div class="product-imgbox">
                                 <div class="product-front">
                                     <img src="'.$product_image.'" class="img-fluid" alt="product">
-                                </div>';
-                                if($discount>30){
-                                    echo'
-                                    <div class="on-sale4">
-                                        on sale
-                                    </div>';
-                                }
-                                echo'
+                                </div>
+                                 
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="on-sale4">
+                                    on sale
+                                </div>
                                 <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
                             </div>
                             <div class="product-detail detail-center1">
@@ -1638,10 +1691,14 @@ else {
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
-                                <span class="detail-price">'.$final_cost.'<span style = "color: #bdbdbd"><del>'.$initial_cost.'</del> &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
+                                <span class="detail-price">'.$initial_cost.'<span>'.$final_cost.' &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
                                 <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
                             </a></span></span>
-                            <i class="fa fa-heart"></i></button>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" onclick = "window.location.href= cart.php" title="Add to cart">
+                                    add to cart
+                                </button>
                             </div>
                             <div class="addtocart_btn" style = "width:200%">';
                             if($availability == 1){
@@ -1783,7 +1840,6 @@ else {
 </section>
 <div class="title4 section-my-space">
     <h4 class = "float-left pl-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #006400">Sports <span></span></h4>
-    <h6 class = "float-right pr-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #008eee">View <span>More</span></h6>
 </div>
 <!--title end-->
 
@@ -1809,14 +1865,25 @@ else {
                             <div class="product-imgbox">
                                 <div class="product-front">
                                     <img src="'.$product_image.'" class="img-fluid" alt="product">
-                                </div>';
-                                if($discount>30){
-                                    echo'
-                                    <div class="on-sale4">
-                                        on sale
-                                    </div>';
-                                }
-                                echo'
+                                </div>
+                                 
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+                                </div>
+                                <div class="on-sale4">
+                                    on sale
+                                </div>
                                 <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
                             </div>
                             <div class="product-detail detail-center1">
@@ -1828,14 +1895,18 @@ else {
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                                 <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
-                                    <span class="detail-price">'.$final_cost.'<span style = "color: #bdbdbd"><del>'.$initial_cost.'</del> &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
-                                <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="false"  ></i></a>
+                                <span class="detail-price">'.$initial_cost.'<span>'.$final_cost.' &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
+                                <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
                             </a></span></span>
-                            <i class="fa fa-heart"></i></button>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" onclick = "window.location.href= cart.php" title="Add to cart">
+                                    add to cart
+                                </button>
                             </div>
                             <div class="addtocart_btn" style = "width:200%">';
                             if($availability == 1){
-                                echo '<button class="add-button" style = "background-color: #ffaa1d;"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
+                                echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
                                 Buy Now
                                  </button>';
                             }
@@ -1974,8 +2045,7 @@ else {
 
 
 <div class="title4 section-my-space">
-    <h4 class>trending <span>product</span></h4>
-    <h6 class = "float-right pr-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif; color: #008eee">View <span>More</span></h6>
+    <h4 class = "float-left pl-2" style = "font-family: 'Comic Sans MS', cursive, sans-serif">trending <span>product</span></h4>
 </div>
 <!--title end-->
 
@@ -2000,14 +2070,25 @@ else {
                             <div class="product-imgbox">
                                 <div class="product-front">
                                     <img src="'.$product_image.'" class="img-fluid" alt="product">
-                                </div>';
-                                if($discount>30){
-                                echo'
+                                </div>
+                                 
+                                <div class="product-icon">
+                                    <button data-toggle="modal" data-target="#addtocart" title="Add to cart">
+                                        <i class="ti-bag" ></i>
+                                    </button>
+                                    <a href="javascript:void(0)" title="Add to Wishlist">
+                                        <i class="fa fa-heart" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="#" data-toggle="modal" data-target="#quick-view" title="Quick View">
+                                        <i class="ti-search" aria-hidden="true"></i>
+                                    </a>
+                                    <a href="compare.html" title="Compare">
+                                        <i class="fa fa-exchange" aria-hidden="true"></i>
+                                    </a>
+                                </div>
                                 <div class="on-sale4">
                                     on sale
-                                </div>';
-                                }
-                                echo'
+                                </div>
                                 <div class="new-label1">                                 <div class="cart-block mobile-cart cart-hover-div" onclick="openCart()">                                         <a href="#"><span class="cart-product" style="color:black"><?php echo $total_items?></span><i class="icon-shopping-cart"></i></a>                                     </div>                                 </div>
                             </div>
                             <div class="product-detail detail-center1">
@@ -2020,9 +2101,13 @@ else {
                                 </ul>
                                 <a href = "details_1.php"><h6>'.$product_name.'</h6></a>
                                 <span class="detail-price">'.$initial_cost.'<span>'.$final_cost.' &emsp; &emsp; &emsp;<a href="javascript:void(0)" title="Add to Wishlist" style="color:blue">
-                                <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart"></i></a>
+                                <a href = "favourite_1.php?id='.$product_name.'><i class="ti-heart" aria-hidden="true"  ></i></a>
                             </a></span></span>
-                            <i class="fa fa-heart"></i></button>
+                            </div>
+                            <div class="addtocart_btn" style = "width:200%">
+                                <button class="add-button add_cart" onclick = "window.location.href= cart.php" title="Add to cart">
+                                    add to cart
+                                </button>
                             </div>
                             <div class="addtocart_btn" style = "width:200%">';
                             if($availability == 1){
@@ -2042,7 +2127,8 @@ else {
                     }
                 }
                 ?>
-                
+                    
+                  
                     <!-- <div>
                         <div class="product-box">
                             <div class="product-imgbox">
@@ -2345,12 +2431,15 @@ else {
                                                 </button>
                                         </div>
                                         <br>
+                                        <div class ="addtocart_btn">
+                                        <button class="add-button" style = "color: "#ffaa1d"><a class="addtocart_btn" href="cart_1.php?id='.$product_name.'" style="color:white">Add to Cart</a>
+                                        </button>
+                                        </div>
                                     </div>
                                 </div>';
                                 }
                             }
                             ?>
-                            
                                 
                                 
                         </div>
