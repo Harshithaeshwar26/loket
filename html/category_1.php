@@ -1424,7 +1424,7 @@ else {
                             </a></span></span>
                             <i class="fa fa-heart"></i></button>
                             </div>
-                            <div class="addtocart_btn">';
+                            <div class="addtocart_btn" style = "width:200%">';
                             if($availability == 1){
                                 echo '<button class="add-button"> <a class="addtocart_btn" href="checkout.php?id='.$product_name.'" style="color:white"></a>
                                 Buy Now
